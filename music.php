@@ -1,7 +1,3 @@
-<form action="" method="post">
-    <input type="text" name="url">
-    <input type="submit" name="enter"/>
-</form>
 <?php
 
 /*
@@ -10,10 +6,6 @@
  */
 
 // get contents of a file into a string
-
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    
-}
 $path = realpath(dirname(__FILE__));
 $filename = $path . "/css/standard-v.1.0.51.min.css";
 $handle = fopen($filename, "r");
