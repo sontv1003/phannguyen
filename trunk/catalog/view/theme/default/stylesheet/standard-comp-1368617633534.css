@@ -1526,11 +1526,10 @@ i,.icon{background-image:url('../image/sprite-s94ad1612ee.png')}
 .staticMenu #logo{position:fixed}
 #container-nav,#header{position:absolute}
 .staticMenu #header{position:fixed}
-.staticMenu #container-nav{position:relative;height: 330px; overflow: hidden;}
+.staticMenu #container-nav{position:fixed;height: 330px; overflow: hidden;}
 #container-nav{opacity:1}
 #footer{font:11px/1.231 arial,clean,sans-serif}
 .staticMenu .head{height:0;background-color:transparent;top:0;padding-top:0}
-.designPage #page-container #header{background-color:transparent}
 .categoryPage #page-container #header{background-color:white}
 .smallShopBagWrap{top:35px;right:25px}
 .smallShopBagWrap .actions .button{margin:0}
@@ -1550,4 +1549,16 @@ i,.icon{background-image:url('../image/sprite-s94ad1612ee.png')}
 #cart:hover .smallShopBagWrap{
     opacity: 1;
     visibility: visible;
+}
+
+
+ul#mainNavigationMenu li > ul{
+    display: none;
+}
+ul#mainNavigationMenu li.current > ul{
+    display: block;
+}
+
+.price-old{
+    text-decoration: line-through;
 }

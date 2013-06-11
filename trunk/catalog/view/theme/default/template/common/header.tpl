@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>">
+<html dir="<?php echo $direction; ?>" id="V2013-HOMBRE-CAZADORAS" lang="<?php echo $lang; ?>">
     <head>
         <meta charset="UTF-8" />
         <title><?php echo $title; ?></title>
@@ -21,6 +21,7 @@
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/standard-v.1.0.51.min.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/application-comp-1368617633534.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/perfect-scrollbar.min.css" />
+        <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/category-comp-1370537430555.css" />
         <?php foreach ($styles as $style) { ?>
             <link rel="<?php echo $style['rel']; ?>" type="text/css" href="<?php echo $style['href']; ?>" media="<?php echo $style['media']; ?>" />
         <?php } ?>
@@ -48,7 +49,11 @@
     <?php foreach ($stores as $store) { ?>
                 $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></iframe>');
     <?php } ?>
+                    
+                    
         });
+                    
+                 
         //--></script>
         <?php } ?>
         <?php echo $google_analytics; ?>
@@ -63,192 +68,78 @@
         <?php } ?>
 
 
-        <div  class="page gaView">
-            <!--main-->
-            <div id="page-container">
-
-                <header class="content-main fixed" id="header" style="left: 0px;">
-                    <!-- User menu section -->
-                    <nav class="_menuUser">
-                        <ul id="header-actions">
-
-                            <li>
-                                <?php if (!$logged) { ?>
-                                    <?php echo $text_welcome; ?>
-                                <?php } else { ?>
-                                    <?php echo $text_logged; ?>
-                                <?php } ?>
-                            </li>
-                            <?php echo $language; ?>
-                            <li class="miniShopCart" id="miniShopCart">
-                                <?php echo $cart; ?>
-                            </li>
-
-                            <li class="_userHelp">
-                                <a href="<?php echo $contact ?>"><?php echo $text_contact ?></a>
-                            </li>
-
-                        </ul>
-                    </nav>
-
-                </header>
-
-            </div>
-        </div>
-
-
         <div id="container-nav">
             <nav id="menu">
-                <!--menu vertical desplegable-->
-
-                <ul id="searchMenu">
-                    <li class="mainMenuEntry">MAIN MENU</li>
-                </ul>
-
                 <ul id="mainNavigationMenu">
-
                     <li id="menuItemData_363021">
                         <a href="http://www.zara.com/webapp/wcs/stores/servlet/category/us/en/zara-nam-S2013/363008/New+this+week" >
                             New this week
                         </a>
 
                     </li>
+                    <li><i class="icon icon-line-menu-divider"></i> </li>
+                    <?php if ($categories) { ?>
+                        <?php foreach ($categories as $category) { ?>
+                            <li class="<?php echo ($category['category_id'] == $category_id) ? 'current' : '' ?>">
+                                <a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
+                                <?php if ($category['children']) { ?>
+                                    <?php for ($i = 0; $i < count($category['children']);) { ?>
+                                        <ul>
+                                            <?php $j = $i + ceil(count($category['children']) / $category['column']); ?>
+                                            <?php for (; $i < $j; $i++) { ?>
+                                                <?php if (isset($category['children'][$i])) { ?>
+                                                    <li><a href="<?php echo $category['children'][$i]['href']; ?>"><?php echo $category['children'][$i]['name']; ?></a></li>
+                                                <?php } ?>
+                                            <?php } ?>
+                                        </ul>
+                                    <?php } ?>
+                                <?php } ?>
+                            </li>
+                        <?php } ?>
+                    <?php } ?>
 
-                    <li><i class="icon icon-line-menu-divider"></i>
-
-                    </li>
-
-                    <li id="menuItemData_358501">
-                        <a href="http://www.zara.com/webapp/wcs/stores/servlet/category/us/en/zara-nam-S2013/358501/Woman" >
-                            Woman
-                        </a>
-
-                    </li>
-
-                    <li id="menuItemData_358502">
-                        <a href="http://www.zara.com/webapp/wcs/stores/servlet/category/us/en/zara-nam-S2013/358502/TRF" >
-                            TRF
-                        </a>
-
-                    </li>
-
-                    <li id="menuItemData_358523">
-                        <a href="http://www.zara.com/webapp/wcs/stores/servlet/category/us/en/zara-nam-S2013/358523/Man" >
-                            Man
-                        </a>
-
-                    </li>
-
-                    <li id="menuItemData_358503">
-                        <a href="http://www.zara.com/webapp/wcs/stores/servlet/category/us/en/zara-nam-S2013/358503/Kids" >
-                            Kids
-                        </a>
-
-                    </li>
-
-                    <li id="menuItemData_295501">
-                        <a href="http://www.zara.com/webapp/wcs/stores/servlet/category/us/en/zara-nam-S2013/295501/GIFT+CARD" >
-                            GIFT CARD
-                        </a>
-
-                    </li>
-
-                    <li class="icon-empty-divider">&nbsp;</i>
-
-                    </li>
-
-                    <li id="menuItemData_362004">
-                        <a href="http://www.zara.com/webapp/wcs/stores/servlet/category/us/en/zara-nam-S2013/362004/APPS" >
-                            APPS
-                        </a>
-
-                    </li>
-
-                    <li id="menuItemData_362003">
-                        <a href="http://www.zara.com/webapp/wcs/stores/servlet/category/us/en/zara-nam-S2013/362003/Campaign" >
-                            Campaign
-                        </a>
-
-                    </li>
-
-                    <li id="menuItemData_367001">
-                        <a href="http://www.zara.com/webapp/wcs/stores/servlet/category/us/en/zara-nam-S2013/367001/LOOKBOOK" >
-                            LOOKBOOK
-                        </a>
-
-                    </li>
-
-                    <li id="menuItemData_390501">
-                        <a href="http://www.zara.com/webapp/wcs/stores/servlet/category/us/en/zara-nam-S2013/427501/PEOPLE" >
-                            PEOPLE!
-                        </a>
-
-                    </li>
-
-                    <li id="menuItemData_426501">
-                        <a href="http://www.zara.com/webapp/wcs/stores/servlet/category/us/en/zara-nam-S2013/426501/Cities" >
-                            Cities
-                        </a>
-
-                    </li>
-
-                    <li class="icon-empty-divider">&nbsp;</i>
-
-                    </li>
 
                     <li id="menuItemData_194501">
-                        <a href="http://www.zara.com/webapp/wcs/stores/servlet/category/us/en/zara-nam-S2013/194501/%2B+INFO" >
+                        <a href="javascript:void(0)" onclick="$('#information').toggle()">
                             + INFO
                         </a>
+                        <ul id="information">
+                            <li id="menuItemData_11108">
+                                <a href="http://www.zara.com/us/en/stores-c11108.html" >
+                                    Stores
+                                </a>
 
+                            </li>
+                            <li id="menuItemData_11110">
+                                <a href="http://www.zara.com/us/en/newsletter-c11110.html" >
+                                    Newsletter
+                                </a>
+
+                            </li><li id="menuItemData_11111">
+                                <a href="http://www.zara.com/us/en/press-c11111.html" >
+                                    Press
+                                </a>
+
+                            </li><li id="menuItemData_11112">
+                                <a href="http://www.zara.com/us/en/company-c11112.html" >
+                                    Company
+                                </a>
+
+                            </li><li id="menuItemData_11113">
+                                <a href="http://www.zara.com/us/en/contact-us-c11113.html" >
+                                    Contact us
+                                </a>
+
+                            </li>
+                            <li id="menuItemData_196001">
+                                <a href="http://www.zara.com/webapp/wcs/stores/servlet/ShopGuideView?catalogId=24056&amp;fts=0&amp;langId=-1&amp;storeId=11719"  class=" gaTag gaEvent myShopGuideLinkClass" gaprops="{events:'click', section:'Pie_Pagina', action:'Guia_Compra_Como_Comprar'}">
+                                    Buying guide
+                                </a>
+
+                            </li>
+                        </ul>
                     </li>
-
-                    <li id="menuItemData_11108">
-                        <a href="http://www.zara.com/webapp/wcs/stores/servlet/category/us/en/zara-nam-S2013/11108/Stores" >
-                            Stores
-                        </a>
-
-                    </li>
-
-                    <li id="menuItemData_11110">
-                        <a href="http://www.zara.com/webapp/wcs/stores/servlet/category/us/en/zara-nam-S2013/11110/Newsletter" >
-                            Newsletter
-                        </a>
-
-                    </li>
-
-                    <li id="menuItemData_11111">
-                        <a href="http://www.zara.com/webapp/wcs/stores/servlet/category/us/en/zara-nam-S2013/11111/Press" >
-                            Press
-                        </a>
-
-                    </li>
-
-                    <li id="menuItemData_11112">
-                        <a href="http://www.zara.com/webapp/wcs/stores/servlet/category/us/en/zara-nam-S2013/11112/Company" >
-                            Company
-                        </a>
-
-                    </li>
-
-                    <li id="menuItemData_11113">
-                        <a href="http://www.zara.com/webapp/wcs/stores/servlet/category/us/en/zara-nam-S2013/11113/Contact+us" >
-                            Contact us
-                        </a>
-
-                    </li>
-
-                    <li id="menuItemData_196001">
-                        <a href="http://www.zara.com/webapp/wcs/stores/servlet/category/us/en/zara-nam-S2013/196001/Buying+guide" >
-                            Buying guide
-                        </a>
-
-                    </li>
-
-                </ul>
-
-
-
+                </ul>            
                 <div class="search">
 
 
@@ -273,14 +164,32 @@
                     </form>
                 </div>
 
-                <div id="sb-autocompletePanel" class="sb-autocomplete">
-                    <div class="resultsWrapper"></div>
-                </div>
         </div>
 
-        <div id="container">
-            <div id="notification"></div>
+        <div id="page-container">
 
-            <div class="center-containt">
-                <div class="bottom_bg">
-                    <div class="clear"></div>
+            <header class="content-main fixed" id="header" style="left: 0px;">
+                <!-- User menu section -->
+                <nav class="_menuUser">
+                    <ul id="header-actions">
+
+                        <li>
+                            <?php if (!$logged) { ?>
+                                <?php echo $text_welcome; ?>
+                            <?php } else { ?>
+                                <?php echo $text_logged; ?>
+                            <?php } ?>
+                        </li>
+                        <?php echo $language; ?>
+                        <li class="miniShopCart" id="miniShopCart">
+                            <?php echo $cart; ?>
+                        </li>
+
+                        <li class="_userHelp">
+                            <a href="<?php echo $contact ?>"><?php echo $text_contact ?></a>
+                        </li>
+
+                    </ul>
+                </nav>
+
+            </header>

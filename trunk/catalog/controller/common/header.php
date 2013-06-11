@@ -122,6 +122,7 @@ class ControllerCommonHeader extends Controller {
                 // Level 1
                 $this->data['categories'][] = array(
                     'name' => $category['name'],
+                    'category_id' => $category['category_id'],
                     'children' => $children_data,
                     'column' => $category['column'] ? $category['column'] : 1,
                     'href' => $this->url->link('product/category', 'path=' . $category['category_id'])
@@ -202,7 +203,26 @@ class ControllerCommonHeader extends Controller {
 
         $this->data['contact'] = $this->url->link('information/contact', '', 'SSL');
         $this->data['text_contact'] = $this->language->get('text_contact');
-        
+
+
+        if (isset($this->request->get['path'])) {
+            $parts = explode('_', (string) $this->request->get['path']);
+        } else {
+            $parts = array();
+        }
+
+        if (isset($parts[0])) {
+            $this->data['category_id'] = $parts[0];
+        } else {
+            $this->data['category_id'] = 0;
+        }
+
+        if (isset($parts[1])) {
+            $this->data['child_id'] = $parts[1];
+        } else {
+            $this->data['child_id'] = 0;
+        }
+
         $this->children = array(
             'module/language',
             'module/currency',
