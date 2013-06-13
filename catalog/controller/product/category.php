@@ -200,8 +200,8 @@ class ControllerProductCategory extends Controller {
                 'filter_filter' => $filter,
                 'sort' => $sort,
                 'order' => $order,
-                'start' => ($page - 1) * $limit,
-                'limit' => $limit
+//                'start' => ($page - 1) * $limit,
+//                'limit' => $limit
             );
             if (!empty($this->request->get['filter_manufacturer_id']))
                 $data['filter_manufacturer_id'] = $this->request->get['filter_manufacturer_id'];

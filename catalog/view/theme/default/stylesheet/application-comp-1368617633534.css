@@ -19,7 +19,7 @@ body{min-width:990px}
 .touch #logo{position:absolute}
 #container-nav{top:120px;left:55px;width:175px;z-index:3;position:relative;visibility:visible}
 .touch #container-nav{position:absolute}
-#page-container{margin-left:230px;margin-top:0;margin-bottom:55px}
+#page-container{margin-left:230px;margin-top:0;margin-bottom:0}
 #page-container #header{min-width:990px;top:0;left:0;width:100%;height:45px;background:white;z-index:2;margin:0 0 35px;padding-top:35px}
 .touch #page-container #header{position:absolute}
 #page-container #header nav{margin:0 55px 0 175px}
@@ -164,7 +164,7 @@ i,.icon{background-image:url('../image/sprite-s94ad1612ee.png')}
 #header-actions .smallShopBagWrap li{margin-left:0}
 #header-actions .smallShopBagWrap .actions .button{margin:0}
 #header-actions .miniShopCart span.shoppingCartBar{line-height:14px;font-size:10px}
-#header-actions a{overflow:hidden;text-transform:uppercase;font-size:10px;line-height:14px}
+#header-actions a{overflow:hidden;text-transform:uppercase;font-size:10px;line-height:18px}
 #header-actions a .icon-cart{margin-top:-2px}
 #header-actions .smallShopBagHead{background-position:left 0!important}
 #menu{list-style:none;margin-top:0;padding-bottom:20px}
