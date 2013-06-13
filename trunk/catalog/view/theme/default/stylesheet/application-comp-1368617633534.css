@@ -335,7 +335,7 @@ select{height:26px;border:1px solid #7b7b7b}
 .moreItems{padding:5px 7px}
 .moreItems a{font-weight:normal}
 .actions .button span{display:block;white-space:nowrap;font-size:11px;text-align:center;min-width:165px;line-height:37px;.width:auto;_width:165px;*margin-top:-1px}
-.actions .butBlack{background-color:#000}
+.actions .butBlack{background-color:#000;color: #fff}
 .actions .butBlack span{color:#fff}
 .actions .butBlack:hover{background-color:#d2d2d2;border-color:#d2d2d2}
 .actions .nextBlack{background:black url(../image/arrow_buttons.gif) no-repeat right top}
