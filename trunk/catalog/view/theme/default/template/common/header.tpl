@@ -128,11 +128,11 @@
     <?php foreach ($stores as $store) { ?>
                 $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></iframe>');
     <?php } ?>
-                                            
-                                            
+                                                
+                                                
         });
-                                            
-                                         
+                                                
+                                             
         //--></script>
         <?php } ?>
         <?php echo $google_analytics; ?>
@@ -186,47 +186,8 @@
                         <?php } ?>
                     <?php } ?>
 
-
-                    <li id="menuItemData_194501">
-                        <a href="javascript:void(0)" onclick="$('#information').toggle()">
-                            + INFO
-                        </a>
-                        <ul id="information">
-                            <li id="menuItemData_11108">
-                                <a href="http://www.zara.com/us/en/stores-c11108.html" >
-                                    Stores
-                                </a>
-
-                            </li>
-                            <li id="menuItemData_11110">
-                                <a href="http://www.zara.com/us/en/newsletter-c11110.html" >
-                                    Newsletter
-                                </a>
-
-                            </li><li id="menuItemData_11111">
-                                <a href="http://www.zara.com/us/en/press-c11111.html" >
-                                    Press
-                                </a>
-
-                            </li><li id="menuItemData_11112">
-                                <a href="http://www.zara.com/us/en/company-c11112.html" >
-                                    Company
-                                </a>
-
-                            </li><li id="menuItemData_11113">
-                                <a href="http://www.zara.com/us/en/contact-us-c11113.html" >
-                                    Contact us
-                                </a>
-
-                            </li>
-                            <li id="menuItemData_196001">
-                                <a href="http://www.zara.com/webapp/wcs/stores/servlet/ShopGuideView?catalogId=24056&amp;fts=0&amp;langId=-1&amp;storeId=11719"  class=" gaTag gaEvent myShopGuideLinkClass" gaprops="{events:'click', section:'Pie_Pagina', action:'Guia_Compra_Como_Comprar'}">
-                                    Buying guide
-                                </a>
-
-                            </li>
-                        </ul>
-                    </li>
+                    <?php echo $information ?>        
+                    
                 </ul>            
                 <div id="search" class="search">
                     <input type="text" class="textField searchTextField placeholder" size="18" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />
@@ -234,6 +195,8 @@
                 </div>
 
         </div>
+
+        
 
         <div id="page-container">
 
