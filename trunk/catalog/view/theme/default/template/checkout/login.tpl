@@ -1,42 +1,58 @@
-<div class="left">
-  <h2><?php echo $text_new_customer; ?></h2>
-  <p><?php echo $text_checkout; ?></p>
-  <label for="register">
-    <?php if ($account == 'register') { ?>
-    <input type="radio" name="account" value="register" id="register" checked="checked" />
-    <?php } else { ?>
-    <input type="radio" name="account" value="register" id="register" />
-    <?php } ?>
-    <b><?php echo $text_register; ?></b></label>
-  <br />
-  <?php if ($guest_checkout) { ?>
-  <label for="guest">
-    <?php if ($account == 'guest') { ?>
-    <input type="radio" name="account" value="guest" id="guest" checked="checked" />
-    <?php } else { ?>
-    <input type="radio" name="account" value="guest" id="guest" />
-    <?php } ?>
-    <b><?php echo $text_guest; ?></b></label>
-  <br />
-  <?php } ?>
-  <br />
-  <p><?php echo $text_register_account; ?></p>
-  <input type="button" value="<?php echo $button_continue; ?>" id="button-account" class="button" />
-  <br />
-  <br />
+<div class="modalTitle">
+    <h2 id=""><?php echo $text_login_register ?> </h2>
 </div>
-<div id="login" class="right">
-  <h2><?php echo $text_returning_customer; ?></h2>
-  <p><?php echo $text_i_am_returning_customer; ?></p>
-  <b><?php echo $entry_email; ?></b><br />
-  <input type="text" name="email" value="" />
-  <br />
-  <br />
-  <b><?php echo $entry_password; ?></b><br />
-  <input type="password" name="password" value="" />
-  <br />
-  <a href="<?php echo $forgotten; ?>"><?php echo $text_forgotten; ?></a><br />
-  <br />
-  <input type="button" value="<?php echo $button_login; ?>" id="button-login" class="button" /><br />
-  <br />
+<br/>
+<div class="infoLogin logonPanel gaTrack gaPanel" id="logonPanel" style="height: 262px;">
+
+    <div class="unit size1of2">
+        <div class="rPadded">		                           
+            <h3><?php echo $text_returning_customer; ?> </h3>
+            <p><?php echo $text_i_am_returning_customer; ?></p>	
+
+            <ul>
+                <li class="formControl">
+                    <label for="email" class="labelUp">
+                        <?php echo $entry_email; ?>
+                    </label>
+                    <input type="text" name="email" value="" class="inputText logon gaFormField"/>
+                </li>
+                <li class="formControl">
+                    <label for="password" class="labelUp">
+                        <?php echo $entry_password; ?>
+                    </label>
+                    <input type="password" name="password" value="" class="inputText gaFormField"/>
+
+                    <div class="passHelpLink">
+
+                        <a href="<?php echo $forgotten; ?>" id="forgetPasswordLink"><?php echo $text_forgotten; ?></a>
+                    </div>
+                </li>
+
+            </ul>
+
+            <div class="actions">
+                <button value="<?php echo $button_login; ?>" id="button-login" class="button butBlack actionButton" type="button">
+                    <span>
+                        Log in
+                    </span>
+                </button>
+            </div>
+            </form>
+        </div>
+    </div>
+    <div class="unit size1of2 lastUnit">
+        <div class="rPadded">			
+            <h3><?php echo $text_new_customer; ?></h3>
+            <p>
+                <?php echo $text_register; ?>
+            </p>
+
+            <div class="actions">
+                <input type="radio" name="account" value="register" id="register" checked="checked" style="display: none"/>
+                <button class="button butBlack actionButton" type="button" value="<?php echo $button_continue; ?>" id="button-account">
+                    <span>Create account</span>
+                </button>
+            </div>
+        </div>
+    </div>
 </div>

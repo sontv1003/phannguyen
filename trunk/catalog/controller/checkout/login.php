@@ -5,6 +5,7 @@ class ControllerCheckoutLogin extends Controller {
 		
 		$this->data['text_new_customer'] = $this->language->get('text_new_customer');
 		$this->data['text_returning_customer'] = $this->language->get('text_returning_customer');
+		$this->data['text_login_register'] = $this->language->get('text_login_register');
 		$this->data['text_checkout'] = $this->language->get('text_checkout');
 		$this->data['text_register'] = $this->language->get('text_register');
 		$this->data['text_guest'] = $this->language->get('text_guest');
@@ -46,9 +47,9 @@ class ControllerCheckoutLogin extends Controller {
 			$json['redirect'] = $this->url->link('checkout/checkout', '', 'SSL');			
 		}
 		
-		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
-			$json['redirect'] = $this->url->link('checkout/cart');
-		}	
+//		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+//			$json['redirect'] = $this->url->link('checkout/cart');
+//		}	
 		
 		if (!$json) {
 			if (!$this->customer->login($this->request->post['email'], $this->request->post['password'])) {
