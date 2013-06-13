@@ -10,6 +10,8 @@ class ControllerCommonHeader extends Controller {
         } else {
             $server = $this->config->get('config_url');
         }
+        
+        
 
         $this->data['base'] = $server;
         $this->data['description'] = $this->document->getDescription();
