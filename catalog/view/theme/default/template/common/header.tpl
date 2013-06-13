@@ -128,11 +128,11 @@
     <?php foreach ($stores as $store) { ?>
                 $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></iframe>');
     <?php } ?>
-                                                
-                                                
+                                                    
+                                                    
         });
-                                                
-                                             
+                                                    
+                                                 
         //--></script>
         <?php } ?>
         <?php echo $google_analytics; ?>
@@ -187,7 +187,7 @@
                     <?php } ?>
 
                     <?php echo $information ?>        
-                    
+
                 </ul>            
                 <div id="search" class="search">
                     <input type="text" class="textField searchTextField placeholder" size="18" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />
@@ -196,7 +196,7 @@
 
         </div>
 
-        
+
 
         <div id="page-container">
 

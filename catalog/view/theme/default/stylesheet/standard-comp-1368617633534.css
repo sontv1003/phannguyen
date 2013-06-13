@@ -63,12 +63,11 @@ html{overflow:auto}
 .designPage .main{width:100%}
 .selectionPage .main{width:815px;position:relative;top:45px;background:transparent url(../image/bg_veil.png) 0 0;padding:51px}
 .head{height:75px;position:relative;z-index:100}
-.designPage .head{height:auto;position:absolute;right:0}
 .storePage .head{background:url(../image/dotted_line.png) repeat-x left bottom}
 .categoryPage .head{background:none!important}
 .messagePage .page{padding:0 45px}
 .messagePage .main{width:auto;position:relative;top:45px;padding:51px}
-.body{min-height:500px;padding-top:24px;color:#0f0f0f;z-index:99}
+.body{min-height:500px;padding-top:24px;color:#0f0f0f;z-index:1}
 .categoryPage .body{padding-top:0}
 .foot{margin-bottom:20px;background:url("../image/dotted_line.png") repeat-x scroll left top transparent;padding-top:23px}
 .line{*zoom:1}
@@ -974,10 +973,10 @@ div.basketNoStock span{background-color:#b90000;color:#fff;display:block;font-si
 .staticMenu .navMenuWrapper .arrow.top{border-color:transparent transparent #555 transparent;top:0}
 .staticMenu .navMenuWrapper .arrow.bottom{border-color:#555 transparent transparent transparent;bottom:0}
 .staticMenu .fixed,.staticMenu .logo,.staticMenu .nav,.staticMenu .head,.staticMenu .body>.line.mod{position:fixed}
-.staticMenu .head{height:77px;background-color:white!important;top:0;padding-top:45px}
+.staticMenu .head{height:77px;top:0;padding-top:45px}
 .staticMenu .selectionProds{margin-top:133px}
 .staticMenu .body>.line.mod{top:120px;z-index:99;background-position:0 36px;background-color:white;padding-bottom:20px;margin-bottom:0;padding-top:3px}
-.staticMenu .head,.staticMenu .body>.line.mod{width:817px}
+.staticMenu .head,.staticMenu .body>.line.mod{width:895px}
 .staticMenu.landscapeView .head,.staticMenu.landscapeView .body>.line.mod{width:899px}
 @media screen and (max-width:1108px){.staticMenu .head,.staticMenu .body>.line.mod{width:745px}
 }
@@ -1537,7 +1536,7 @@ i,.icon{background-image:url('../image/sprite-s94ad1612ee.png')}
 #page-container #header{z-index:110}
 #logo{z-index:115}
 .main section .head{height:50px}
-.productPage .main section .head{height:75px}
+.productPage .main section .head{height:85px}
 #popup-product h2{font:10px/1.231 arial,clean,sans-serif;padding-bottom:0}
 #popup-product p{padding-bottom:0}
 #popup-product .price{margin-bottom:17px}
@@ -1621,4 +1620,27 @@ ul#mainNavigationMenu li.current > ul{
 
 #payment-address .left{
     width: 50%
+}
+
+.head {
+    height: 75px;
+    position: relative;
+    z-index: 100;
+}
+
+.storePage .head {
+    background: url("../image/dotted_line.png") repeat-x scroll left bottom transparent;
+}
+
+.main section .head {
+    height: 50px;
+}
+
+
+h2.h2 {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 22px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
 }

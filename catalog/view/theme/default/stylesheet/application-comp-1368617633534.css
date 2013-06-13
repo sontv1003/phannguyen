@@ -23,7 +23,7 @@ body{min-width:990px}
 #page-container #header{min-width:990px;top:0;left:0;width:100%;height:45px;background:white;z-index:2;margin:0 0 35px;padding-top:35px}
 .touch #page-container #header{position:absolute}
 #page-container #header nav{margin:0 55px 0 175px}
-#page-container #main{margin-top:80px;margin-bottom:55px;display:block;overflow:hidden}
+#page-container #main{margin-top:115px;margin-bottom:55px;display:block;overflow:hidden}
 .content-main{margin:0 auto;width:80%}
 .backToTopLink{visibility:hidden;position:absolute;width:70px;height:27px;padding:5px;z-index:100}
 .backToTopLink img{width:inherit}
