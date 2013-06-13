@@ -1523,6 +1523,7 @@ i,.icon{background-image:url('../image/sprite-s94ad1612ee.png')}
 .staticMenu .body>.line.mod{top:78px;padding-top:44px;background-position:0 77px}
 #logo{position:absolute}
 .staticMenu #logo{position:fixed}
+.staticMenu #logo img{width: 150px;}
 #container-nav,#header{position:absolute}
 .staticMenu #header{position:fixed}
 .staticMenu #container-nav{position:fixed;height: 330px; overflow: hidden;}
