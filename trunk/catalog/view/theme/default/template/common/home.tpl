@@ -13,3 +13,4 @@
         })
     </script>
 </div>
+<?php echo $footer; ?>

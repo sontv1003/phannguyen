@@ -1,14 +1,52 @@
 <?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
-<div id="content"><?php echo $content_top; ?>
-  <div class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
-    <?php } ?>
-  </div>
-  <h1><?php echo $heading_title; ?></h1>
-  <?php echo $description; ?>
-  <div class="buttons">
-    <div class="right"><a href="<?php echo $continue; ?>" class="button"><?php echo $button_continue; ?></a></div>
-  </div>
-  <?php echo $content_bottom; ?></div>
+<?php echo $content_top; ?>
+<!--<div id="content">
+
+    <section class="content-main body" id="main">
+
+
+        <div class="head">
+        </div>
+
+        <div class="body">								  
+             Begin ItxCachedCompanyCommitmentView.jsp line					
+            <div class="line">
+                <div class="unit size1of1">					
+                    <h2 class="h2"><?php echo $heading_title; ?></h2>																																						
+                </div>
+            </div>	
+            /lineline		
+            <div class="line">
+                <div class="unit size1of1">	
+<?php echo $description; ?>
+                </div> End - JSP File Name:  ItxProductMarketingSpot.jsp 
+            </div>
+        </div>
+         END ItxCachedCompanyCommitmentView.jsp  
+    </section>
+
+<?php echo $content_bottom; ?>
+</div>-->
+
+
+
+<div class="storePage main">
+    <section class="content-main body" id="main">
+        <div class="head">
+        </div>
+        <div class="body">								  
+            <!-- Begin ItxCachedCompanyCommitmentView.jsp --><!--line-->					
+            <div class="line">
+                <div class="unit size1of1">					
+                    <h2 class="h2"><?php echo $heading_title; ?></h2>																																						
+                </div>
+            </div>	
+            <!--/line--><!--line-->		
+            <div class="line">
+                <?php echo $description; ?>
+            </div>
+        </div>
+        <!-- END ItxCachedCompanyCommitmentView.jsp --> 
+    </section>
+</div><!-- END div body -->
 <?php echo $footer; ?>
