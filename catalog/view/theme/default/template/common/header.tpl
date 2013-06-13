@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="<?php echo $direction; ?>" id="V2013-HOMBRE-CAZADORAS" lang="<?php echo $lang; ?>">
+<html dir="<?php echo $direction; ?>" id="V2013-HOMBRE-CAZADORAS" class="productPage newDesign-2013-1 js no-touch video" lang="<?php echo $lang; ?>">
     <head>
         <meta charset="UTF-8" />
         <title><?php echo $title; ?></title>
@@ -22,6 +22,7 @@
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/application-comp-1368617633534.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/perfect-scrollbar.min.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/category-comp-1370537430555.css" />
+        <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/bootstrap.min.css" />
         <?php foreach ($styles as $style) { ?>
             <link rel="<?php echo $style['rel']; ?>" type="text/css" href="<?php echo $style['href']; ?>" media="<?php echo $style['media']; ?>" />
         <?php } ?>
@@ -32,11 +33,89 @@
         <script type="text/javascript" src="catalog/view/javascript/jquery/main.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/perfect-scrollbar.min.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/perfect-scrollbar.with-mousewheel.min.js"></script>
+        <script type="text/javascript" src="catalog/view/javascript/jquery/bootstrap.min.js"></script>
 
         <script>
             $(document).ready(function ($) {
                 "use strict";
                 $('#container-nav').perfectScrollbar({wheelPropagation:true});
+                
+                $('.login-page > a').live('click',function(){
+                    $('#modal-ajax').modal();
+                    $('#itxLoading').show();
+                    
+                    $.ajax({
+                        url: 'index.php?route=checkout/login',
+                        dataType: 'html',
+                        success: function(html) {
+                            $('.modal-body').html(html);
+                            $('#itxLoading').hide();
+                        },
+                        error: function(xhr, ajaxOptions, thrownError) {
+                            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                        }
+                    });
+                    return false;
+                })
+                
+                
+                
+                // Login
+                $('#button-login').live('click', function() {
+                    $.ajax({
+                        url: 'index.php?route=checkout/login/validate',
+                        type: 'post',
+                        data: $('#logonPanel :input'),
+                        dataType: 'json',
+                        beforeSend: function() {
+                            $('#button-login').attr('disabled', true);
+                            $('#itxLoading').show();
+                        },	
+                        complete: function() {
+                            $('#button-login').attr('disabled', false);
+                            $('#itxLoading').hide();
+                        },				
+                        success: function(json) {
+                            $('.warning, .error').remove();
+			
+                            if (json['redirect']) {
+                                //                                location = json['redirect'];
+                            } else if (json['error']) {
+                                $('.logonPanel').prepend('<div class="warning" style="display: none;">' + json['error']['warning'] + '</div>');
+                                $('.warning').fadeIn('slow');
+                            }
+                        },
+                        error: function(xhr, ajaxOptions, thrownError) {
+                            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                        }
+                    });	
+                });
+                
+                
+                // Checkout
+                $('#button-account').live('click', function() {
+                    $.ajax({
+                        url: 'index.php?route=checkout/' + $('input[name=\'account\']:checked').attr('value'),
+                        dataType: 'html',
+                        beforeSend: function() {
+                            $('.warning, .error').remove();
+                            $('#button-account').attr('disabled', true);
+                            $('#itxLoading').show();
+                        },		
+                        complete: function() {
+                            $('#button-account').attr('disabled', false);
+                            
+                        },			
+                        success: function(html) {
+                            
+                            $('.modal-body').html(html);
+                            $('#itxLoading').hide();
+                        },
+                        error: function(xhr, ajaxOptions, thrownError) {
+                            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                        }
+                    });
+                });
             });
         </script>
         <?php foreach ($scripts as $script) { ?>
@@ -49,16 +128,25 @@
     <?php foreach ($stores as $store) { ?>
                 $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></iframe>');
     <?php } ?>
-                    
-                    
+                                            
+                                            
         });
-                    
-                 
+                                            
+                                         
         //--></script>
         <?php } ?>
         <?php echo $google_analytics; ?>
     </head>
     <body class="designPage homePage staticMenu">
+        <div id="modal-ajax" class="modal hide fade">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+
+
+            <div class="modal-body">
+
+            </div>
+            <div id="itxLoading" ></div>
+        </div>
         <?php if ($logo) { ?>
             <h1> 		 
                 <a href="<?php echo $home; ?>" class="fixed" id="logo" style="left: 55px;">
@@ -140,28 +228,9 @@
                         </ul>
                     </li>
                 </ul>            
-                <div class="search">
-
-
-
-                    <form id="innerSearchForm" name="CatalogSearchForm" action="http://www.zara.com/webapp/wcs/stores/servlet/ItxSolrSearchingDataCmd?catalogId=24056&amp;langId=-1&amp;storeId=11719" method="get">			
-                        <input type="hidden" name="storeId" value="11719" />			
-                        <input type="hidden" name="langId" value="-1" />
-                        <input type="hidden" class="catalogId" name="catalogId" value="24056" />
-                        <input type="hidden" class="warehouseId" name="warehouseId" value="11551" />
-                        <input type="hidden" class="searchFilter" name="filter" value="" data-originalValue=""/>
-
-
-
-                        <input type="text" size="18" name="searchTerm" id="search" 
-                               autocomplete="off"  
-                               autocorrect="off"
-                               value=""
-                               class="textField searchTextField placeholder" 
-                               placeholder="Search..." />
-
-                        <input id="WC_searchForm_button_1" type="submit" value="" class="button searchButton"/>
-                    </form>
+                <div id="search" class="search">
+                    <input type="text" class="textField searchTextField placeholder" size="18" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />
+                    <div class="button searchButton button-search"></div>
                 </div>
 
         </div>
@@ -173,7 +242,7 @@
                 <nav class="_menuUser">
                     <ul id="header-actions">
 
-                        <li>
+                        <li class="login-page"> 
                             <?php if (!$logged) { ?>
                                 <?php echo $text_welcome; ?>
                             <?php } else { ?>
