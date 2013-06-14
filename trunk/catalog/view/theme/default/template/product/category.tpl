@@ -16,16 +16,15 @@
                 <?php echo $description; ?>
             </div>
             <?php if ($products) { ?>
-                <ul id="product-list">
+                <ul id="product-info" class="product-grid">
                     <?php foreach ($products as $product) { ?>
-                        <li data-cattype="P" id="productId_1296552" class="product pageDelim">
-
+                        <li class="product pageDelim">
 
                             <?php if ($product['thumb']) { ?>
-                                <a class="item gaProductDetailsLink" href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" title="<?php echo $product['name']; ?>" alt="<?php echo $product['name']; ?>" /></a>
+                                <a class="item gaProductDetailsLink" href="<?php echo $product['href']; ?>"><img rel="<?php echo $product['thumb_small']; ?>" class="image" src="<?php echo $product['thumb']; ?>" title="<?php echo $product['name']; ?>" alt="<?php echo $product['name']; ?>" /></a>
                             <?php } ?>
 
-                            <div class="product-info" style="visibility: visible; opacity: 1;">
+                            <div class="product-info">
 
                                 <?php $nextWeek = time() + (7 * 24 * 60 * 60); ?>
 
@@ -59,8 +58,8 @@
                         <ul>
                             <li><span>VIEW OPTIONS:</span>
                                 <ul class="view-options">
-                                    <li><a data-ga-props="{action:'Cambio_vista', opt_label:'Mostrar_2'}" href="?rows=2" class="two selected gaTrack gaViewEvent">2</a></li>
-                                    <li><a data-ga-props="{action:'Cambio_vista', opt_label:'Mostrar_6'}" href="?rows=6" class="six gaTrack gaViewEvent">6</a></li>
+                                    <li><a  href="javascript:display('list')" id="ds_grid" class="six gaTrack gaViewEvent">2</a></li>
+                                    <li><a  href="javascript:display('grid')" id="ds_list" class="two selected gaTrack gaViewEvent">6</a></li>
                                 </ul>
                             </li>
                             <li class="products-total">
@@ -125,7 +124,7 @@
             if(lh_page >= 2){
                 ajaxHomepageGetMore();					
             }	
-            var html = $('#product-list').html();
+            var html = $('#product-info').html();
             
         }
     });	
@@ -146,7 +145,7 @@
                 if(data.length > 0){
                     lh_page++;
                     jQuery("#lh_page").val(lh_page);
-                    $('#product-list').append(data);
+                    $('#product-info').append(data);
                 }
             }
         });
@@ -188,7 +187,7 @@
                 success: function(data) {
                     $('#pageLoading').hide();
                     $('#modal-opion').modal('hide');
-                    $('#product-list').html(data);
+                    $('#product-info').html(data);
                     if(data.length > 0){
                         lh_page++;
                         jQuery("#lh_page").val(lh_page);
@@ -198,82 +197,19 @@
         })
     })
     function display(view) {
+        console.debug(view);
         if (view == 'list') {
             $('.product-grid').attr('class', 'product-list');
-		
-            $('.product-list > div').each(function(index, element) {
-                html  = '<div class="right">';
-                html += '  <div class="cart">' + $(element).find('.cart').html() + '</div>';
-                html += '  <div class="wishlist">' + $(element).find('.wishlist').html() + '</div>';
-                html += '  <div class="compare">' + $(element).find('.compare').html() + '</div>';
-                html += '</div>';			
-			
-                html += '<div class="left">';
-			
-                var image = $(element).find('.image').html();
-			
-                if (image != null) { 
-                    html += '<div class="image">' + image + '</div>';
-                }
-			
-                var price = $(element).find('.price').html();
-			
-                if (price != null) {
-                    html += '<div class="price">' + price  + '</div>';
-                }
-					
-                html += '  <div class="name">' + $(element).find('.name').html() + '</div>';
-                html += '  <div class="description">' + $(element).find('.description').html() + '</div>';
-			
-                var rating = $(element).find('.rating').html();
-			
-                if (rating != null) {
-                    html += '<div class="rating">' + rating + '</div>';
-                }
-				
-                html += '</div>';
-						
-                $(element).html(html);
-            });		
-		
-            $('.display').html('<b><?php echo $text_display; ?></b> <?php echo $text_list; ?> <b>/</b> <a onclick="display(\'grid\');"><?php echo $text_grid; ?></a>');
+	    	
+            $('#ds_list').removeClass('selected')	
+	    $('#ds_grid').addClass('selected')
 		
             $.totalStorage('display', 'list'); 
         } else {
             $('.product-list').attr('class', 'product-grid');
-		
-            $('.product-grid > div').each(function(index, element) {
-                html = '';
-			
-                var image = $(element).find('.image').html();
-			
-                if (image != null) {
-                    html += '<div class="image">' + image + '</div>';
-                }
-			
-                html += '<div class="name">' + $(element).find('.name').html() + '</div>';
-                html += '<div class="description">' + $(element).find('.description').html() + '</div>';
-			
-                var price = $(element).find('.price').html();
-			
-                if (price != null) {
-                    html += '<div class="price">' + price  + '</div>';
-                }
-			
-                var rating = $(element).find('.rating').html();
-			
-                if (rating != null) {
-                    html += '<div class="rating">' + rating + '</div>';
-                }
-						
-                html += '<div class="cart">' + $(element).find('.cart').html() + '</div>';
-                html += '<div class="wishlist">' + $(element).find('.wishlist').html() + '</div>';
-                html += '<div class="compare">' + $(element).find('.compare').html() + '</div>';
-			
-                $(element).html(html);
-            });	
-					
-            $('.display').html('<b><?php echo $text_display; ?></b> <a onclick="display(\'list\');"><?php echo $text_list; ?></a> <b>/</b> <?php echo $text_grid; ?>');
+            $('#ds_list').addClass('selected')	
+	    $('#ds_grid').removeClass('selected')
+            
 		
             $.totalStorage('display', 'grid');
         }

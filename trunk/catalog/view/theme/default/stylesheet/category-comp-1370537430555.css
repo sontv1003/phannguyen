@@ -13,12 +13,34 @@
 #products #product-list h3,#products .product-list h3{text-align:center}
 #products #product-list h3 a.suggestionLnk,#products .product-list h3 a.suggestionLnk{display:inline;text-decoration:underline}
 #products #product-list h3 .searchTerm,#products #product-list h3 .spellcheck,#products #product-list h3 .suggestionTerm,#products .product-list h3 .searchTerm,#products .product-list h3 .spellcheck,#products .product-list h3 .suggestionTerm{font-weight:bold}
+
+
+#products #product-grid,#products .product-grid{min-height:500px}
+#products #product-grid li,#products .product-grid li{
+    display:inline-block;
+    vertical-align:bottom;
+    margin:0 0 37px;
+    padding:0;
+    float:left;
+}
+.two #products #product-grid img,.two #products .product-grid img{min-height:370px;background:url("../images/loader.gif") no-repeat scroll center center transparent}
+.six #products #product-grid img,.six #products .product-grid img{min-height:100px;background:url("../images/loader.gif") no-repeat scroll center center transparent}
+#products #product-grid h3,#products .product-grid h3{text-align:center}
+#products #product-grid h3 a.suggestionLnk,#products .product-grid h3 a.suggestionLnk{display:inline;text-decoration:underline}
+#products #product-grid h3 .searchTerm,#products #product-grid h3 .spellcheck,#products #product-grid h3 .suggestionTerm,#products .product-grid h3 .searchTerm,#products .product-grid h3 .spellcheck,#products .product-grid h3 .suggestionTerm{font-weight:bold}
+
+
 #products #banner{font-size:10px;text-align:center;width:100%}
 #products a{display:block;overflow:hidden;cursor:pointer}
 #products img{width:100%;image-rendering:crisp-edges}
 html[class*="aw2012"][class~="six"] #products img{width:95%}
 .two #products img{width:75%}
-#products li{width:50%;text-align:center}
+.product-list li{width:50%;text-align:center}
+.product-grid li{width:16%;text-align:center}
+.product-grid .product-info{visibility: hidden;}
+.product-grid li{position: relative}
+.product-grid li:hover .product-info{visibility: visible;top: 60px;left:25px;position: absolute}
+.product-list .product-info{visibility: visible;}
 .four #products li{width:25%}
 .six #products li{width:16.66667%}
 #products li.separator{width:100%}
