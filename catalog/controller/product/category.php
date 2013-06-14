@@ -151,8 +151,10 @@ class ControllerProductCategory extends Controller {
 
             if ($category_info['image']) {
                 $this->data['thumb'] = $this->model_tool_image->resize($category_info['image'], $this->config->get('config_image_category_width'), $this->config->get('config_image_category_height'));
+                $this->data['thumb_small'] = $this->model_tool_image->resize($category_info['image'], $this->config->get('config_image_wishlist_width'), $this->config->get('config_image_wishlist_height'));
             } else {
                 $this->data['thumb'] = '';
+                $this->data['thumb_small'] = '';
             }
 
             $this->data['description'] = html_entity_decode($category_info['description'], ENT_QUOTES, 'UTF-8');
@@ -236,8 +238,10 @@ class ControllerProductCategory extends Controller {
 
                 if ($result['image']) {
                     $image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+                    $thumb_small = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_wishlist_width'), $this->config->get('config_image_wishlist_height'));
                 } else {
                     $image = false;
+                    $thumb_small = false;
                 }
 
                 if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
@@ -268,6 +272,7 @@ class ControllerProductCategory extends Controller {
                     'product_id' => $result['product_id'],
                     'man_thumb' => $man_thumb,
                     'thumb' => $image,
+                    'thumb_small' => $thumb_small,
                     'thumbs' => $images,
                     'name' => $result['name'],
                     'date' => $result['date_available'],
@@ -669,6 +674,7 @@ class ControllerProductCategory extends Controller {
 
             if ($category_info['image']) {
                 $this->data['thumb'] = $this->model_tool_image->resize($category_info['image'], $this->config->get('config_image_category_width'), $this->config->get('config_image_category_height'));
+                
             } else {
                 $this->data['thumb'] = '';
             }
@@ -755,8 +761,10 @@ class ControllerProductCategory extends Controller {
 
                 if ($result['image']) {
                     $image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+                    $thumb_small = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_wishlist_width'), $this->config->get('config_image_wishlist_height'));
                 } else {
                     $image = false;
+                    $thumb_small = FALSE;
                 }
 
                 if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
@@ -787,6 +795,7 @@ class ControllerProductCategory extends Controller {
                     'product_id' => $result['product_id'],
                     'man_thumb' => $man_thumb,
                     'thumb' => $image,
+                    'thumb_small' => $thumb_small,
                     'thumbs' => $images,
                     'name' => $result['name'],
                     'date' => $result['date_available'],

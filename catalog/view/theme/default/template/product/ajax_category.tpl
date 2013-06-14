@@ -3,10 +3,10 @@
         <li data-cattype="P" id="productId_1296552" class="product pageDelim">
 
             <?php if ($product['thumb']) { ?>
-                <a class="item gaProductDetailsLink" href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" title="<?php echo $product['name']; ?>" alt="<?php echo $product['name']; ?>" /></a>
+                <a class="item gaProductDetailsLink" href="<?php echo $product['href']; ?>"><img rel="<?php echo $product['thumb_small']; ?>" src="<?php echo $product['thumb']; ?>" title="<?php echo $product['name']; ?>" alt="<?php echo $product['name']; ?>" /></a>
             <?php } ?>
 
-            <div class="product-info" style="visibility: visible; opacity: 1;">
+            <div class="product-info">
 
                 <?php $nextWeek = time() + (7 * 24 * 60 * 60); ?>
 
