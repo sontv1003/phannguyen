@@ -119,7 +119,7 @@ class ModelCatalogProduct extends Model {
         }
 
         if (!empty($data['filter_option'])) {
-            $sql .= " AND pov.option_value_id = '" . (int) $data['filter_option'] . "'";
+            $sql .= " AND pov.option_value_id IN(" . $data['filter_option'] . ")";
         }
         if (!empty($data['filter_name']) || !empty($data['filter_tag'])) {
             $sql .= " AND (";
@@ -578,7 +578,7 @@ class ModelCatalogProduct extends Model {
 
 
         if (!empty($data['filter_option'])) {
-            $sql .= " AND pov.option_value_id = '" . (int) $data['filter_option'] . "'";
+            $sql .= " AND pov.option_value_id IN(" . $data['filter_option'] . ")";
         }
 
         if (!empty($data['filter_name']) || !empty($data['filter_tag'])) {

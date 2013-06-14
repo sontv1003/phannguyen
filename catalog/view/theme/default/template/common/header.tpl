@@ -39,7 +39,7 @@
             $(document).ready(function ($) {
                 "use strict";
                 $('#container-nav').perfectScrollbar({wheelPropagation:true});
-                
+                $('.modal-body').perfectScrollbar({wheelPropagation:true});
                 $('.login-page > a').live('click',function(){
                     $('#modal-ajax').modal();
                     $('#itxLoading').show();
@@ -160,7 +160,7 @@
             <nav id="menu">
                 <ul id="mainNavigationMenu">
                     <li id="menuItemData_363021">
-                        <a href="http://www.zara.com/webapp/wcs/stores/servlet/category/us/en/zara-nam-S2013/363008/New+this+week" >
+                        <a href="#" >
                             New this week
                         </a>
 
