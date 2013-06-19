@@ -31,9 +31,9 @@
             </div>
         </li>
     <?php } ?>
-
+    <script>
+        $('.js-count').html('<?php echo $product_total ?></span>')
+    </script>
 <?php } ?>
 
-        <script>
-            $('.js-count').html('<?php echo $product_total ?></span>')
-        </script>
+

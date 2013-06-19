@@ -50,6 +50,7 @@
                         </li>
                     <?php } ?>
                 </ul>
+                            <div class="clear"></div>
             </section>
 
             <section id="sidebar" style="position: absolute;" class="">
@@ -142,7 +143,7 @@
             },
             success: function(data) {
                 $('#pageLoading').hide();
-                if(data.length > 0){
+                if($.trim(data).length > 0){
                     lh_page++;
                     jQuery("#lh_page").val(lh_page);
                     $('#product-info').append(data);
@@ -188,10 +189,11 @@
                     $('#pageLoading').hide();
                     $('#modal-opion').modal('hide');
                     $('#product-info').html(data);
-                    if(data.length > 0){
+                    if($.trim(data).length > 0){
                         lh_page++;
                         jQuery("#lh_page").val(lh_page);
                     }
+                    jQuery("#lh_page").val(0);
                 }
             });
         })
