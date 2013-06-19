@@ -37,9 +37,9 @@ html[class*="aw2012"][class~="six"] #products img{width:95%}
 .two #products img{width:75%}
 .product-list li{width:50%;text-align:center}
 .product-grid li{width:16%;text-align:center}
-.product-grid .product-info{visibility: hidden;}
+.product-grid .product-info{visibility: hidden;top: 60px;left:25px;position: absolute}
 .product-grid li{position: relative}
-.product-grid li:hover .product-info{visibility: visible;top: 60px;left:25px;position: absolute}
+.product-grid li:hover .product-info{visibility: visible;}
 .product-list .product-info{visibility: visible;}
 .four #products li{width:25%}
 .six #products li{width:16.66667%}
@@ -99,3 +99,6 @@ html[class*="aw2012"][class~="six"] #products img{width:95%}
 .categoryInfo{margin:0 auto;width:80%}
 .categoryInfo .catMainHead{font-weight:bold;text-transform:uppercase;margin-bottom:5px}
 .categoryInfo .catDesc{position:relative;top:8px;max-width:400px}
+.clear{
+    clear: both;
+}
