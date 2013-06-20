@@ -53,7 +53,7 @@
                             <div class="clear"></div>
             </section>
 
-            <section id="sidebar" style="position: absolute;" class="">
+            <section id="sidebar" >
                 <div id="sidebar-content">
                     <div class="options">
                         <ul>

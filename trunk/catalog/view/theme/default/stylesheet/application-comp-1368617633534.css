@@ -632,7 +632,7 @@ tfoot.pagination td .table-nav-page-info span{float:left;padding-right:3px}
 .datepicker th,.datepicker td{padding:0}
 .product-card{position:relative;left:10%}
 .product-card .left{display:-moz-inline-stack;display:inline-block;vertical-align:middle;*vertical-align:auto;zoom:1;*display:inline;width:50%;text-align:center;float:left}
-.product-card .left #associatedLnks{margin:32px 0 0 10px}
+.product-card .left #associatedLnks{margin:0 0 0 10px}
 .product-card .left #associatedLnks div{text-transform:uppercase;margin-bottom:10px;text-align:left;font-size:10px}
 .product-card .left #associatedLnks a{padding:0;display:inline;text-decoration:none}
 .product-card .left #associatedLnks a img{width:35px;cursor:pointer;margin-right:5px;color:#fff;font-size:1px}
@@ -641,9 +641,9 @@ tfoot.pagination td .table-nav-page-info span{float:left;padding-right:3px}
 .product-card .left #associatedLnks ul li a{text-decoration:none}
 .product-card .left #associatedLnks ul li a img{color:#fff;font-size:1px}
 .product-card .left #products-nav #associatedLnks ul li{padding-bottom:10px;padding-top:10px}
-.product-card .right{min-width:260px;float:left;padding-top:45px;margin-bottom:50px;position:absolute}
+.product-card .right{min-width:260px;float:left;padding-top:0;margin-bottom:50px;position:absolute}
 .product-card .right.fixed{position:fixed}
-.no-touch .product-card .right{margin-left:50%}
+.no-touch .product-card .right{margin-left:35%;position: fixed;}
 .touch .product-card .right{position:relative;margin-left:-30px;width:35%}
 .product-card .right .giftCardDesc{margin:30px 0}
 .product-card .right .giftCardDesc li{background:url(../image/ico_point.png) no-repeat 0 5px;padding-left:5px;margin-bottom:3px}
@@ -651,7 +651,6 @@ tfoot.pagination td .table-nav-page-info span{float:left;padding-right:3px}
 .product-card .right .viewSmall li,.product-card .right .viewSmall img{width:65px;height:37px}
 .product-card .right #clickToCall{margin:10px 0 0}
 .product-card .image-wrap,.product-card .video-wrap{margin-bottom:50px;position:relative}
-#page-container .product-card .image-wrap img{min-height:0;background:url("../image/loader.gif") no-repeat scroll center center transparent}
 .product-card .share{visibility:hidden;overflow:visible}
 .product-card .share ul{width:400%;height:50px}
 .product-card .share ul li{display:inline-block;float:none}
@@ -720,7 +719,7 @@ tfoot.pagination td .table-nav-page-info span{float:left;padding-right:3px}
 .psection_3 .product-card .image-big,.ptype_2 .product-card .image-big,.ptype_1 .product-card .image-big,.psection_3 .product-card video,.ptype_2 .product-card video,.ptype_1 .product-card video,.psection_3 .product-card object,.ptype_2 .product-card object,.ptype_1 .product-card object{width:80%}
 .aw2012 .product-card .image-big,.aw2012 .product-card video,.aw2012 .product-card object{width:60%!important}
 .product-card video,.product-card object{width:60%}
-.product-card #products-nav{left:300px;z-index:1;padding-top:37px}
+.product-card #products-nav{left:300px;z-index:1;padding-top:0}
 .product-card #products-nav.fixed{margin-left:0}
 .touch .product-card #products-nav{position:absolute;left:-70px}
 .product-card #products-nav a{display:inline-block;padding:10px}
@@ -783,3 +782,45 @@ tfoot.pagination td .table-nav-page-info span{float:left;padding-right:3px}
 .giftCardDetail .slider .sliderHandle{top:-3px;cursor:pointer}
 .giftCardDetail .slider .sliderHandle span.value{margin:15px 0 0;top:-33px;font-weight:normal;cursor:pointer}
 .giftCardDetail .requiredLegend{text-align:left;color:#222}
+
+td.size-name input {
+    left: -9999px;
+    position: absolute;
+}
+
+.colors {
+    clear: left;
+    margin-bottom: 35px;
+}
+.colors label {
+    font-size: 10px;
+    font-weight: normal;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    width: 50px;
+}
+.colors img {
+    background: none repeat scroll 0 center transparent;
+    border: 1px solid transparent;
+    display: block;
+    margin: 0 auto 5px;
+    padding: 4px;
+    width: 32px;
+}
+
+.colors span {
+    display: block;
+    height: 3em;
+    text-transform: capitalize;
+}
+
+.colors input {
+    left: -9999px;
+    position: absolute;
+}
+.colors label.selected{
+    border: 1px solid;
+}
