@@ -1,14 +1,16 @@
-<div id="cart">
-    <a class="shoppingCartBar smallShopBagHead" id="shoppingCartBar" tabindex="0" href="https://www.zara.com/webapp/wcs/stores/servlet/ShopCartPage?calculationUsageId=-1&amp;updatePrices=1&amp;catalogId=24056&amp;orderId=.&amp;langId=-1&amp;storeId=11719&amp;URL=ShopCartPage">			 
-        <?php echo $heading_title; ?> - <span id="miniShopCartItems"><?php echo $text_items; ?></span>
-    </a>
+<div id="cart" >
+    <div class="heading">
+        <a class="shoppingCartBar smallShopBagHead" id="cart-total" tabindex="0" href="javascript:void(0)">			 
+            <?php echo $heading_title; ?> - <span id="miniShopCartItems"><?php echo $text_items; ?></span>
+        </a>
+    </div>
     <div class="smallShopBagWrap" >
         <div id="smallShopBagId" class="smallShopBag">
             <div class="lt ieSh"> </div>
             <div class="lb ieSh"> </div>
             <div class="rb ieSh"> </div>
             <div class="rt ieSh"></div>
-            <div class="smallShopBagCont">
+            <div class="smallShopBagCont mini-cart-info">
                 <ul>
                     <?php if ($products || $vouchers) { ?>
                         <?php foreach ($products as $product) { ?>
