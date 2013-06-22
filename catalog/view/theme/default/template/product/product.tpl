@@ -66,7 +66,7 @@
             </div>
 
 
-            <div id="productRightMenu" class="right ">
+            <div id="productRightMenu" class="right product-info">
 
                 <header>
                     <h1>
@@ -114,8 +114,6 @@
                     </div>
                 <?php } ?>
                 <div class="colors" id="colors-1361077">
-
-
 
                 </div>
                 <?php if ($options) { ?>
@@ -265,7 +263,7 @@
                 <?php } ?>
                 <div class="cart">
                     <div><?php echo $text_qty; ?>
-                        <input type="text" name="quantity" size="2" value="<?php echo $minimum; ?>" />
+                        <input type="text" name="quantity" style="padding: 5px;" size="2" value="<?php echo $minimum; ?>" />
                         <input type="hidden" name="product_id" size="2" value="<?php echo $product_id; ?>" />
                         &nbsp;
                         <input type="button" value="<?php echo $button_cart; ?>" id="button-cart" class="button" />

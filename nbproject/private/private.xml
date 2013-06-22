@@ -1,28 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/F:/zara/catalog/view/theme/default/template/product/product.tpl</file>
-        <file>file:/F:/zara/catalog/view/theme/default/template/product/category.tpl</file>
-        <file>file:/F:/zara/catalog/controller/common/header.php</file>
-        <file>file:/F:/zara/catalog/view/theme/default/template/common/header.tpl</file>
-        <file>file:/F:/zara/catalog/view/theme/default/template/checkout/login.tpl</file>
-        <file>file:/F:/zara/catalog/controller/checkout/login.php</file>
-        <file>file:/F:/zara/catalog/view/theme/default/template/checkout/register.tpl</file>
-        <file>file:/F:/zara/catalog/controller/common/home.php</file>
-        <file>file:/F:/zara/catalog/view/theme/default/template/common/home.tpl</file>
-        <file>file:/F:/zara/catalog/controller/module/information.php</file>
-        <file>file:/F:/zara/catalog/view/theme/default/template/module/information.tpl</file>
-        <file>file:/F:/zara/catalog/view/theme/default/template/module/category.tpl</file>
-        <file>file:/F:/zara/catalog/controller/module/category.php</file>
-        <file>file:/F:/zara/catalog/controller/product/category.php</file>
-        <file>file:/F:/zara/catalog/view/theme/default/template/information/information.tpl</file>
-        <file>file:/F:/zara/catalog/view/theme/default/template/common/footer.tpl</file>
-        <file>file:/F:/zara/catalog/view/theme/default/template/information/sitemap.tpl</file>
-        <file>file:/F:/zara/catalog/view/theme/default/stylesheet/standard-comp-1368617633534.css</file>
-        <file>file:/F:/zara/catalog/controller/common/column_left.php</file>
-        <file>file:/F:/zara/catalog/controller/information/information.php</file>
-        <file>file:/F:/zara/catalog/view/theme/default/template/information/contact.tpl</file>
-        <file>file:/F:/zara/catalog/view/theme/default/stylesheet/application-comp-1368617633534.css</file>
-    </open-files>
 </project-private>
