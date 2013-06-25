@@ -1,6 +1,6 @@
 <?php
 
-class ControllerProductProduct extends Controller {
+class ControllerProductAjaxProduct extends Controller {
 
     private $error = array();
 
@@ -285,7 +285,6 @@ class ControllerProductProduct extends Controller {
             $this->data['product_id'] = $this->request->get['product_id'];
             $this->data['manufacturer'] = $product_info['manufacturer'];
             $this->data['manufacturers'] = $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $product_info['manufacturer_id']);
-            $this->data['ajax_product'] = $this->url->link('product/ajax_product');
             $this->data['model'] = $product_info['model'];
             $this->data['reward'] = $product_info['reward'];
             $this->data['points'] = $product_info['points'];
@@ -470,10 +469,10 @@ class ControllerProductProduct extends Controller {
 
             $this->model_catalog_product->updateViewed($this->request->get['product_id']);
 
-            if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/product.tpl')) {
-                $this->template = $this->config->get('config_template') . '/template/product/product.tpl';
+            if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/ajax_product.tpl')) {
+                $this->template = $this->config->get('config_template') . '/template/product/ajax_product.tpl';
             } else {
-                $this->template = 'default/template/product/product.tpl';
+                $this->template = 'default/template/product/ajax_product.tpl';
             }
 
             $this->children = array(

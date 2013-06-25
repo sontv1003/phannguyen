@@ -199,7 +199,7 @@
         
 
         <div id="page-container">
-
+            
             <header class="content-main fixed" id="header" style="left: 0px;">
                 <!-- User menu section -->
                 <nav class="_menuUser">
@@ -225,3 +225,4 @@
                 </nav>
 
             </header>
+            <div id="notification"></div>
