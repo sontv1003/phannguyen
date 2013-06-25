@@ -675,7 +675,7 @@ tfoot.pagination td .table-nav-page-info span{float:left;padding-right:3px}
 .product-card #colors img:hover,.product-card #colors img.checked{border:1px solid #ccc}
 .product-card #colors input{display:none}
 .product-card #colors span{text-transform:capitalize;height:3em;display:block}
-.product-card .size-btn{-moz-box-shadow:inset 0 1px 0 0 #fff;-webkit-box-shadow:inset 0 1px 0 0 #fff;box-shadow:inset 0 1px 0 0 #fff;border:1px solid #444;background-color:#fff;cursor:pointer;display:inline-block;margin-bottom:35px;padding:9px 15px;text-transform:uppercase;overflow:hidden;zoom:1;*display:inline}
+.product-card .size-btn{-moz-box-shadow:inset 0 1px 0 0 #fff;-webkit-box-shadow:inset 0 1px 0 0 #fff;box-shadow:inset 0 1px 0 0 #fff;border:1px solid #444;background-color:#fff;cursor:pointer;display:inline-block;margin-bottom:0;padding:9px 15px;text-transform:uppercase;overflow:hidden;zoom:1;*display:inline}
 .product-card .size-btn.bundleOpened{height:auto;width:228px;display:block;position:absolute;margin-top:-5px}
 .product-card .size-btn:hover{border:1px solid black}
 .product-card .size-btn.opened{height:auto;width:auto;display:block}
@@ -823,4 +823,12 @@ td.size-name input {
 }
 .colors label.selected{
     border: 1px solid;
+}
+
+.popup-content .product-card{
+    left: 0;
+}
+.popup-content .productRightMenu{
+    margin-left: 56%;
+    position: absolute;
 }

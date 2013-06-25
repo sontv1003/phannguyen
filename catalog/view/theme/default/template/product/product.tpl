@@ -1,149 +1,124 @@
 <?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
 <div id="content">
     <?php echo $content_top; ?>
-
-    <section id="main" class="content-main">
-        <section id="product" class="product-card psection_1 ptype_0 pcatentry_1344505 pversion_v1">
-            <div class="left">
-
-
-                <nav class="fixed" id="products-nav" style="left: 300px;">
-
-                    <a data-ga-props="{action:'Navegacion', opt_label:'Volver'}" class="back gaTrack gaViewEvent" href="#">
-                        BACK
-                    </a>
+    <div id="pageLoading"></div>
+    <form id="main-product">
+        <section id="main" class="content-main">
+            <section id="product" class="product-card psection_1 ptype_0 pcatentry_1344505 pversion_v1">
+                <div class="left">
 
 
-                    <input type="hidden" value="http://www.zara.com/us/en/-c358002" name="patternProductUrl" id="patternProductUrl">
-                    <a href="javascript:void(0)" data-ga-props="{action:'Navegacion', opt_label:'Anterior'}" class="prev gaTrack gaViewEvent">
-                        <i class="icon icon-arrow-left-disabled"></i>
-                    </a>
-                    <a href="http://www.zara.com/us/en/woman/blazers/fantasy-fabric-jacket-c358002p1296440.html" data-ga-props="{action:'Navegacion', opt_label:'Siguiente'}" class="next gaTrack gaViewEvent">
-                        <i class="icon icon-arrow-right"></i>
-                    </a>
+                    <nav class="fixed" id="products-nav" style="left: 300px;">
 
-                    <div class="fixed" id="associatedLnks" style="left: 300px;">
-                        <div class="associatedTitle">LOOK+
+                        <a data-ga-props="{action:'Navegacion', opt_label:'Volver'}" class="back gaTrack gaViewEvent" href="#">
+                            BACK
+                        </a>
+
+
+                        <input type="hidden" value="#" name="patternProductUrl" id="patternProductUrl">
+                        <a href="javascript:void(0)" data-ga-props="{action:'Navegacion', opt_label:'Anterior'}" class="prev gaTrack gaViewEvent">
+                            <i class="icon icon-arrow-left-disabled"></i>
+                        </a>
+                        <a href="#" data-ga-props="{action:'Navegacion', opt_label:'Siguiente'}" class="next gaTrack gaViewEvent">
+                            <i class="icon icon-arrow-right"></i>
+                        </a>
+
+                        <div class="fixed" id="associatedLnks" style="left: 300px;">
+                            <div class="associatedTitle">LOOK+
+                            </div>
+                            <?php if ($products) { ?>
+                                <ul class="small-images">
+                                    <?php foreach ($products as $product) { ?>
+                                        <li data-prodindex="0">
+                                            <a class="more-product" rel="<?php echo $product['product_id'] ?>" href="<?php echo $product['href']; ?>">
+                                                <img src="<?php echo $product['thumb']; ?>"class="draggableAssociated sbdraggable" alt="<?php echo $product['name']; ?>">
+                                            </a>
+                                        </li>
+                                    <?php } ?>
+                                </ul>
+                            <?php } ?>
+
                         </div>
-                        <?php if ($products) { ?>
-                            <ul class="small-images">
-                                <?php foreach ($products as $product) { ?>
-                                    <li data-prodindex="0">
-                                        <a href="<?php echo $product['href']; ?>">
-                                            <img src="<?php echo $product['thumb']; ?>"class="draggableAssociated sbdraggable" alt="<?php echo $product['name']; ?>">
-                                        </a>
-                                    </li>
+
+
+                    </nav>	
+
+                    <div class="bigImageContainer">
+
+                        <?php if ($thumb || $images) { ?>
+                            <div class="image-wrap mainImage imageZoom">
+                                <?php if ($thumb) { ?>
+                                    <img src="<?php echo $popup; ?>" data-name="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" >
                                 <?php } ?>
-                            </ul>
+
+                                <?php if ($images) { ?>
+                                    <div class="image-additional">
+                                        <?php foreach ($images as $image) { ?>
+                                            <img src="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>"/>
+                                        <?php } ?>
+                                    </div>
+                                <?php } ?>
+                            </div>
                         <?php } ?>
+
 
                     </div>
 
+                </div>
 
-                </nav>	
 
-                <div class="bigImageContainer">
+                <div id="productRightMenu" class="right product-info">
 
-                    <?php if ($thumb || $images) { ?>
-                        <div class="image-wrap mainImage imageZoom">
-                            <?php if ($thumb) { ?>
-                                <img src="<?php echo $popup; ?>" data-name="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" >
+                    <header>
+                        <h1>
+                            <?php echo $heading_title; ?>	
+                        </h1>
+                    </header>						
+
+                    <?php if ($manufacturer) { ?>
+                        <p class="reference">
+                            <span><?php echo $text_manufacturer; ?></span> <a href="<?php echo $manufacturers; ?>"><?php echo $manufacturer; ?></a><br />
+                        </p>	
+                    <?php } ?>
+                    <p class="reference">
+                        <span><?php echo $text_model; ?></span> <?php echo $model; ?>
+                    </p>	
+
+                    <p class="reference">
+                        <span><?php echo $text_stock; ?></span> <?php echo $stock; ?>
+                    </p>	
+
+                    <br/>
+                    <div class="description"><?php echo $description; ?></div>
+
+
+                    <?php if ($price) { ?>
+                        <div class="price"><?php echo $text_price; ?>
+                            <?php if (!$special) { ?>
+                                <?php echo $price; ?>
+                            <?php } else { ?>
+                                <span class="price-old"><?php echo $price; ?></span> <span class="price-new"><?php echo $special; ?></span>
+                            <?php } ?>
+                            <br />
+                            <?php if ($tax) { ?>
+                                <span class="price-tax"><?php echo $text_tax; ?> <?php echo $tax; ?></span><br />
                             <?php } ?>
 
-                            <?php if ($images) { ?>
-                                <div class="image-additional">
-                                    <?php foreach ($images as $image) { ?>
-                                        <img src="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>"/>
+                            <?php if ($discounts) { ?>
+                                <br />
+                                <div class="discount">
+                                    <?php foreach ($discounts as $discount) { ?>
+                                        <?php echo sprintf($text_discount, $discount['quantity'], $discount['price']); ?><br />
                                     <?php } ?>
                                 </div>
                             <?php } ?>
                         </div>
                     <?php } ?>
 
-
-                </div>
-
-            </div>
-
-
-            <div id="productRightMenu" class="right product-info">
-
-                <header>
-                    <h1>
-                        <?php echo $heading_title; ?>	
-                    </h1>
-                </header>						
-
-                <?php if ($manufacturer) { ?>
-                    <p class="reference">
-                        <span><?php echo $text_manufacturer; ?></span> <a href="<?php echo $manufacturers; ?>"><?php echo $manufacturer; ?></a><br />
-                    </p>	
-                <?php } ?>
-                <p class="reference">
-                    <span><?php echo $text_model; ?></span> <?php echo $model; ?>
-                </p>	
-
-                <p class="reference">
-                    <span><?php echo $text_stock; ?></span> <?php echo $stock; ?>
-                </p>	
-
-                <br/>
-                <div class="description"><?php echo $description; ?></div>
-
-
-                <?php if ($price) { ?>
-                    <div class="price"><?php echo $text_price; ?>
-                        <?php if (!$special) { ?>
-                            <?php echo $price; ?>
-                        <?php } else { ?>
-                            <span class="price-old"><?php echo $price; ?></span> <span class="price-new"><?php echo $special; ?></span>
-                        <?php } ?>
-                        <br />
-                        <?php if ($tax) { ?>
-                            <span class="price-tax"><?php echo $text_tax; ?> <?php echo $tax; ?></span><br />
-                        <?php } ?>
-
-                        <?php if ($discounts) { ?>
-                            <br />
-                            <div class="discount">
-                                <?php foreach ($discounts as $discount) { ?>
-                                    <?php echo sprintf($text_discount, $discount['quantity'], $discount['price']); ?><br />
-                                <?php } ?>
-                            </div>
-                        <?php } ?>
-                    </div>
-                <?php } ?>
-                <div class="colors" id="colors-1361077">
-
-                </div>
-                <?php if ($options) { ?>
-                    <div class="options">
-                        <?php foreach ($options as $option) { ?>
-                            <?php if ($option['type'] == 'select') { ?>
-                                <div class="size-btn" style="visibility: visible; opacity: 1;">
-                                    <span class="selected-size"><span class="required">*</span> <?php echo $option['name']; ?> </span>
-                                    <div class="size-select" style="display: none;">
-                                        <table>
-                                            <tbody>
-                                                <?php foreach ($option['option_value'] as $option_value) { ?>
-                                                    <tr class="product-size gaTrack gaViewEvent">
-                                                        <td class="size-name">
-                                                            <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" />
-                                                            <label for="option-value-<?php echo $option_value['product_option_value_id']; ?>">
-                                                                <?php echo $option_value['name']; ?>
-                                                            </label>
-                                                        </td>																								
-                                                        <td class="suscribe">&nbsp;</td>
-                                                    </tr>
-                                                <?php } ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <br />
-                            <?php } ?>
-                            <?php if ($option['type'] == 'radio') { ?>
-                                <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
+                    <?php if ($options) { ?>
+                        <div class="options">
+                            <?php foreach ($options as $option) { ?>
+                                <?php if ($option['type'] == 'select') { ?>
                                     <div class="size-btn" style="visibility: visible; opacity: 1;">
                                         <span class="selected-size"><span class="required">*</span> <?php echo $option['name']; ?> </span>
                                         <div class="size-select" style="display: none;">
@@ -152,7 +127,7 @@
                                                     <?php foreach ($option['option_value'] as $option_value) { ?>
                                                         <tr class="product-size gaTrack gaViewEvent">
                                                             <td class="size-name">
-                                                                <input rel="<?php echo $option_value['name']; ?>" type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" />
+                                                                <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" />
                                                                 <label for="option-value-<?php echo $option_value['product_option_value_id']; ?>">
                                                                     <?php echo $option_value['name']; ?>
                                                                 </label>
@@ -164,119 +139,150 @@
                                             </table>
                                         </div>
                                     </div>
-                                </div>
-                                <br />
-                            <?php } ?>
-                            <?php if ($option['type'] == 'checkbox') { ?>
-                                <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
-                                    <?php if ($option['required']) { ?>
-                                        <span class="required">*</span>
-                                    <?php } ?>
-                                    <b><?php echo $option['name']; ?>:</b><br />
-                                    <?php foreach ($option['option_value'] as $option_value) { ?>
-                                        <input type="checkbox" name="option[<?php echo $option['product_option_id']; ?>][]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" />
-                                        <label for="option-value-<?php echo $option_value['product_option_value_id']; ?>"><?php echo $option_value['name']; ?>
-                                            <?php if ($option_value['price']) { ?>
-                                                (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
-                                            <?php } ?>
-                                        </label>
-                                        <br />
-                                    <?php } ?>
-                                </div>
-                                <br />
-                            <?php } ?>
-                            <?php if ($option['type'] == 'image') { ?>
-                                <div class="colors" >
-                                    <?php foreach ($option['option_value'] as $option_value) { ?>
-                                        <label for="option-value-<?php echo $option_value['product_option_value_id']; ?>" >
-                                            <img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name']; ?>" />
-                                            <span><?php echo $option_value['name']; ?></span>
-                                        </label>
-                                        <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" />
-                                    <?php } ?>
-                                </div>
+                                    <br />
+                                <?php } ?>
+                                <?php if ($option['type'] == 'radio') { ?>
+                                    <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
+                                        <div class="size-btn" style="visibility: visible; opacity: 1;">
+                                            <span class="selected-size"><span class="required">*</span> <?php echo $option['name']; ?> </span>
+                                            <div class="size-select" style="display: none;">
+                                                <table>
+                                                    <tbody>
+                                                        <?php foreach ($option['option_value'] as $option_value) { ?>
+                                                            <tr class="product-size gaTrack gaViewEvent">
+                                                                <td class="size-name">
+                                                                    <input rel="<?php echo $option_value['name']; ?>" type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" />
+                                                                    <label for="option-value-<?php echo $option_value['product_option_value_id']; ?>">
+                                                                        <?php echo $option_value['name']; ?>
+                                                                    </label>
+                                                                </td>																								
+                                                                <td class="suscribe">&nbsp;</td>
+                                                            </tr>
+                                                        <?php } ?>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+                                <?php } ?>
+                                <?php if ($option['type'] == 'checkbox') { ?>
+                                    <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
+                                        <?php if ($option['required']) { ?>
+                                            <span class="required">*</span>
+                                        <?php } ?>
+                                        <b><?php echo $option['name']; ?>:</b><br />
+                                        <?php foreach ($option['option_value'] as $option_value) { ?>
+                                            <input type="checkbox" name="option[<?php echo $option['product_option_id']; ?>][]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" />
+                                            <label for="option-value-<?php echo $option_value['product_option_value_id']; ?>"><?php echo $option_value['name']; ?>
+                                                <?php if ($option_value['price']) { ?>
+                                                    (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+                                                <?php } ?>
+                                            </label>
+                                            <br />
+                                        <?php } ?>
+                                    </div>
+                                    <br />
+                                <?php } ?>
+                                <?php if ($option['type'] == 'image') { ?>
+                                    <div class="colors" >
+                                        <?php foreach ($option['option_value'] as $option_value) { ?>
+                                            <label for="option-value-<?php echo $option_value['product_option_value_id']; ?>" >
+                                                <img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name']; ?>" />
+                                                <span><?php echo $option_value['name']; ?></span>
+                                            </label>
+                                            <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" id="option-value-<?php echo $option_value['product_option_value_id']; ?>" />
+                                        <?php } ?>
+                                    </div>
 
+                                <?php } ?>
+                                <?php if ($option['type'] == 'text') { ?>
+                                    <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
+                                        <?php if ($option['required']) { ?>
+                                            <span class="required">*</span>
+                                        <?php } ?>
+                                        <b><?php echo $option['name']; ?>:</b><br />
+                                        <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['option_value']; ?>" />
+                                    </div>
+                                    <br />
+                                <?php } ?>
+                                <?php if ($option['type'] == 'textarea') { ?>
+                                    <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
+                                        <?php if ($option['required']) { ?>
+                                            <span class="required">*</span>
+                                        <?php } ?>
+                                        <b><?php echo $option['name']; ?>:</b><br />
+                                        <textarea name="option[<?php echo $option['product_option_id']; ?>]" cols="40" rows="5"><?php echo $option['option_value']; ?></textarea>
+                                    </div>
+                                    <br />
+                                <?php } ?>
+                                <?php if ($option['type'] == 'file') { ?>
+                                    <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
+                                        <?php if ($option['required']) { ?>
+                                            <span class="required">*</span>
+                                        <?php } ?>
+                                        <b><?php echo $option['name']; ?>:</b><br />
+                                        <input type="button" value="<?php echo $button_upload; ?>" id="button-option-<?php echo $option['product_option_id']; ?>" class="button">
+                                        <input type="hidden" name="option[<?php echo $option['product_option_id']; ?>]" value="" />
+                                    </div>
+                                    <br />
+                                <?php } ?>
+                                <?php if ($option['type'] == 'date') { ?>
+                                    <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
+                                        <?php if ($option['required']) { ?>
+                                            <span class="required">*</span>
+                                        <?php } ?>
+                                        <b><?php echo $option['name']; ?>:</b><br />
+                                        <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['option_value']; ?>" class="date" />
+                                    </div>
+                                    <br />
+                                <?php } ?>
+                                <?php if ($option['type'] == 'datetime') { ?>
+                                    <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
+                                        <?php if ($option['required']) { ?>
+                                            <span class="required">*</span>
+                                        <?php } ?>
+                                        <b><?php echo $option['name']; ?>:</b><br />
+                                        <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['option_value']; ?>" class="datetime" />
+                                    </div>
+                                    <br />
+                                <?php } ?>
+                                <?php if ($option['type'] == 'time') { ?>
+                                    <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
+                                        <?php if ($option['required']) { ?>
+                                            <span class="required">*</span>
+                                        <?php } ?>
+                                        <b><?php echo $option['name']; ?>:</b><br />
+                                        <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['option_value']; ?>" class="time" />
+                                    </div>
+                                    <br />
+                                <?php } ?>
                             <?php } ?>
-                            <?php if ($option['type'] == 'text') { ?>
-                                <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
-                                    <?php if ($option['required']) { ?>
-                                        <span class="required">*</span>
-                                    <?php } ?>
-                                    <b><?php echo $option['name']; ?>:</b><br />
-                                    <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['option_value']; ?>" />
-                                </div>
-                                <br />
-                            <?php } ?>
-                            <?php if ($option['type'] == 'textarea') { ?>
-                                <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
-                                    <?php if ($option['required']) { ?>
-                                        <span class="required">*</span>
-                                    <?php } ?>
-                                    <b><?php echo $option['name']; ?>:</b><br />
-                                    <textarea name="option[<?php echo $option['product_option_id']; ?>]" cols="40" rows="5"><?php echo $option['option_value']; ?></textarea>
-                                </div>
-                                <br />
-                            <?php } ?>
-                            <?php if ($option['type'] == 'file') { ?>
-                                <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
-                                    <?php if ($option['required']) { ?>
-                                        <span class="required">*</span>
-                                    <?php } ?>
-                                    <b><?php echo $option['name']; ?>:</b><br />
-                                    <input type="button" value="<?php echo $button_upload; ?>" id="button-option-<?php echo $option['product_option_id']; ?>" class="button">
-                                    <input type="hidden" name="option[<?php echo $option['product_option_id']; ?>]" value="" />
-                                </div>
-                                <br />
-                            <?php } ?>
-                            <?php if ($option['type'] == 'date') { ?>
-                                <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
-                                    <?php if ($option['required']) { ?>
-                                        <span class="required">*</span>
-                                    <?php } ?>
-                                    <b><?php echo $option['name']; ?>:</b><br />
-                                    <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['option_value']; ?>" class="date" />
-                                </div>
-                                <br />
-                            <?php } ?>
-                            <?php if ($option['type'] == 'datetime') { ?>
-                                <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
-                                    <?php if ($option['required']) { ?>
-                                        <span class="required">*</span>
-                                    <?php } ?>
-                                    <b><?php echo $option['name']; ?>:</b><br />
-                                    <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['option_value']; ?>" class="datetime" />
-                                </div>
-                                <br />
-                            <?php } ?>
-                            <?php if ($option['type'] == 'time') { ?>
-                                <div id="option-<?php echo $option['product_option_id']; ?>" class="option">
-                                    <?php if ($option['required']) { ?>
-                                        <span class="required">*</span>
-                                    <?php } ?>
-                                    <b><?php echo $option['name']; ?>:</b><br />
-                                    <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['option_value']; ?>" class="time" />
-                                </div>
-                                <br />
-                            <?php } ?>
+                        </div>
+                    <?php } ?>
+                    <div class="cart">
+                        <div><?php echo $text_qty; ?>
+                            <input type="text" name="quantity" style="padding: 5px;" size="2" value="<?php echo $minimum; ?>" />
+                            <input type="hidden" name="product_id" size="2" value="<?php echo $product_id; ?>" />
+                            &nbsp;
+                            <input type="button" value="<?php echo $button_cart; ?>" id="button-cart" class="button" />
+                        </div>
+                        <?php if ($minimum > 1) { ?>
+                            <div class="minimum"><?php echo $text_minimum; ?></div>
                         <?php } ?>
                     </div>
-                <?php } ?>
-                <div class="cart">
-                    <div><?php echo $text_qty; ?>
-                        <input type="text" name="quantity" style="padding: 5px;" size="2" value="<?php echo $minimum; ?>" />
-                        <input type="hidden" name="product_id" size="2" value="<?php echo $product_id; ?>" />
-                        &nbsp;
-                        <input type="button" value="<?php echo $button_cart; ?>" id="button-cart" class="button" />
-                    </div>
-                    <?php if ($minimum > 1) { ?>
-                        <div class="minimum"><?php echo $text_minimum; ?></div>
-                    <?php } ?>
+
                 </div>
-
-            </div>
+            </section>
         </section>
-    </section>
+    </form>
+    <div id="modal-opion" class="modal hide fade">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
 
+        <div class="modal-body">
+
+        </div>
+    </div>
     <?php echo $content_bottom; ?></div>
 <script type="text/javascript"><!--
     $(document).ready(function() {
@@ -295,26 +301,90 @@
         
         $('.selected-size').live('click',function(){
             var e = $(this);
+            console.debug(e.text())
             if($(e).parent().children('.size-select').is(":visible"))
                 $(e).parent().children('.size-select').hide();
             else
                 $(e).parent().children('.size-select').show();
         })
         
-        $('.size-name input').click(function(){
+        $('.size-name input').live('click',function(){
+            
             var e = $(this).parents('.size-select');
             e.parent().children('.selected-size').text($(this).attr('rel'));
-            e.parent().children('.size-select').hide()
             
+            e.hide();
         })
     });
     //--></script> 
 <script type="text/javascript"><!--
+    
+    $(document).ready(function(){
+        
+        $('#filter-btn').live('click',function(){
+            $('#modal-opion').modal();
+        })
+        
+       
+        
+        $('.more-product').live('click',function(){
+            var product_id = jQuery(this).attr('rel');
+            $.ajax({
+                url: '<?php echo html_entity_decode($ajax_product) ?>&product_id='+product_id,
+                beforeSend: function(){
+                    $('#pageLoading').show();
+                    $('#pageLoading').css('right',50);
+                    $('#pageLoading').css('top',50);
+                    $("#lh_page").val(1);
+                },
+                success: function(data) {
+                    $('#pageLoading').hide();
+                    $('#modal-opion').modal();
+                    $('#modal-opion .modal-body').html(data);
+                }
+            });
+            return false;
+        })
+    })
+    
+    $('#button-cart-ajax').live('click',function(){
+        
+        $.ajax({
+            url: 'index.php?route=checkout/cart/add',
+            type: 'post',
+            data: $('form#ajax-product').serialize(),
+            dataType: 'json',
+            success: function(json) {
+                $('.success, .warning, .attention, information, .error').remove();
+			
+                if (json['error']) {
+                    if (json['error']['option']) {
+                        for (i in json['error']['option']) {
+                            $('#optionajax-' + i).after('<span class="error">' + json['error']['option'][i] + '</span>');
+                        }
+                    }
+                } 
+			
+                if (json['success']) {
+                    $('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
+					
+                    $('.success').fadeIn('slow');
+					
+                    $('#cart-total').html(json['total']);
+				
+                    $('html, body').animate({ scrollTop: 0 }, 'slow'); 
+                    
+                    $('#modal-opion').modal('hide');
+                }	
+            }
+        });
+    })
+    
     $('#button-cart').bind('click', function() {
         $.ajax({
             url: 'index.php?route=checkout/cart/add',
             type: 'post',
-            data: $('.product-info input[type=\'text\'], .product-info input[type=\'hidden\'], .product-info input[type=\'radio\']:checked, .product-info input[type=\'checkbox\']:checked, .product-info select, .product-info textarea'),
+            data: $('form#main-product').serialize(),
             dataType: 'json',
             success: function(json) {
                 $('.success, .warning, .attention, information, .error').remove();
@@ -356,19 +426,19 @@
                     },
                     onComplete: function(file, json) {
                         $('#button-option-<?php echo $option['product_option_id']; ?>').attr('disabled', false);
-                                                                                                                                                                                                                                                                                                                                                                                                                                    		
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        		
                         $('.error').remove();
-                                                                                                                                                                                                                                                                                                                                                                                                                                    		
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        		
                         if (json['success']) {
                             alert(json['success']);
-                                                                                                                                                                                                                                                                                                                                                                                                                                    			
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        			
                             $('input[name=\'option[<?php echo $option['product_option_id']; ?>]\']').attr('value', json['file']);
                         }
-                                                                                                                                                                                                                                                                                                                                                                                                                                    		
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        		
                         if (json['error']) {
                             $('#option-<?php echo $option['product_option_id']; ?>').after('<span class="error">' + json['error'] + '</span>');
                         }
-                                                                                                                                                                                                                                                                                                                                                                                                                                    		
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        		
                         $('.loading').remove();	
                     }
                 });
