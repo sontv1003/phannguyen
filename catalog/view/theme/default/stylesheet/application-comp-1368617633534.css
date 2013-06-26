@@ -480,7 +480,7 @@ tfoot.pagination td .table-nav-page-info span{float:left;padding-right:3px}
 .multiMessage .title{font-size:24px;padding-bottom:.3em}
 .multiMessage .contact{color:#a1a1a1;font-size:11px}
 .multiMessage .contact a{text-decoration:underline;color:#a1a1a1}
-#itxLoading,.itxLoading,#pageLoading{bottom: 17px;
+#itxLoading,#checkout-itxLoading,.itxLoading,#pageLoading{bottom: 17px;
     opacity: 1;
     display: none;
     right: 16px;position:absolute;z-index:2000;background-image:url(../image/loader.gif);height:11px;width:16px}
