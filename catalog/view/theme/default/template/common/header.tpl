@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <title><?php echo $title; ?></title>
-        
+
         <base href="<?php echo $base; ?>" />
         <?php if ($description) { ?>
             <meta name="description" content="<?php echo $description; ?>" />
@@ -38,6 +38,19 @@
 
         <script>
             $(document).ready(function ($) {
+                
+                $(window).scroll(function(){
+//                    console.debug($(document).height());
+//                    console.debug($(window).height());
+                    var height = $(document).height() - $(window).scrollTop() - $(window).height()
+                    if(height <= 100){
+                        $('#sidebar').css('bottom','300px');
+                        $('#productRightMenu').css('bottom','200px');
+                    }else{
+                        $('#sidebar').css('bottom','');
+                        $('#productRightMenu').css('bottom','');
+                    }
+                })
                 "use strict";
                 $('#container-nav').perfectScrollbar({wheelPropagation:true});
                 $('#modal-ajax .modal-body').perfectScrollbar({wheelPropagation:true});
@@ -129,11 +142,11 @@
     <?php foreach ($stores as $store) { ?>
                 $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></iframe>');
     <?php } ?>
-                                                                
-                                                                
+                                                                        
+                                                                        
         });
-                                                                
-                                                             
+                                                                        
+                                                                     
         //--></script>
         <?php } ?>
         <?php echo $google_analytics; ?>
@@ -196,22 +209,25 @@
 
         </div>
 
-        
+
 
         <div id="page-container">
-            
+
             <header class="content-main fixed" id="header" style="left: 0px;">
                 <!-- User menu section -->
                 <nav class="_menuUser">
                     <ul id="header-actions">
+                        <?php if (!$logged) { ?>
+                            <li class="login-page"> 
 
-                        <li class="login-page"> 
-                            <?php if (!$logged) { ?>
                                 <?php echo $text_welcome; ?>
-                            <?php } else { ?>
+
+                            </li>
+                        <?php } else { ?>
+                            <li class="member-page"> 
                                 <?php echo $text_logged; ?>
-                            <?php } ?>
-                        </li>
+                            </li>
+                        <?php } ?>
                         <?php echo $language; ?>
                         <li class="miniShopCart" id="miniShopCart">
                             <?php echo $cart; ?>
