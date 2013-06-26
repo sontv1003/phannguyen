@@ -1,7 +1,9 @@
-<div class="buttons">
-  <div class="right">
-    <input type="button" value="<?php echo $button_confirm; ?>" id="button-confirm" class="button" />
-  </div>
+<div class="actions">
+    <button type="button" id="button-confirm" class="button butBlack gaTrack gaViewEvent" value="<?php echo $button_confirm; ?>">
+        <span>
+            <?php echo $button_confirm; ?>
+        </span>
+    </button>
 </div>
 <script type="text/javascript"><!--
 $('#button-confirm').bind('click', function() {

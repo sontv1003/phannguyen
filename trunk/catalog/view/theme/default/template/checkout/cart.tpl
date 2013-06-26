@@ -25,8 +25,6 @@
 
                     <h2 class="h2"><?php echo $heading_title; ?></h2>	
 
-
-
                 </div>
             </div>	
 
@@ -102,7 +100,7 @@
                     </div>
                 </div>
                 
-                <div data-ga-props="{logic:'Cesta/Lista_de_Productos', uriDelim:'Total_1/Productos_1/Disponible_1/NoDisponible_0/GiftCard_Fisicas_0/GiftCard_Virtuales_0', eventDefaults:{category:'Cesta'}}" class="line mod gaView">
+                <div  class="line mod gaView">
 
                     <div class="unit size1of1">
                         <div class="actions fLeft">							
@@ -113,7 +111,7 @@
                         </div>
                         
                         <div class="actions fRight">	
-                            <button onclick="location='<?php echo $checkout; ?>'" class="button butBlack gaTrack gaViewEvent" type="button">
+                            <button onclick="checkout()" class="button butBlack gaTrack gaViewEvent" type="button">
                                 <span><?php echo $button_checkout; ?></span>
                             </button>
                         </div>								

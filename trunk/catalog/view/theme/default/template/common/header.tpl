@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <title><?php echo $title; ?></title>
+        
         <base href="<?php echo $base; ?>" />
         <?php if ($description) { ?>
             <meta name="description" content="<?php echo $description; ?>" />
@@ -39,7 +40,7 @@
             $(document).ready(function ($) {
                 "use strict";
                 $('#container-nav').perfectScrollbar({wheelPropagation:true});
-                $('.modal-body').perfectScrollbar({wheelPropagation:true});
+                $('#modal-ajax .modal-body').perfectScrollbar({wheelPropagation:true});
                 $('.login-page > a').live('click',function(){
                     $('#modal-ajax').modal();
                     $('#itxLoading').show();
@@ -48,7 +49,7 @@
                         url: 'index.php?route=checkout/login',
                         dataType: 'html',
                         success: function(html) {
-                            $('.modal-body').html(html);
+                            $('#modal-ajax .modal-body').html(html);
                             $('#itxLoading').hide();
                         },
                         error: function(xhr, ajaxOptions, thrownError) {
@@ -61,18 +62,18 @@
                 
                 
                 // Login
-                $('#button-login').live('click', function() {
+                $('#modal-ajax #button-login').live('click', function() {
                     $.ajax({
                         url: 'index.php?route=checkout/login/validate',
                         type: 'post',
                         data: $('#logonPanel :input'),
                         dataType: 'json',
                         beforeSend: function() {
-                            $('#button-login').attr('disabled', true);
+                            $('#modal-ajax #button-login').attr('disabled', true);
                             $('#itxLoading').show();
                         },	
                         complete: function() {
-                            $('#button-login').attr('disabled', false);
+                            $('#modal-ajax #button-login').attr('disabled', false);
                             $('#itxLoading').hide();
                         },				
                         success: function(json) {
@@ -81,7 +82,7 @@
                             if (json['redirect']) {
                                 //                                location = json['redirect'];
                             } else if (json['error']) {
-                                $('.logonPanel').prepend('<div class="warning" style="display: none;">' + json['error']['warning'] + '</div>');
+                                $('#modal-ajax .logonPanel').prepend('<div class="warning" style="display: none;">' + json['error']['warning'] + '</div>');
                                 $('.warning').fadeIn('slow');
                             }
                         },
@@ -93,23 +94,23 @@
                 
                 
                 // Checkout
-                $('#button-account').live('click', function() {
+                $('#modal-ajax #button-account').live('click', function() {
                     $.ajax({
                         url: 'index.php?route=checkout/' + $('input[name=\'account\']:checked').attr('value'),
                         dataType: 'html',
                         beforeSend: function() {
                             $('.warning, .error').remove();
-                            $('#button-account').attr('disabled', true);
-                            $('#itxLoading').show();
+                            $('#modal-ajax #button-account').attr('disabled', true);
+                            $('#modal-ajax #itxLoading').show();
                         },		
                         complete: function() {
-                            $('#button-account').attr('disabled', false);
+                            $('#modal-ajax #button-account').attr('disabled', false);
                             
                         },			
                         success: function(html) {
                             
-                            $('.modal-body').html(html);
-                            $('#itxLoading').hide();
+                            $('#modal-ajax .modal-body').html(html);
+                            $('#modal-ajax #itxLoading').hide();
                         },
                         error: function(xhr, ajaxOptions, thrownError) {
                             alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
@@ -154,7 +155,6 @@
                 </a>
             </h1>
         <?php } ?>
-
 
         <div id="container-nav">
             <nav id="menu">

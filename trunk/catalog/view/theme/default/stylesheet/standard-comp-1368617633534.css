@@ -298,9 +298,9 @@ p.entry{font-size:11px;padding-bottom:2em}
 .viewBig img{position:absolute;top:0;left:0;width:395px;height:507px}
 .prodView .share{margin-top:10px;overflow:hidden}
 @media screen and (max-width:1108px){.storePage .main{width:745px}
-.viewBig,.viewBig img{width:360px;height:462px}
-.selectionProds li{width:232px}
-.selectionProds .lnkProd,.selectionProds .lnkProd img{width:232px;height:297px}
+                                     .viewBig,.viewBig img{width:360px;height:462px}
+                                     .selectionProds li{width:232px}
+                                     .selectionProds .lnkProd,.selectionProds .lnkProd img{width:232px;height:297px}
 }
 .lt1024.storePage .main{width:743px;.width:733px}
 .lt1024 .viewBig,.lt1024 .viewBig img{width:360px;height:462px}
@@ -896,18 +896,18 @@ div.basketNoStock span{background-color:#b90000;color:#fff;display:block;font-si
 .updateMessage p{margin-bottom:.5em;text-align:center}
 .updateMessage p.es{color:#a5a5a5}
 @media print{.page{padding-left:0}
-.main{width:auto}
-.menuUser,.smallShopBagHead,.nav,.back,.infoSale,.selSize,.actions,.share,.barUtil,.listProds,.viewSmall,.foot,.view{display:none!important}
-#confirmationPage .page .line,#confirmationPage .head{display:none}
-#confirmationPage .confirmation .line{display:block}
-#confirmationPage .confirmation{border:0;background-color:transparent}
-.prodInfo{margin-left:62px!important}
+             .main{width:auto}
+             .menuUser,.smallShopBagHead,.nav,.back,.infoSale,.selSize,.actions,.share,.barUtil,.listProds,.viewSmall,.foot,.view{display:none!important}
+             #confirmationPage .page .line,#confirmationPage .head{display:none}
+             #confirmationPage .confirmation .line{display:block}
+             #confirmationPage .confirmation{border:0;background-color:transparent}
+             .prodInfo{margin-left:62px!important}
 }
 .divPaymentEmpty{height:195px}
 .paymentAuthorization{width:300px;font-weight:bold;font-size:20px}
 #staticPanel .modalContent{padding:30px}
 #bag{position:absolute;top:0;left:0}
-#itxLoading,.itxLoading{position:absolute;z-index:2000;background-image:url(../image/loader.gif);height:11px;width:16px}
+#itxLoading,#checkout-itxLoading,.itxLoading{position:absolute;z-index:2000;background-image:url(../image/loader.gif);height:11px;width:16px}
 #itxOverlay{position:fixed;top:0;left:0;z-index:-900;background-color:#fff;width:100%}
 #pupIFrame{position:absolute;top:0;left:0;z-index:1111;background:transparent;border:0;overflow:hidden}
 #ajaxIFrame{position:absolute;bottom:0;right:0;z-index:-100;background:transparent;border:0;overflow:hidden}
@@ -956,15 +956,15 @@ div.basketNoStock span{background-color:#b90000;color:#fff;display:block;font-si
 .landscapeView .selectionProds li{margin-right:13px;width:440px}
 .landscapeView .selectionProds .lnkProd,.landscapeView .selectionProds li img{display:block;height:264px;width:440px}
 @media screen and (max-width:1180px){.landscapeView.storePage .main{width:745px}
-.landscapeView .selectionProds li{width:363px}
-.landscapeView .selectionProds .lnkProd,.landscapeView .selectionProds .lnkProd img{width:363px;height:218px}
+                                     .landscapeView .selectionProds li{width:363px}
+                                     .landscapeView .selectionProds .lnkProd,.landscapeView .selectionProds .lnkProd img{width:363px;height:218px}
 }
 .lt1180.landscapeView.storePage .main{width:743px;.width:733px}
 .lt1180.landscapeView .selectionProds li{width:363px;.width:358px}
 .lt1180.landscapeView .selectionProds .lnkProd,.lt1180.landscapeView .selectionProds .lnkProd img{width:363px;height:218px;.width:358px;.height:215px}
 @media screen and (min-width:1450px){.landscapeView.storePage .main{width:978px}
-.landscapeView .selectionProds li{width:480px}
-.landscapeView .selectionProds .lnkProd,.landscapeView .selectionProds .lnkProd img{width:480px;height:288px}
+                                     .landscapeView .selectionProds li{width:480px}
+                                     .landscapeView .selectionProds .lnkProd,.landscapeView .selectionProds .lnkProd img{width:480px;height:288px}
 }
 .gt1450.landscapeView.storePage .main{width:977px}
 .gt1450.landscapeView .selectionProds li{width:480px}
@@ -1643,4 +1643,35 @@ h2.h2 {
     line-height: 22px;
     padding-bottom: 20px;
     text-transform: uppercase;
+}
+
+.checkout-heading{
+    background: url("../image/dotted_line.png") repeat-x scroll left bottom transparent;
+    margin-bottom: 0;
+    position: relative;
+    white-space: nowrap;
+}
+.checkout-heading span{
+    padding-bottom: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 25px;
+    text-transform: uppercase;
+}
+
+#payment-new .formControl,#shipping-new .formControl{
+    float: left;
+    width: 50%
+}
+#payment-new .formControl label, #shipping-new .formControl label{
+    display:block;
+}
+.checkout-heading{
+    display: block;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+.checkout-heading a{
+    position: absolute;
+    right: 0;
 }
