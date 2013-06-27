@@ -73,7 +73,6 @@
     <?php if (!$logged) { ?>
         <div id="payment-address" class="modal hide fade">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-            <div class="checkout-heading"><span><?php echo $text_checkout_account; ?></span></div>
             <div class="checkout-content"></div>
         </div>
     <?php } else { ?>
@@ -157,7 +156,7 @@
 
 
     // Checkout
-    $('#button-account').live('click', function() {
+    $('#checkout #button-account').live('click', function() {
         $.ajax({
             url: 'index.php?route=checkout/' + $('input[name=\'account\']:checked').attr('value'),
             dataType: 'html',
@@ -189,7 +188,7 @@
     });
 
     // Login
-    $('#button-login').live('click', function() {
+    $('#checkout #button-login').live('click', function() {
         $.ajax({
             url: 'index.php?route=checkout/login/validate',
             type: 'post',
