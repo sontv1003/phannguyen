@@ -40,15 +40,17 @@
             $(document).ready(function ($) {
                 
                 $(window).scroll(function(){
-//                    console.debug($(document).height());
-//                    console.debug($(window).height());
+                    //                    console.debug($(document).height());
+                    //                    console.debug($(window).height());
                     var height = $(document).height() - $(window).scrollTop() - $(window).height()
-                    if(height <= 100){
+                    if(height <= 150){
                         $('#sidebar').css('bottom','300px');
                         $('#productRightMenu').css('bottom','200px');
+                        $('#products-nav').css('bottom','250px');
                     }else{
                         $('#sidebar').css('bottom','');
                         $('#productRightMenu').css('bottom','');
+                        $('#products-nav').css('bottom','');
                     }
                 })
                 "use strict";
@@ -79,7 +81,7 @@
                     $.ajax({
                         url: 'index.php?route=checkout/login/validate',
                         type: 'post',
-                        data: $('#logonPanel :input'),
+                        data: $('#modal-ajax #login :input'),
                         dataType: 'json',
                         beforeSend: function() {
                             $('#modal-ajax #button-login').attr('disabled', true);
@@ -93,7 +95,8 @@
                             $('.warning, .error').remove();
 			
                             if (json['redirect']) {
-                                //                                location = json['redirect'];
+                                location = '<?php echo $home ?>';
+                                
                             } else if (json['error']) {
                                 $('#modal-ajax .logonPanel').prepend('<div class="warning" style="display: none;">' + json['error']['warning'] + '</div>');
                                 $('.warning').fadeIn('slow');
@@ -142,11 +145,11 @@
     <?php foreach ($stores as $store) { ?>
                 $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></iframe>');
     <?php } ?>
-                                                                        
-                                                                        
+                                                                            
+                                                                            
         });
-                                                                        
-                                                                     
+                                                                            
+                                                                         
         //--></script>
         <?php } ?>
         <?php echo $google_analytics; ?>

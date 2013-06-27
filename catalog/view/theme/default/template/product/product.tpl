@@ -23,9 +23,9 @@
                             <i class="icon icon-arrow-right"></i>
                         </a>
 
-                        <div class="fixed" id="associatedLnks" style="left: 300px;">
-                            <div class="associatedTitle">LOOK+
-                            </div>
+                        <div id="associatedLnks" >
+                            <div class="clear"></div>
+                            <div class="associatedTitle">LOOK+</div>
                             <?php if ($products) { ?>
                                 <ul class="small-images">
                                     <?php foreach ($products as $product) { ?>
