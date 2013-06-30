@@ -9,8 +9,7 @@
         <h2 class="offleft"><?php echo $heading_title; ?></h2>
         <section id="products">
             <div id="banner">
-                <h3>FREE SHIPPING AND FREE RETURNS</h3>
-                <p>On all standard orders</p>
+                <h3><?php echo $text_description ?></h3>
             </div>
             <div id="msgFathersDay" class="msgFathersDay">
                 <?php echo $description; ?>
@@ -192,6 +191,8 @@
                     if($.trim(data).length > 0){
                         lh_page++;
                         jQuery("#lh_page").val(lh_page);
+                    }else{
+                        $('.js-count').html('0')
                     }
                     jQuery("#lh_page").val(0);
                 }
