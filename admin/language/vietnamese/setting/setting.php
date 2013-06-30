@@ -73,6 +73,7 @@ $_['entry_commission']          = 'Ủy nhiệm liên kết (%):<br /><span clas
 $_['entry_return_status']       = 'Tình trạng Phản hồi:<br /><span class="help">Thiết lập mặc định trở lại trạng thái khi một yêu cầu được gửi trả về.</span>';
 $_['entry_logo']              = 'Logo cửa hàng:';
 $_['entry_icon']              = 'Icon:<br /><span class="help">icon được hiện thị với đuôi .PNG và kích thước 16px x 16px.</span>';
+$_['entry_home_image']         = 'Hành ảnh trang chủ';
 $_['entry_image_category']    = 'Cỡ hình danh mục:';
 $_['entry_image_thumb']       = 'Cỡ hình sản phẩm thu nhỏ:';
 $_['entry_image_popup']       = 'Cỡ hình sản phẩm phóng to:';
