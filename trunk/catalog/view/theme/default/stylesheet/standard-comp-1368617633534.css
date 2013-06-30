@@ -1675,3 +1675,7 @@ h2.h2 {
     position: absolute;
     right: 0;
 }
+
+table.form tr td{
+    padding: 5px 0;
+}

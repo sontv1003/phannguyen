@@ -15,8 +15,6 @@
                 <p><?php echo $text_service; ?></p>
                 <ul class="submenuUtilities">
                     <li><a href="<?php echo $manufacturer; ?>"><?php echo $text_manufacturer; ?></a></li>
-                    <li><a href="<?php echo $voucher; ?>"><?php echo $text_voucher; ?></a></li>
-                    <li><a href="<?php echo $affiliate; ?>"><?php echo $text_affiliate; ?></a></li>
                     <li><a href="<?php echo $special; ?>"><?php echo $text_special; ?></a></li>
                 </ul>
             </li>
@@ -25,8 +23,6 @@
                 <p><?php echo $text_extra; ?></p>
                 <ul class="submenuUtilities">
                     <li><a href="<?php echo $manufacturer; ?>"><?php echo $text_manufacturer; ?></a></li>
-                    <li><a href="<?php echo $voucher; ?>"><?php echo $text_voucher; ?></a></li>
-                    <li><a href="<?php echo $affiliate; ?>"><?php echo $text_affiliate; ?></a></li>
                     <li><a href="<?php echo $special; ?>"><?php echo $text_special; ?></a></li>    
                 </ul>
             </li>
@@ -34,10 +30,15 @@
             <li>
                 <p><?php echo $text_account; ?></p>
                 <ul class="submenuUtilities">
-                    <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
-                    <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
-                    <li><a href="<?php echo $wishlist; ?>"><?php echo $text_wishlist; ?></a></li>
-                    <li><a href="<?php echo $newsletter; ?>"><?php echo $text_newsletter; ?></a></li>
+                    <?php if ($logged) { ?>
+                        <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
+                        <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
+                        <li><a href="<?php echo $newsletter; ?>"><?php echo $text_newsletter; ?></a></li>
+                    <?php } else { ?>
+                        <li class="login-page"><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
+                        <li class="login-page"><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
+                        <li class="login-page"><a href="<?php echo $newsletter; ?>"><?php echo $text_newsletter; ?></a></li>
+                    <?php } ?>
                 </ul>
             </li>
         </ul>
@@ -300,24 +301,24 @@
                 } else {
 <?php if ($shipping_required) { ?>				
                         var shipping_address = $('#payment-address input[name=\'shipping_address\']:checked').attr('value');
-                                				
+                                    				
                         if (shipping_address) {
                             $.ajax({
                                 url: 'index.php?route=checkout/shipping_method',
                                 dataType: 'html',
                                 success: function(html) {
                                     $('#shipping-method .checkout-content').html(html);
-                                							
+                                    							
                                     $('#payment-address .checkout-content').slideUp('slow');
-                                							
+                                    							
                                     $('#shipping-method .checkout-content').slideDown('slow');
-                                							
+                                    							
                                     $('#checkout .checkout-heading a').remove();
                                     $('#payment-address .checkout-heading a').remove();
                                     $('#shipping-address .checkout-heading a').remove();
                                     $('#shipping-method .checkout-heading a').remove();
                                     $('#payment-method .checkout-heading a').remove();											
-                                							
+                                    							
                                     $('#shipping-address .checkout-heading').append('<a><?php echo $text_modify; ?></a>');									
                                     $('#payment-address .checkout-heading').append('<a><?php echo $text_modify; ?></a>');	
 
@@ -342,11 +343,11 @@
                                 dataType: 'html',
                                 success: function(html) {
                                     $('#shipping-address .checkout-content').html(html);
-                                							
+                                    							
                                     $('#payment-address .checkout-content').slideUp('slow');
-                                							
+                                    							
                                     $('#shipping-address .checkout-content').slideDown('slow');
-                                							
+                                    							
                                     $('#checkout .checkout-heading a').remove();
                                     $('#payment-address .checkout-heading a').remove();
                                     $('#shipping-address .checkout-heading a').remove();
@@ -366,15 +367,15 @@
                             dataType: 'html',
                             success: function(html) {
                                 $('#payment-method .checkout-content').html(html);
-                                						
+                                    						
                                 $('#payment-address .checkout-content').slideUp('slow');
-                                						
+                                    						
                                 $('#payment-method .checkout-content').slideDown('slow');
-                                						
+                                    						
                                 $('#checkout .checkout-heading a').remove();
                                 $('#payment-address .checkout-heading a').remove();
                                 $('#payment-method .checkout-heading a').remove();								
-                                						
+                                    						
                                 $('#payment-address .checkout-heading').append('<a><?php echo $text_modify; ?></a>');	
                             },
                             error: function(xhr, ajaxOptions, thrownError) {
@@ -476,14 +477,14 @@
                             success: function(html) {
                                 $('#payment-address').modal('hide');
                                 $('#shipping-address .checkout-content').html(html);
-                                					
+                                    					
                                 $('#shipping-address').modal();
-                                						
+                                    						
                                 $('#payment-address .checkout-heading a').remove();
                                 $('#shipping-address .checkout-heading a').remove();
                                 $('#shipping-method .checkout-heading a').remove();
                                 $('#payment-method .checkout-heading a').remove();
-                                						
+                                    						
                                 $('#payment-address .checkout-heading').append('<a><?php echo $text_modify; ?></a>');	
                             },
                             error: function(xhr, ajaxOptions, thrownError) {
@@ -497,12 +498,12 @@
                             success: function(html) {
                                 $('#payment-method').modal('hide');
                                 $('#payment-method .checkout-content').html(html);
-                                					
+                                    					
                                 $('#payment-address').modal();
-                                						
+                                    						
                                 $('#payment-address .checkout-heading a').remove();
                                 $('#payment-method .checkout-heading a').remove();
-                                													
+                                    													
                                 $('#payment-address .checkout-heading').append('<a><?php echo $text_modify; ?></a>');	
                             },
                             error: function(xhr, ajaxOptions, thrownError) {
@@ -713,26 +714,26 @@
                 } else {
 <?php if ($shipping_required) { ?>	
                         var shipping_address = $('#payment-address input[name=\'shipping_address\']:checked').attr('value');
-                                				
+                                    				
                         if (shipping_address) {
                             $.ajax({
                                 url: 'index.php?route=checkout/shipping_method',
                                 dataType: 'html',
                                 success: function(html) {
                                     $('#shipping-method .checkout-content').html(html);
-                                							
+                                    							
                                     $('#payment-address .checkout-content').slideUp('slow');
-                                							
+                                    							
                                     $('#shipping-method .checkout-content').slideDown('slow');
-                                							
+                                    							
                                     $('#payment-address .checkout-heading a').remove();
                                     $('#shipping-address .checkout-heading a').remove();
                                     $('#shipping-method .checkout-heading a').remove();
                                     $('#payment-method .checkout-heading a').remove();		
-                                															
+                                    															
                                     $('#payment-address .checkout-heading').append('<a><?php echo $text_modify; ?></a>');	
                                     $('#shipping-address .checkout-heading').append('<a><?php echo $text_modify; ?></a>');									
-                                							
+                                    							
                                     $.ajax({
                                         url: 'index.php?route=checkout/guest_shipping',
                                         dataType: 'html',
@@ -754,16 +755,16 @@
                                 dataType: 'html',
                                 success: function(html) {
                                     $('#shipping-address .checkout-content').html(html);
-                                							
+                                    							
                                     $('#payment-address .checkout-content').slideUp('slow');
-                                							
+                                    							
                                     $('#shipping-address .checkout-content').slideDown('slow');
-                                							
+                                    							
                                     $('#payment-address .checkout-heading a').remove();
                                     $('#shipping-address .checkout-heading a').remove();
                                     $('#shipping-method .checkout-heading a').remove();
                                     $('#payment-method .checkout-heading a').remove();
-                                							
+                                    							
                                     $('#payment-address .checkout-heading').append('<a><?php echo $text_modify; ?></a>');	
                                 },
                                 error: function(xhr, ajaxOptions, thrownError) {
@@ -777,14 +778,14 @@
                             dataType: 'html',
                             success: function(html) {
                                 $('#payment-method .checkout-content').html(html);
-                                						
+                                    						
                                 $('#payment-address .checkout-content').slideUp('slow');
-                                							
+                                    							
                                 $('#payment-method .checkout-content').slideDown('slow');
-                                							
+                                    							
                                 $('#payment-address .checkout-heading a').remove();
                                 $('#payment-method .checkout-heading a').remove();
-                                														
+                                    														
                                 $('#payment-address .checkout-heading').append('<a><?php echo $text_modify; ?></a>');
                             },
                             error: function(xhr, ajaxOptions, thrownError) {

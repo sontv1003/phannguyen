@@ -32,7 +32,7 @@
         </li>
     <?php } ?>
     <script>
-        $('.js-count').html('<?php echo $product_total ?></span>')
+        $('.js-count').html('<?php echo $product_total ?>')
     </script>
 <?php } ?>
 

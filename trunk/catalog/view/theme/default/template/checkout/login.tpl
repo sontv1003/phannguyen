@@ -49,7 +49,7 @@
             <div class="actions">
                 <input type="radio" name="account" value="register" id="register" checked="checked" style="display: none"/>
                 <button class="button butBlack actionButton" type="button" value="<?php echo $button_continue; ?>" id="button-account">
-                    <span>Create account</span>
+                    <span><?php echo $button_continue; ?></span>
                 </button>
             </div>
         </div>

@@ -18,23 +18,23 @@
             <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
         <?php } ?>
         <!--<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/stylesheet.css" />-->
-        <link rel="stylesheet" type="text/css" href="/catalog/view/theme/default/stylesheet/standard-comp-1368617633534.css" />
-        <link rel="stylesheet" type="text/css" href="/catalog/view/theme/default/stylesheet/standard-v.1.0.51.min.css" />
-        <link rel="stylesheet" type="text/css" href="/catalog/view/theme/default/stylesheet/application-comp-1368617633534.css" />
-        <link rel="stylesheet" type="text/css" href="/catalog/view/theme/default/stylesheet/perfect-scrollbar.min.css" />
-        <link rel="stylesheet" type="text/css" href="/catalog/view/theme/default/stylesheet/category-comp-1370537430555.css" />
-        <link rel="stylesheet" type="text/css" href="/catalog/view/theme/default/stylesheet/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/standard-comp-1368617633534.css" />
+        <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/standard-v.1.0.51.min.css" />
+        <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/application-comp-1368617633534.css" />
+        <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/perfect-scrollbar.min.css" />
+        <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/category-comp-1370537430555.css" />
+        <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/bootstrap.min.css" />
         <?php foreach ($styles as $style) { ?>
             <link rel="<?php echo $style['rel']; ?>" type="text/css" href="<?php echo $style['href']; ?>" media="<?php echo $style['media']; ?>" />
         <?php } ?>
-        <script type="text/javascript" src="/catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
-        <script type="text/javascript" src="/catalog/view/javascript/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="/catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" />
-        <script type="text/javascript" src="/catalog/view/javascript/common.js"></script>
-        <script type="text/javascript" src="/catalog/view/javascript/jquery/main.js"></script>
-        <script type="text/javascript" src="/catalog/view/javascript/perfect-scrollbar.min.js"></script>
-        <script type="text/javascript" src="/catalog/view/javascript/perfect-scrollbar.with-mousewheel.min.js"></script>
-        <script type="text/javascript" src="/catalog/view/javascript/jquery/bootstrap.min.js"></script>
+        <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="catalog/view/javascript/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" />
+        <script type="text/javascript" src="catalog/view/javascript/common.js"></script>
+        <script type="text/javascript" src="catalog/view/javascript/jquery/main.js"></script>
+        <script type="text/javascript" src="catalog/view/javascript/perfect-scrollbar.min.js"></script>
+        <script type="text/javascript" src="catalog/view/javascript/perfect-scrollbar.with-mousewheel.min.js"></script>
+        <script type="text/javascript" src="catalog/view/javascript/jquery/bootstrap.min.js"></script>
 
         <script>
             $(document).ready(function ($) {
