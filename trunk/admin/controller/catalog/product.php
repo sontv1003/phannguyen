@@ -360,6 +360,11 @@ class ControllerCatalogProduct extends Controller {
             } else {
                 $image = $this->model_tool_image->resize('no_image.jpg', 40, 40);
             }
+            if ($result['image_representative'] && file_exists(DIR_IMAGE . $result['image_representative'])) {
+                $image_representative = $this->model_tool_image->resize($result['image_representative'], 40, 40);
+            } else {
+                $image_representative = $this->model_tool_image->resize('no_image.jpg', 40, 40);
+            }
 
             $special = false;
 
@@ -380,6 +385,7 @@ class ControllerCatalogProduct extends Controller {
                 'price' => $result['price'],
                 'special' => $special,
                 'image' => $image,
+                'image_representative' => $image_representative,
                 'quantity' => $result['quantity'],
                 'status' => ($result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled')),
                 'selected' => isset($this->request->post['selected']) && in_array($result['product_id'], $this->request->post['selected']),
@@ -571,6 +577,7 @@ class ControllerCatalogProduct extends Controller {
         $this->data['entry_dimension'] = $this->language->get('entry_dimension');
         $this->data['entry_length'] = $this->language->get('entry_length');
         $this->data['entry_image'] = $this->language->get('entry_image');
+        $this->data['entry_image_representative'] = $this->language->get('entry_image_representative');
         $this->data['entry_download'] = $this->language->get('entry_download');
         $this->data['entry_category'] = $this->language->get('entry_category');
         $this->data['entry_filter'] = $this->language->get('entry_filter');
@@ -813,6 +820,13 @@ class ControllerCatalogProduct extends Controller {
         } else {
             $this->data['image'] = '';
         }
+        if (isset($this->request->post['image_representative'])) {
+            $this->data['image_representative'] = $this->request->post['image_representative'];
+        } elseif (!empty($product_info)) {
+            $this->data['image_representative'] = $product_info['image_representative'];
+        } else {
+            $this->data['image_representative'] = '';
+        }
 
         $this->load->model('tool/image');
 
@@ -822,6 +836,14 @@ class ControllerCatalogProduct extends Controller {
             $this->data['thumb'] = $this->model_tool_image->resize($product_info['image'], 100, 100);
         } else {
             $this->data['thumb'] = $this->model_tool_image->resize('no_image.jpg', 100, 100);
+        }
+        
+        if (isset($this->request->post['image_representative']) && file_exists(DIR_IMAGE . $this->request->post['image_representative'])) {
+            $this->data['thumb_representative'] = $this->model_tool_image->resize($this->request->post['image_representative'], 100, 100);
+        } elseif (!empty($product_info) && $product_info['image_representative'] && file_exists(DIR_IMAGE . $product_info['image_representative'])) {
+            $this->data['thumb_representative'] = $this->model_tool_image->resize($product_info['image_representative'], 100, 100);
+        } else {
+            $this->data['thumb_representative'] = $this->model_tool_image->resize('no_image.jpg', 100, 100);
         }
 
         if (isset($this->request->post['shipping'])) {

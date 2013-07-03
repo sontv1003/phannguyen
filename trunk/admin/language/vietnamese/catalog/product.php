@@ -55,6 +55,7 @@ $_['entry_weight']           = 'Nặng:';
 $_['entry_length']           = 'Chiều dài:';
 $_['entry_dimension']        = 'Kích thước(L x W x H):';
 $_['entry_image']            = 'Hình ảnh:';
+$_['entry_image_representative']            = 'Ảnh đại diện:';
 $_['entry_customer_group']   = 'Nhóm khách hàng:';
 $_['entry_date_start']       = 'Từ ngày:';
 $_['entry_date_end']         = 'Đến ngày:';

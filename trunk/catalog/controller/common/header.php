@@ -119,7 +119,7 @@ class ControllerCommonHeader extends Controller {
                         'href' => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id'])
                     );
                 }
-
+                $this->data['lookbook_href'] = $this->url->link('product/lookbook');
                 // Level 1
                 $this->data['categories'][] = array(
                     'name' => $category['name'],

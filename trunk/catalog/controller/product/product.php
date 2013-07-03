@@ -416,11 +416,13 @@ class ControllerProductProduct extends Controller {
             $this->data['products'] = array();
 
             $results = $this->model_catalog_product->getProductRelated($this->request->get['product_id']);
-
             foreach ($results as $result) {
-                if ($result['image']) {
+                if ($result['image_representative']) {
+                    $image = $this->model_tool_image->resize($result['image_representative'], $this->config->get('config_image_related_width'), $this->config->get('config_image_related_height'));
+                } elseif($result['image']) {
                     $image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_related_width'), $this->config->get('config_image_related_height'));
-                } else {
+                    
+                }else{
                     $image = false;
                 }
 

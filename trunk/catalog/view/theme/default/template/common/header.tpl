@@ -145,11 +145,11 @@
     <?php foreach ($stores as $store) { ?>
                 $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></iframe>');
     <?php } ?>
-                                                                            
-                                                                            
+                                                                                                
+                                                                                                
         });
-                                                                            
-                                                                         
+                                                                                                
+                                                                                             
         //--></script>
         <?php } ?>
         <?php echo $google_analytics; ?>
@@ -179,7 +179,6 @@
                         <a href="#" >
                             New this week
                         </a>
-
                     </li>
                     <li><i class="icon icon-line-menu-divider"></i> </li>
                     <?php if ($categories) { ?>
@@ -201,10 +200,21 @@
                             </li>
                         <?php } ?>
                     <?php } ?>
+<!--                    <li class="">
+                        <a href="<?php echo $news_brand_href ?>">Bộ sưu tập</a> 
+                        <ul>
+                            <?php foreach ($categoriesnews as $category) { ?>
+                                <li>
+                                    <a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
+                                </li>
+                            <?php } ?>
+                        </ul>
 
+                    </li>-->
                     <?php echo $information ?>        
 
-                </ul>            
+                </ul>
+
                 <div id="search" class="search">
                     <input type="text" class="textField searchTextField placeholder" size="18" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />
                     <div class="button searchButton button-search"></div>
