@@ -4,12 +4,13 @@ class ControllerCommonHeader extends Controller {
 
     protected function index() {
         $this->data['title'] = $this->document->getTitle();
-
         if (isset($this->request->server['HTTPS']) && (($this->request->server['HTTPS'] == 'on') || ($this->request->server['HTTPS'] == '1'))) {
             $server = $this->config->get('config_ssl');
         } else {
             $server = $this->config->get('config_url');
         }
+        
+        
 
         $this->data['base'] = $server;
         $this->data['description'] = $this->document->getDescription();
@@ -276,7 +277,8 @@ if (isset($this->request->get['catid'])) {
         $this->children = array(
             'module/language',
             'module/currency',
-            'module/cart'
+            'module/cart',
+            'module/information',
         );
 
         if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/header.tpl')) {
