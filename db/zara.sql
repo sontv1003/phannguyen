@@ -1,9 +1,9 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               5.5.16 - MySQL Community Server (GPL)
--- Server OS:                    Win32
+-- Server version:               5.5.24-log - MySQL Community Server (GPL)
+-- Server OS:                    Win64
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2013-07-01 00:02:48
+-- Date/time:                    2013-07-03 22:14:16
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -11,7 +11,6 @@
 /*!40014 SET FOREIGN_KEY_CHECKS=0 */;
 
 -- Dumping structure for table zara.address
-DROP TABLE IF EXISTS `address`;
 CREATE TABLE IF NOT EXISTS `address` (
   `address_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -31,7 +30,6 @@ CREATE TABLE IF NOT EXISTS `address` (
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.address: 2 rows
-DELETE FROM `address`;
 /*!40000 ALTER TABLE `address` DISABLE KEYS */;
 INSERT INTO `address` (`address_id`, `customer_id`, `firstname`, `lastname`, `company`, `company_id`, `tax_id`, `address_1`, `address_2`, `city`, `postcode`, `country_id`, `zone_id`) VALUES
 	(1, 1, 'Khiem', 'Pham', 'fsdf', '', '', '423423', '', '4234242', '', 230, 3776),
@@ -40,7 +38,6 @@ INSERT INTO `address` (`address_id`, `customer_id`, `firstname`, `lastname`, `co
 
 
 -- Dumping structure for table zara.affiliate
-DROP TABLE IF EXISTS `affiliate`;
 CREATE TABLE IF NOT EXISTS `affiliate` (
   `affiliate_id` int(11) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(32) NOT NULL,
@@ -77,13 +74,11 @@ CREATE TABLE IF NOT EXISTS `affiliate` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.affiliate: 0 rows
-DELETE FROM `affiliate`;
 /*!40000 ALTER TABLE `affiliate` DISABLE KEYS */;
 /*!40000 ALTER TABLE `affiliate` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.affiliate_transaction
-DROP TABLE IF EXISTS `affiliate_transaction`;
 CREATE TABLE IF NOT EXISTS `affiliate_transaction` (
   `affiliate_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
   `affiliate_id` int(11) NOT NULL,
@@ -95,13 +90,11 @@ CREATE TABLE IF NOT EXISTS `affiliate_transaction` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.affiliate_transaction: 0 rows
-DELETE FROM `affiliate_transaction`;
 /*!40000 ALTER TABLE `affiliate_transaction` DISABLE KEYS */;
 /*!40000 ALTER TABLE `affiliate_transaction` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.attribute
-DROP TABLE IF EXISTS `attribute`;
 CREATE TABLE IF NOT EXISTS `attribute` (
   `attribute_id` int(11) NOT NULL AUTO_INCREMENT,
   `attribute_group_id` int(11) NOT NULL,
@@ -110,7 +103,6 @@ CREATE TABLE IF NOT EXISTS `attribute` (
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.attribute: 11 rows
-DELETE FROM `attribute`;
 /*!40000 ALTER TABLE `attribute` DISABLE KEYS */;
 INSERT INTO `attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VALUES
 	(1, 6, 1),
@@ -128,7 +120,6 @@ INSERT INTO `attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VAL
 
 
 -- Dumping structure for table zara.attribute_description
-DROP TABLE IF EXISTS `attribute_description`;
 CREATE TABLE IF NOT EXISTS `attribute_description` (
   `attribute_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -137,7 +128,6 @@ CREATE TABLE IF NOT EXISTS `attribute_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.attribute_description: 22 rows
-DELETE FROM `attribute_description`;
 /*!40000 ALTER TABLE `attribute_description` DISABLE KEYS */;
 INSERT INTO `attribute_description` (`attribute_id`, `language_id`, `name`) VALUES
 	(1, 2, 'Description'),
@@ -166,7 +156,6 @@ INSERT INTO `attribute_description` (`attribute_id`, `language_id`, `name`) VALU
 
 
 -- Dumping structure for table zara.attribute_group
-DROP TABLE IF EXISTS `attribute_group`;
 CREATE TABLE IF NOT EXISTS `attribute_group` (
   `attribute_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL,
@@ -174,7 +163,6 @@ CREATE TABLE IF NOT EXISTS `attribute_group` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.attribute_group: 4 rows
-DELETE FROM `attribute_group`;
 /*!40000 ALTER TABLE `attribute_group` DISABLE KEYS */;
 INSERT INTO `attribute_group` (`attribute_group_id`, `sort_order`) VALUES
 	(3, 2),
@@ -185,7 +173,6 @@ INSERT INTO `attribute_group` (`attribute_group_id`, `sort_order`) VALUES
 
 
 -- Dumping structure for table zara.attribute_group_description
-DROP TABLE IF EXISTS `attribute_group_description`;
 CREATE TABLE IF NOT EXISTS `attribute_group_description` (
   `attribute_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -194,7 +181,6 @@ CREATE TABLE IF NOT EXISTS `attribute_group_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.attribute_group_description: 8 rows
-DELETE FROM `attribute_group_description`;
 /*!40000 ALTER TABLE `attribute_group_description` DISABLE KEYS */;
 INSERT INTO `attribute_group_description` (`attribute_group_id`, `language_id`, `name`) VALUES
 	(3, 2, 'Memory'),
@@ -209,7 +195,6 @@ INSERT INTO `attribute_group_description` (`attribute_group_id`, `language_id`, 
 
 
 -- Dumping structure for table zara.banner
-DROP TABLE IF EXISTS `banner`;
 CREATE TABLE IF NOT EXISTS `banner` (
   `banner_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -218,7 +203,6 @@ CREATE TABLE IF NOT EXISTS `banner` (
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.banner: 3 rows
-DELETE FROM `banner`;
 /*!40000 ALTER TABLE `banner` DISABLE KEYS */;
 INSERT INTO `banner` (`banner_id`, `name`, `status`) VALUES
 	(7, 'Slideshow trang chủ', 1),
@@ -228,7 +212,6 @@ INSERT INTO `banner` (`banner_id`, `name`, `status`) VALUES
 
 
 -- Dumping structure for table zara.banner_image
-DROP TABLE IF EXISTS `banner_image`;
 CREATE TABLE IF NOT EXISTS `banner_image` (
   `banner_image_id` int(11) NOT NULL AUTO_INCREMENT,
   `banner_id` int(11) NOT NULL,
@@ -238,7 +221,6 @@ CREATE TABLE IF NOT EXISTS `banner_image` (
 ) ENGINE=MyISAM AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.banner_image: 5 rows
-DELETE FROM `banner_image`;
 /*!40000 ALTER TABLE `banner_image` DISABLE KEYS */;
 INSERT INTO `banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) VALUES
 	(87, 8, 'index.php?route=product/manufacturer/info&amp;manufacturer_id=7', 'data/anh1.jpg'),
@@ -250,7 +232,6 @@ INSERT INTO `banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) VAL
 
 
 -- Dumping structure for table zara.banner_image_description
-DROP TABLE IF EXISTS `banner_image_description`;
 CREATE TABLE IF NOT EXISTS `banner_image_description` (
   `banner_image_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -260,7 +241,6 @@ CREATE TABLE IF NOT EXISTS `banner_image_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.banner_image_description: 10 rows
-DELETE FROM `banner_image_description`;
 /*!40000 ALTER TABLE `banner_image_description` DISABLE KEYS */;
 INSERT INTO `banner_image_description` (`banner_image_id`, `language_id`, `banner_id`, `title`) VALUES
 	(93, 2, 7, 'ssssssss'),
@@ -277,7 +257,6 @@ INSERT INTO `banner_image_description` (`banner_image_id`, `language_id`, `banne
 
 
 -- Dumping structure for table zara.category
-DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) DEFAULT NULL,
@@ -293,7 +272,6 @@ CREATE TABLE IF NOT EXISTS `category` (
 ) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.category: 9 rows
-DELETE FROM `category`;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
 INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `top2`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
 	(25, '', 0, 1, 0, 1, 1, 1, '2009-01-31 01:04:25', '2013-05-20 23:43:45'),
@@ -309,7 +287,6 @@ INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `top2`, `col
 
 
 -- Dumping structure for table zara.category_description
-DROP TABLE IF EXISTS `category_description`;
 CREATE TABLE IF NOT EXISTS `category_description` (
   `category_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -322,7 +299,6 @@ CREATE TABLE IF NOT EXISTS `category_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.category_description: 18 rows
-DELETE FROM `category_description`;
 /*!40000 ALTER TABLE `category_description` DISABLE KEYS */;
 INSERT INTO `category_description` (`category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
 	(33, 2, 'Nam', '', '', 'nam'),
@@ -347,7 +323,6 @@ INSERT INTO `category_description` (`category_id`, `language_id`, `name`, `descr
 
 
 -- Dumping structure for table zara.category_filter
-DROP TABLE IF EXISTS `category_filter`;
 CREATE TABLE IF NOT EXISTS `category_filter` (
   `category_id` int(11) NOT NULL,
   `filter_id` int(11) NOT NULL,
@@ -355,13 +330,11 @@ CREATE TABLE IF NOT EXISTS `category_filter` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.category_filter: 0 rows
-DELETE FROM `category_filter`;
 /*!40000 ALTER TABLE `category_filter` DISABLE KEYS */;
 /*!40000 ALTER TABLE `category_filter` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.category_path
-DROP TABLE IF EXISTS `category_path`;
 CREATE TABLE IF NOT EXISTS `category_path` (
   `category_id` int(11) NOT NULL,
   `path_id` int(11) NOT NULL,
@@ -370,7 +343,6 @@ CREATE TABLE IF NOT EXISTS `category_path` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.category_path: 15 rows
-DELETE FROM `category_path`;
 /*!40000 ALTER TABLE `category_path` DISABLE KEYS */;
 INSERT INTO `category_path` (`category_id`, `path_id`, `level`) VALUES
 	(25, 25, 0),
@@ -392,7 +364,6 @@ INSERT INTO `category_path` (`category_id`, `path_id`, `level`) VALUES
 
 
 -- Dumping structure for table zara.category_to_layout
-DROP TABLE IF EXISTS `category_to_layout`;
 CREATE TABLE IF NOT EXISTS `category_to_layout` (
   `category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -401,7 +372,6 @@ CREATE TABLE IF NOT EXISTS `category_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.category_to_layout: 6 rows
-DELETE FROM `category_to_layout`;
 /*!40000 ALTER TABLE `category_to_layout` DISABLE KEYS */;
 INSERT INTO `category_to_layout` (`category_id`, `store_id`, `layout_id`) VALUES
 	(61, 0, 3),
@@ -414,7 +384,6 @@ INSERT INTO `category_to_layout` (`category_id`, `store_id`, `layout_id`) VALUES
 
 
 -- Dumping structure for table zara.category_to_store
-DROP TABLE IF EXISTS `category_to_store`;
 CREATE TABLE IF NOT EXISTS `category_to_store` (
   `category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -422,7 +391,6 @@ CREATE TABLE IF NOT EXISTS `category_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.category_to_store: 9 rows
-DELETE FROM `category_to_store`;
 /*!40000 ALTER TABLE `category_to_store` DISABLE KEYS */;
 INSERT INTO `category_to_store` (`category_id`, `store_id`) VALUES
 	(25, 0),
@@ -438,7 +406,6 @@ INSERT INTO `category_to_store` (`category_id`, `store_id`) VALUES
 
 
 -- Dumping structure for table zara.country
-DROP TABLE IF EXISTS `country`;
 CREATE TABLE IF NOT EXISTS `country` (
   `country_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
@@ -451,7 +418,6 @@ CREATE TABLE IF NOT EXISTS `country` (
 ) ENGINE=MyISAM AUTO_INCREMENT=252 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.country: 249 rows
-DELETE FROM `country`;
 /*!40000 ALTER TABLE `country` DISABLE KEYS */;
 INSERT INTO `country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`) VALUES
 	(1, 'Afghanistan', 'AF', 'AFG', '', 0, 1),
@@ -707,7 +673,6 @@ INSERT INTO `country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `addres
 
 
 -- Dumping structure for table zara.coupon
-DROP TABLE IF EXISTS `coupon`;
 CREATE TABLE IF NOT EXISTS `coupon` (
   `coupon_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
@@ -727,7 +692,6 @@ CREATE TABLE IF NOT EXISTS `coupon` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.coupon: 3 rows
-DELETE FROM `coupon`;
 /*!40000 ALTER TABLE `coupon` DISABLE KEYS */;
 INSERT INTO `coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`, `shipping`, `total`, `date_start`, `date_end`, `uses_total`, `uses_customer`, `status`, `date_added`) VALUES
 	(4, '-10% Discount', '2222', 'P', 10.0000, 0, 0, 0.0000, '2011-01-01', '2012-01-01', 10, '10', 1, '2009-01-27 13:55:03'),
@@ -737,7 +701,6 @@ INSERT INTO `coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`,
 
 
 -- Dumping structure for table zara.coupon_category
-DROP TABLE IF EXISTS `coupon_category`;
 CREATE TABLE IF NOT EXISTS `coupon_category` (
   `coupon_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
@@ -745,13 +708,11 @@ CREATE TABLE IF NOT EXISTS `coupon_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.coupon_category: 0 rows
-DELETE FROM `coupon_category`;
 /*!40000 ALTER TABLE `coupon_category` DISABLE KEYS */;
 /*!40000 ALTER TABLE `coupon_category` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.coupon_history
-DROP TABLE IF EXISTS `coupon_history`;
 CREATE TABLE IF NOT EXISTS `coupon_history` (
   `coupon_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `coupon_id` int(11) NOT NULL,
@@ -763,13 +724,11 @@ CREATE TABLE IF NOT EXISTS `coupon_history` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.coupon_history: 0 rows
-DELETE FROM `coupon_history`;
 /*!40000 ALTER TABLE `coupon_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `coupon_history` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.coupon_product
-DROP TABLE IF EXISTS `coupon_product`;
 CREATE TABLE IF NOT EXISTS `coupon_product` (
   `coupon_product_id` int(11) NOT NULL AUTO_INCREMENT,
   `coupon_id` int(11) NOT NULL,
@@ -778,13 +737,11 @@ CREATE TABLE IF NOT EXISTS `coupon_product` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.coupon_product: 0 rows
-DELETE FROM `coupon_product`;
 /*!40000 ALTER TABLE `coupon_product` DISABLE KEYS */;
 /*!40000 ALTER TABLE `coupon_product` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.currency
-DROP TABLE IF EXISTS `currency`;
 CREATE TABLE IF NOT EXISTS `currency` (
   `currency_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(32) NOT NULL,
@@ -799,17 +756,15 @@ CREATE TABLE IF NOT EXISTS `currency` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.currency: 3 rows
-DELETE FROM `currency`;
 /*!40000 ALTER TABLE `currency` DISABLE KEYS */;
 INSERT INTO `currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
-	(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.65750003, 1, '2013-06-30 07:03:23'),
-	(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2013-06-30 18:52:32'),
-	(3, 'Euro', 'EUR', '', '€', '2', 0.76849997, 1, '2013-06-30 07:03:23');
+	(1, 'Pound Sterling', 'GBP', '£', '', '2', 0.65480000, 1, '2013-07-03 15:09:10'),
+	(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2013-07-03 15:09:10'),
+	(3, 'Euro', 'EUR', '', '€', '2', 0.77020001, 1, '2013-07-03 15:09:10');
 /*!40000 ALTER TABLE `currency` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.customer
-DROP TABLE IF EXISTS `customer`;
 CREATE TABLE IF NOT EXISTS `customer` (
   `customer_id` int(11) NOT NULL AUTO_INCREMENT,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -834,7 +789,6 @@ CREATE TABLE IF NOT EXISTS `customer` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.customer: 1 rows
-DELETE FROM `customer`;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
 INSERT INTO `customer` (`customer_id`, `store_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `password`, `salt`, `cart`, `wishlist`, `newsletter`, `address_id`, `customer_group_id`, `ip`, `status`, `approved`, `token`, `date_added`) VALUES
 	(1, 0, 'Khiem', 'Pham', 'rongandat@gmail.com', '01694042658', '', '5fe6738845009e522adad162db07d18d5bc09c4f', 'af57f4933', 'a:3:{s:31:"30:YToxOntpOjIzMTtzOjI6IjM3Ijt9";i:2;i:28;i:2;s:31:"51:YToxOntpOjIzNTtzOjI6IjQyIjt9";i:4;}', 'a:0:{}', 1, 1, 1, '127.0.0.1', 1, 1, '', '2013-06-25 16:08:01');
@@ -842,7 +796,6 @@ INSERT INTO `customer` (`customer_id`, `store_id`, `firstname`, `lastname`, `ema
 
 
 -- Dumping structure for table zara.customer_ban_ip
-DROP TABLE IF EXISTS `customer_ban_ip`;
 CREATE TABLE IF NOT EXISTS `customer_ban_ip` (
   `customer_ban_ip_id` int(11) NOT NULL AUTO_INCREMENT,
   `ip` varchar(40) NOT NULL,
@@ -851,13 +804,11 @@ CREATE TABLE IF NOT EXISTS `customer_ban_ip` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.customer_ban_ip: 0 rows
-DELETE FROM `customer_ban_ip`;
 /*!40000 ALTER TABLE `customer_ban_ip` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_ban_ip` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.customer_field
-DROP TABLE IF EXISTS `customer_field`;
 CREATE TABLE IF NOT EXISTS `customer_field` (
   `customer_id` int(11) NOT NULL,
   `custom_field_id` int(11) NOT NULL,
@@ -869,13 +820,11 @@ CREATE TABLE IF NOT EXISTS `customer_field` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.customer_field: 0 rows
-DELETE FROM `customer_field`;
 /*!40000 ALTER TABLE `customer_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_field` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.customer_group
-DROP TABLE IF EXISTS `customer_group`;
 CREATE TABLE IF NOT EXISTS `customer_group` (
   `customer_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `approval` int(1) NOT NULL,
@@ -888,7 +837,6 @@ CREATE TABLE IF NOT EXISTS `customer_group` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.customer_group: 1 rows
-DELETE FROM `customer_group`;
 /*!40000 ALTER TABLE `customer_group` DISABLE KEYS */;
 INSERT INTO `customer_group` (`customer_group_id`, `approval`, `company_id_display`, `company_id_required`, `tax_id_display`, `tax_id_required`, `sort_order`) VALUES
 	(1, 0, 1, 0, 0, 1, 1);
@@ -896,7 +844,6 @@ INSERT INTO `customer_group` (`customer_group_id`, `approval`, `company_id_displ
 
 
 -- Dumping structure for table zara.customer_group_description
-DROP TABLE IF EXISTS `customer_group_description`;
 CREATE TABLE IF NOT EXISTS `customer_group_description` (
   `customer_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -906,7 +853,6 @@ CREATE TABLE IF NOT EXISTS `customer_group_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.customer_group_description: 2 rows
-DELETE FROM `customer_group_description`;
 /*!40000 ALTER TABLE `customer_group_description` DISABLE KEYS */;
 INSERT INTO `customer_group_description` (`customer_group_id`, `language_id`, `name`, `description`) VALUES
 	(1, 2, 'Default', 'test'),
@@ -915,7 +861,6 @@ INSERT INTO `customer_group_description` (`customer_group_id`, `language_id`, `n
 
 
 -- Dumping structure for table zara.customer_history
-DROP TABLE IF EXISTS `customer_history`;
 CREATE TABLE IF NOT EXISTS `customer_history` (
   `customer_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -925,13 +870,11 @@ CREATE TABLE IF NOT EXISTS `customer_history` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.customer_history: 0 rows
-DELETE FROM `customer_history`;
 /*!40000 ALTER TABLE `customer_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_history` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.customer_ip
-DROP TABLE IF EXISTS `customer_ip`;
 CREATE TABLE IF NOT EXISTS `customer_ip` (
   `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -942,7 +885,6 @@ CREATE TABLE IF NOT EXISTS `customer_ip` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.customer_ip: 1 rows
-DELETE FROM `customer_ip`;
 /*!40000 ALTER TABLE `customer_ip` DISABLE KEYS */;
 INSERT INTO `customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added`) VALUES
 	(1, 1, '127.0.0.1', '2013-06-25 16:08:34');
@@ -950,7 +892,6 @@ INSERT INTO `customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added`) 
 
 
 -- Dumping structure for table zara.customer_online
-DROP TABLE IF EXISTS `customer_online`;
 CREATE TABLE IF NOT EXISTS `customer_online` (
   `ip` varchar(40) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -961,13 +902,11 @@ CREATE TABLE IF NOT EXISTS `customer_online` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.customer_online: 0 rows
-DELETE FROM `customer_online`;
 /*!40000 ALTER TABLE `customer_online` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_online` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.customer_reward
-DROP TABLE IF EXISTS `customer_reward`;
 CREATE TABLE IF NOT EXISTS `customer_reward` (
   `customer_reward_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL DEFAULT '0',
@@ -979,13 +918,11 @@ CREATE TABLE IF NOT EXISTS `customer_reward` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.customer_reward: 0 rows
-DELETE FROM `customer_reward`;
 /*!40000 ALTER TABLE `customer_reward` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_reward` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.customer_transaction
-DROP TABLE IF EXISTS `customer_transaction`;
 CREATE TABLE IF NOT EXISTS `customer_transaction` (
   `customer_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -997,13 +934,11 @@ CREATE TABLE IF NOT EXISTS `customer_transaction` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.customer_transaction: 0 rows
-DELETE FROM `customer_transaction`;
 /*!40000 ALTER TABLE `customer_transaction` DISABLE KEYS */;
 /*!40000 ALTER TABLE `customer_transaction` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.custom_field
-DROP TABLE IF EXISTS `custom_field`;
 CREATE TABLE IF NOT EXISTS `custom_field` (
   `custom_field_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) NOT NULL,
@@ -1016,13 +951,11 @@ CREATE TABLE IF NOT EXISTS `custom_field` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.custom_field: 0 rows
-DELETE FROM `custom_field`;
 /*!40000 ALTER TABLE `custom_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.custom_field_description
-DROP TABLE IF EXISTS `custom_field_description`;
 CREATE TABLE IF NOT EXISTS `custom_field_description` (
   `custom_field_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1031,13 +964,11 @@ CREATE TABLE IF NOT EXISTS `custom_field_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.custom_field_description: 0 rows
-DELETE FROM `custom_field_description`;
 /*!40000 ALTER TABLE `custom_field_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.custom_field_to_customer_group
-DROP TABLE IF EXISTS `custom_field_to_customer_group`;
 CREATE TABLE IF NOT EXISTS `custom_field_to_customer_group` (
   `custom_field_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
@@ -1045,13 +976,11 @@ CREATE TABLE IF NOT EXISTS `custom_field_to_customer_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.custom_field_to_customer_group: 0 rows
-DELETE FROM `custom_field_to_customer_group`;
 /*!40000 ALTER TABLE `custom_field_to_customer_group` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field_to_customer_group` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.custom_field_value
-DROP TABLE IF EXISTS `custom_field_value`;
 CREATE TABLE IF NOT EXISTS `custom_field_value` (
   `custom_field_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `custom_field_id` int(11) NOT NULL,
@@ -1060,13 +989,11 @@ CREATE TABLE IF NOT EXISTS `custom_field_value` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.custom_field_value: 0 rows
-DELETE FROM `custom_field_value`;
 /*!40000 ALTER TABLE `custom_field_value` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field_value` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.custom_field_value_description
-DROP TABLE IF EXISTS `custom_field_value_description`;
 CREATE TABLE IF NOT EXISTS `custom_field_value_description` (
   `custom_field_value_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1076,13 +1003,11 @@ CREATE TABLE IF NOT EXISTS `custom_field_value_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.custom_field_value_description: 0 rows
-DELETE FROM `custom_field_value_description`;
 /*!40000 ALTER TABLE `custom_field_value_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `custom_field_value_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.download
-DROP TABLE IF EXISTS `download`;
 CREATE TABLE IF NOT EXISTS `download` (
   `download_id` int(11) NOT NULL AUTO_INCREMENT,
   `filename` varchar(128) NOT NULL,
@@ -1093,13 +1018,11 @@ CREATE TABLE IF NOT EXISTS `download` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.download: 0 rows
-DELETE FROM `download`;
 /*!40000 ALTER TABLE `download` DISABLE KEYS */;
 /*!40000 ALTER TABLE `download` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.download_description
-DROP TABLE IF EXISTS `download_description`;
 CREATE TABLE IF NOT EXISTS `download_description` (
   `download_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1108,13 +1031,11 @@ CREATE TABLE IF NOT EXISTS `download_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.download_description: 0 rows
-DELETE FROM `download_description`;
 /*!40000 ALTER TABLE `download_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `download_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.extension
-DROP TABLE IF EXISTS `extension`;
 CREATE TABLE IF NOT EXISTS `extension` (
   `extension_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) NOT NULL,
@@ -1123,7 +1044,6 @@ CREATE TABLE IF NOT EXISTS `extension` (
 ) ENGINE=MyISAM AUTO_INCREMENT=434 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.extension: 15 rows
-DELETE FROM `extension`;
 /*!40000 ALTER TABLE `extension` DISABLE KEYS */;
 INSERT INTO `extension` (`extension_id`, `type`, `code`) VALUES
 	(23, 'payment', 'cod'),
@@ -1145,7 +1065,6 @@ INSERT INTO `extension` (`extension_id`, `type`, `code`) VALUES
 
 
 -- Dumping structure for table zara.filter
-DROP TABLE IF EXISTS `filter`;
 CREATE TABLE IF NOT EXISTS `filter` (
   `filter_id` int(11) NOT NULL AUTO_INCREMENT,
   `filter_group_id` int(11) NOT NULL,
@@ -1154,13 +1073,11 @@ CREATE TABLE IF NOT EXISTS `filter` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.filter: 0 rows
-DELETE FROM `filter`;
 /*!40000 ALTER TABLE `filter` DISABLE KEYS */;
 /*!40000 ALTER TABLE `filter` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.filter_description
-DROP TABLE IF EXISTS `filter_description`;
 CREATE TABLE IF NOT EXISTS `filter_description` (
   `filter_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1170,13 +1087,11 @@ CREATE TABLE IF NOT EXISTS `filter_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.filter_description: 0 rows
-DELETE FROM `filter_description`;
 /*!40000 ALTER TABLE `filter_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `filter_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.filter_group
-DROP TABLE IF EXISTS `filter_group`;
 CREATE TABLE IF NOT EXISTS `filter_group` (
   `filter_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL,
@@ -1184,13 +1099,11 @@ CREATE TABLE IF NOT EXISTS `filter_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.filter_group: 0 rows
-DELETE FROM `filter_group`;
 /*!40000 ALTER TABLE `filter_group` DISABLE KEYS */;
 /*!40000 ALTER TABLE `filter_group` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.filter_group_description
-DROP TABLE IF EXISTS `filter_group_description`;
 CREATE TABLE IF NOT EXISTS `filter_group_description` (
   `filter_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1199,13 +1112,11 @@ CREATE TABLE IF NOT EXISTS `filter_group_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.filter_group_description: 0 rows
-DELETE FROM `filter_group_description`;
 /*!40000 ALTER TABLE `filter_group_description` DISABLE KEYS */;
 /*!40000 ALTER TABLE `filter_group_description` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.geo_zone
-DROP TABLE IF EXISTS `geo_zone`;
 CREATE TABLE IF NOT EXISTS `geo_zone` (
   `geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
@@ -1216,7 +1127,6 @@ CREATE TABLE IF NOT EXISTS `geo_zone` (
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.geo_zone: 2 rows
-DELETE FROM `geo_zone`;
 /*!40000 ALTER TABLE `geo_zone` DISABLE KEYS */;
 INSERT INTO `geo_zone` (`geo_zone_id`, `name`, `description`, `date_modified`, `date_added`) VALUES
 	(3, 'UK VAT Zone', 'UK VAT', '2010-02-26 22:33:24', '2009-01-06 23:26:25'),
@@ -1225,7 +1135,6 @@ INSERT INTO `geo_zone` (`geo_zone_id`, `name`, `description`, `date_modified`, `
 
 
 -- Dumping structure for table zara.information
-DROP TABLE IF EXISTS `information`;
 CREATE TABLE IF NOT EXISTS `information` (
   `information_id` int(11) NOT NULL AUTO_INCREMENT,
   `bottom` int(1) NOT NULL DEFAULT '0',
@@ -1237,7 +1146,6 @@ CREATE TABLE IF NOT EXISTS `information` (
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.information: 7 rows
-DELETE FROM `information`;
 /*!40000 ALTER TABLE `information` DISABLE KEYS */;
 INSERT INTO `information` (`information_id`, `bottom`, `sort_order`, `top`, `top_order`, `status`) VALUES
 	(3, 0, 3, 0, 0, 1),
@@ -1251,7 +1159,6 @@ INSERT INTO `information` (`information_id`, `bottom`, `sort_order`, `top`, `top
 
 
 -- Dumping structure for table zara.information_description
-DROP TABLE IF EXISTS `information_description`;
 CREATE TABLE IF NOT EXISTS `information_description` (
   `information_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1261,7 +1168,6 @@ CREATE TABLE IF NOT EXISTS `information_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.information_description: 14 rows
-DELETE FROM `information_description`;
 /*!40000 ALTER TABLE `information_description` DISABLE KEYS */;
 INSERT INTO `information_description` (`information_id`, `language_id`, `title`, `description`) VALUES
 	(7, 2, 'Dịch vụ', '&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Đoạn 1.10.32 trong &quot;De Finibus Bonorum et Malorum&quot; viết bởi Cicero năm 45 trước Công Nguyên&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Một đoạn dịch của H. Rackham năm 1914&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?&quot;&lt;/p&gt;\r\n\r\n&lt;h3 style=&quot;margin: 0px 0px 14px; padding: 0px; font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans; line-height: normal;&quot;&gt;Đoạn 1.10.33 trong &quot;De Finibus Bonorum et Malorum&quot; viết bởi Cicero năm 45 trước Công Nguyên&lt;/h3&gt;\r\n\r\n&lt;p style=&quot;text-align: justify; font-size: 11px; line-height: 14px; margin: 0px 0px 14px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans;&quot;&gt;&quot;At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.&quot;&lt;/p&gt;\r\n'),
@@ -1282,7 +1188,6 @@ INSERT INTO `information_description` (`information_id`, `language_id`, `title`,
 
 
 -- Dumping structure for table zara.information_to_layout
-DROP TABLE IF EXISTS `information_to_layout`;
 CREATE TABLE IF NOT EXISTS `information_to_layout` (
   `information_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1291,13 +1196,11 @@ CREATE TABLE IF NOT EXISTS `information_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.information_to_layout: 0 rows
-DELETE FROM `information_to_layout`;
 /*!40000 ALTER TABLE `information_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `information_to_layout` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.information_to_store
-DROP TABLE IF EXISTS `information_to_store`;
 CREATE TABLE IF NOT EXISTS `information_to_store` (
   `information_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1305,7 +1208,6 @@ CREATE TABLE IF NOT EXISTS `information_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.information_to_store: 7 rows
-DELETE FROM `information_to_store`;
 /*!40000 ALTER TABLE `information_to_store` DISABLE KEYS */;
 INSERT INTO `information_to_store` (`information_id`, `store_id`) VALUES
 	(3, 0),
@@ -1319,7 +1221,6 @@ INSERT INTO `information_to_store` (`information_id`, `store_id`) VALUES
 
 
 -- Dumping structure for table zara.language
-DROP TABLE IF EXISTS `language`;
 CREATE TABLE IF NOT EXISTS `language` (
   `language_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
@@ -1335,7 +1236,6 @@ CREATE TABLE IF NOT EXISTS `language` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.language: 2 rows
-DELETE FROM `language`;
 /*!40000 ALTER TABLE `language` DISABLE KEYS */;
 INSERT INTO `language` (`language_id`, `name`, `code`, `locale`, `image`, `directory`, `filename`, `sort_order`, `status`) VALUES
 	(2, 'Vietnamese', 'vi', 'vi_VN.UTF-8,vi_VN,vi-vn,vietnamese', 'vn.png', 'vietnamese', 'vietnamese', 0, 1),
@@ -1344,7 +1244,6 @@ INSERT INTO `language` (`language_id`, `name`, `code`, `locale`, `image`, `direc
 
 
 -- Dumping structure for table zara.layout
-DROP TABLE IF EXISTS `layout`;
 CREATE TABLE IF NOT EXISTS `layout` (
   `layout_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -1352,7 +1251,6 @@ CREATE TABLE IF NOT EXISTS `layout` (
 ) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.layout: 13 rows
-DELETE FROM `layout`;
 /*!40000 ALTER TABLE `layout` DISABLE KEYS */;
 INSERT INTO `layout` (`layout_id`, `name`) VALUES
 	(1, 'Home'),
@@ -1372,7 +1270,6 @@ INSERT INTO `layout` (`layout_id`, `name`) VALUES
 
 
 -- Dumping structure for table zara.layout_route
-DROP TABLE IF EXISTS `layout_route`;
 CREATE TABLE IF NOT EXISTS `layout_route` (
   `layout_route_id` int(11) NOT NULL AUTO_INCREMENT,
   `layout_id` int(11) NOT NULL,
@@ -1382,7 +1279,6 @@ CREATE TABLE IF NOT EXISTS `layout_route` (
 ) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.layout_route: 13 rows
-DELETE FROM `layout_route`;
 /*!40000 ALTER TABLE `layout_route` DISABLE KEYS */;
 INSERT INTO `layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`) VALUES
 	(30, 6, 0, 'account'),
@@ -1402,7 +1298,6 @@ INSERT INTO `layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`)
 
 
 -- Dumping structure for table zara.length_class
-DROP TABLE IF EXISTS `length_class`;
 CREATE TABLE IF NOT EXISTS `length_class` (
   `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `value` decimal(15,8) NOT NULL,
@@ -1410,7 +1305,6 @@ CREATE TABLE IF NOT EXISTS `length_class` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.length_class: 3 rows
-DELETE FROM `length_class`;
 /*!40000 ALTER TABLE `length_class` DISABLE KEYS */;
 INSERT INTO `length_class` (`length_class_id`, `value`) VALUES
 	(1, 1.00000000),
@@ -1420,7 +1314,6 @@ INSERT INTO `length_class` (`length_class_id`, `value`) VALUES
 
 
 -- Dumping structure for table zara.length_class_description
-DROP TABLE IF EXISTS `length_class_description`;
 CREATE TABLE IF NOT EXISTS `length_class_description` (
   `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -1430,7 +1323,6 @@ CREATE TABLE IF NOT EXISTS `length_class_description` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.length_class_description: 6 rows
-DELETE FROM `length_class_description`;
 /*!40000 ALTER TABLE `length_class_description` DISABLE KEYS */;
 INSERT INTO `length_class_description` (`length_class_id`, `language_id`, `title`, `unit`) VALUES
 	(1, 2, 'Centimeter', 'cm'),
@@ -1443,7 +1335,6 @@ INSERT INTO `length_class_description` (`length_class_id`, `language_id`, `title
 
 
 -- Dumping structure for table zara.manufacturer
-DROP TABLE IF EXISTS `manufacturer`;
 CREATE TABLE IF NOT EXISTS `manufacturer` (
   `manufacturer_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -1454,7 +1345,6 @@ CREATE TABLE IF NOT EXISTS `manufacturer` (
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.manufacturer: 2 rows
-DELETE FROM `manufacturer`;
 /*!40000 ALTER TABLE `manufacturer` DISABLE KEYS */;
 INSERT INTO `manufacturer` (`manufacturer_id`, `name`, `description`, `image`, `sort_order`) VALUES
 	(5, 'Phan-nguyen2', '', 'data/logo_Zara.png', 0),
@@ -1463,7 +1353,6 @@ INSERT INTO `manufacturer` (`manufacturer_id`, `name`, `description`, `image`, `
 
 
 -- Dumping structure for table zara.manufacturer_to_store
-DROP TABLE IF EXISTS `manufacturer_to_store`;
 CREATE TABLE IF NOT EXISTS `manufacturer_to_store` (
   `manufacturer_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1471,7 +1360,6 @@ CREATE TABLE IF NOT EXISTS `manufacturer_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.manufacturer_to_store: 2 rows
-DELETE FROM `manufacturer_to_store`;
 /*!40000 ALTER TABLE `manufacturer_to_store` DISABLE KEYS */;
 INSERT INTO `manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 	(5, 0),
@@ -1480,7 +1368,6 @@ INSERT INTO `manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 
 
 -- Dumping structure for table zara.news
-DROP TABLE IF EXISTS `news`;
 CREATE TABLE IF NOT EXISTS `news` (
   `news_id` int(11) NOT NULL AUTO_INCREMENT,
   `manufacturer_id` int(11) DEFAULT NULL,
@@ -1497,7 +1384,6 @@ CREATE TABLE IF NOT EXISTS `news` (
 ) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table zara.news: 12 rows
-DELETE FROM `news`;
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
 INSERT INTO `news` (`news_id`, `manufacturer_id`, `image`, `date_available`, `sort_order`, `comment`, `approved`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
 	(1, 0, 'data/sanpham1.jpg', '2013-05-19', 1, 1, 1, 1, '2013-05-21 00:20:55', '2013-05-22 09:07:12', 6),
@@ -1516,7 +1402,6 @@ INSERT INTO `news` (`news_id`, `manufacturer_id`, `image`, `date_available`, `so
 
 
 -- Dumping structure for table zara.news_category
-DROP TABLE IF EXISTS `news_category`;
 CREATE TABLE IF NOT EXISTS `news_category` (
   `news_category_id` int(11) NOT NULL AUTO_INCREMENT,
   `theme_id` int(11) DEFAULT '0',
@@ -1532,7 +1417,6 @@ CREATE TABLE IF NOT EXISTS `news_category` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table zara.news_category: 2 rows
-DELETE FROM `news_category`;
 /*!40000 ALTER TABLE `news_category` DISABLE KEYS */;
 INSERT INTO `news_category` (`news_category_id`, `theme_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
 	(1, 0, '', 0, 1, 1, 4, 1, '2013-05-20 23:56:00', '2013-05-23 23:57:18'),
@@ -1541,7 +1425,6 @@ INSERT INTO `news_category` (`news_category_id`, `theme_id`, `image`, `parent_id
 
 
 -- Dumping structure for table zara.news_category_description
-DROP TABLE IF EXISTS `news_category_description`;
 CREATE TABLE IF NOT EXISTS `news_category_description` (
   `news_category_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1554,7 +1437,6 @@ CREATE TABLE IF NOT EXISTS `news_category_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table zara.news_category_description: 2 rows
-DELETE FROM `news_category_description`;
 /*!40000 ALTER TABLE `news_category_description` DISABLE KEYS */;
 INSERT INTO `news_category_description` (`news_category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
 	(1, 2, 'Tin nóng hàng ngày', '', '', ''),
@@ -1563,7 +1445,6 @@ INSERT INTO `news_category_description` (`news_category_id`, `language_id`, `nam
 
 
 -- Dumping structure for table zara.news_category_to_layout
-DROP TABLE IF EXISTS `news_category_to_layout`;
 CREATE TABLE IF NOT EXISTS `news_category_to_layout` (
   `news_category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1572,13 +1453,11 @@ CREATE TABLE IF NOT EXISTS `news_category_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table zara.news_category_to_layout: 0 rows
-DELETE FROM `news_category_to_layout`;
 /*!40000 ALTER TABLE `news_category_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `news_category_to_layout` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.news_category_to_store
-DROP TABLE IF EXISTS `news_category_to_store`;
 CREATE TABLE IF NOT EXISTS `news_category_to_store` (
   `news_category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1586,7 +1465,6 @@ CREATE TABLE IF NOT EXISTS `news_category_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table zara.news_category_to_store: 2 rows
-DELETE FROM `news_category_to_store`;
 /*!40000 ALTER TABLE `news_category_to_store` DISABLE KEYS */;
 INSERT INTO `news_category_to_store` (`news_category_id`, `store_id`) VALUES
 	(1, 0),
@@ -1595,7 +1473,6 @@ INSERT INTO `news_category_to_store` (`news_category_id`, `store_id`) VALUES
 
 
 -- Dumping structure for table zara.news_comment
-DROP TABLE IF EXISTS `news_comment`;
 CREATE TABLE IF NOT EXISTS `news_comment` (
   `comment_id` int(11) NOT NULL AUTO_INCREMENT,
   `news_id` int(11) NOT NULL,
@@ -1611,13 +1488,11 @@ CREATE TABLE IF NOT EXISTS `news_comment` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table zara.news_comment: 0 rows
-DELETE FROM `news_comment`;
 /*!40000 ALTER TABLE `news_comment` DISABLE KEYS */;
 /*!40000 ALTER TABLE `news_comment` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.news_description
-DROP TABLE IF EXISTS `news_description`;
 CREATE TABLE IF NOT EXISTS `news_description` (
   `news_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -1631,7 +1506,6 @@ CREATE TABLE IF NOT EXISTS `news_description` (
 ) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table zara.news_description: 12 rows
-DELETE FROM `news_description`;
 /*!40000 ALTER TABLE `news_description` DISABLE KEYS */;
 INSERT INTO `news_description` (`news_id`, `language_id`, `name`, `short_description`, `description`, `meta_description`, `meta_keyword`) VALUES
 	(1, 2, 'Sale off 50% hàng Lascote', 'ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…', '&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Tahoma, Geneva, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 18px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;&quot;&gt;ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…ZALORA tổ chức 2 tiếng Flash Sale: giảm 20% tất cả sản phẩm từ 1h - 3h trưa ngày 26/02/13. Kỷ niệm ngày sinh nhật tròn 1 tuổi, ZALORA.VN tổ chức 2 giờ Flash Sale duy nhất, giảm 20% tất cả các sản phẩm trên website, bao gồm các sản phẩm đang giảm giá từ 1h – 3h. Đánh dấu chặng đường phát triển 1 năm, ZALORA Việt Nam gửi đến quý khách hàng “Tuần lễ siêu giảm giá” với sự tham gia của các thương hiệu thời trang nổi tiếng trong và ngoài nước như: Gosto, Sidewalk, Zilandi, Yves Saint Laurent, Something Borrowed, Christion Breton…&lt;/span&gt;&lt;/p&gt;\r\n', '', ''),
@@ -1650,7 +1524,6 @@ INSERT INTO `news_description` (`news_id`, `language_id`, `name`, `short_descrip
 
 
 -- Dumping structure for table zara.news_related
-DROP TABLE IF EXISTS `news_related`;
 CREATE TABLE IF NOT EXISTS `news_related` (
   `news_id` int(11) NOT NULL,
   `related_id` int(11) NOT NULL,
@@ -1658,13 +1531,11 @@ CREATE TABLE IF NOT EXISTS `news_related` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table zara.news_related: 0 rows
-DELETE FROM `news_related`;
 /*!40000 ALTER TABLE `news_related` DISABLE KEYS */;
 /*!40000 ALTER TABLE `news_related` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.news_tag
-DROP TABLE IF EXISTS `news_tag`;
 CREATE TABLE IF NOT EXISTS `news_tag` (
   `news_tag_id` int(11) NOT NULL AUTO_INCREMENT,
   `news_id` int(11) NOT NULL,
@@ -1674,7 +1545,6 @@ CREATE TABLE IF NOT EXISTS `news_tag` (
 ) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table zara.news_tag: 2 rows
-DELETE FROM `news_tag`;
 /*!40000 ALTER TABLE `news_tag` DISABLE KEYS */;
 INSERT INTO `news_tag` (`news_tag_id`, `news_id`, `language_id`, `tag`) VALUES
 	(18, 1, 2, 'sale off'),
@@ -1683,7 +1553,6 @@ INSERT INTO `news_tag` (`news_tag_id`, `news_id`, `language_id`, `tag`) VALUES
 
 
 -- Dumping structure for table zara.news_to_category
-DROP TABLE IF EXISTS `news_to_category`;
 CREATE TABLE IF NOT EXISTS `news_to_category` (
   `news_id` int(11) NOT NULL,
   `news_category_id` int(11) NOT NULL,
@@ -1691,7 +1560,6 @@ CREATE TABLE IF NOT EXISTS `news_to_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table zara.news_to_category: 15 rows
-DELETE FROM `news_to_category`;
 /*!40000 ALTER TABLE `news_to_category` DISABLE KEYS */;
 INSERT INTO `news_to_category` (`news_id`, `news_category_id`) VALUES
 	(1, 1),
@@ -1713,7 +1581,6 @@ INSERT INTO `news_to_category` (`news_id`, `news_category_id`) VALUES
 
 
 -- Dumping structure for table zara.news_to_layout
-DROP TABLE IF EXISTS `news_to_layout`;
 CREATE TABLE IF NOT EXISTS `news_to_layout` (
   `news_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1722,13 +1589,11 @@ CREATE TABLE IF NOT EXISTS `news_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table zara.news_to_layout: 0 rows
-DELETE FROM `news_to_layout`;
 /*!40000 ALTER TABLE `news_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `news_to_layout` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.news_to_store
-DROP TABLE IF EXISTS `news_to_store`;
 CREATE TABLE IF NOT EXISTS `news_to_store` (
   `news_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -1736,7 +1601,6 @@ CREATE TABLE IF NOT EXISTS `news_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Dumping data for table zara.news_to_store: 12 rows
-DELETE FROM `news_to_store`;
 /*!40000 ALTER TABLE `news_to_store` DISABLE KEYS */;
 INSERT INTO `news_to_store` (`news_id`, `store_id`) VALUES
 	(1, 0),
@@ -1755,7 +1619,6 @@ INSERT INTO `news_to_store` (`news_id`, `store_id`) VALUES
 
 
 -- Dumping structure for table zara.option
-DROP TABLE IF EXISTS `option`;
 CREATE TABLE IF NOT EXISTS `option` (
   `option_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) NOT NULL,
@@ -1764,7 +1627,6 @@ CREATE TABLE IF NOT EXISTS `option` (
 ) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.option: 4 rows
-DELETE FROM `option`;
 /*!40000 ALTER TABLE `option` DISABLE KEYS */;
 INSERT INTO `option` (`option_id`, `type`, `sort_order`) VALUES
 	(16, 'radio', 5),
@@ -1775,7 +1637,6 @@ INSERT INTO `option` (`option_id`, `type`, `sort_order`) VALUES
 
 
 -- Dumping structure for table zara.option_description
-DROP TABLE IF EXISTS `option_description`;
 CREATE TABLE IF NOT EXISTS `option_description` (
   `option_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1784,7 +1645,6 @@ CREATE TABLE IF NOT EXISTS `option_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.option_description: 8 rows
-DELETE FROM `option_description`;
 /*!40000 ALTER TABLE `option_description` DISABLE KEYS */;
 INSERT INTO `option_description` (`option_id`, `language_id`, `name`) VALUES
 	(16, 2, 'Kích cỡ khác:'),
@@ -1799,7 +1659,6 @@ INSERT INTO `option_description` (`option_id`, `language_id`, `name`) VALUES
 
 
 -- Dumping structure for table zara.option_value
-DROP TABLE IF EXISTS `option_value`;
 CREATE TABLE IF NOT EXISTS `option_value` (
   `option_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `option_id` int(11) NOT NULL,
@@ -1809,7 +1668,6 @@ CREATE TABLE IF NOT EXISTS `option_value` (
 ) ENGINE=MyISAM AUTO_INCREMENT=97 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.option_value: 48 rows
-DELETE FROM `option_value`;
 /*!40000 ALTER TABLE `option_value` DISABLE KEYS */;
 INSERT INTO `option_value` (`option_value_id`, `option_id`, `image`, `sort_order`) VALUES
 	(52, 13, 'data/colors/xanh_muoc_bien.png', 4),
@@ -1864,7 +1722,6 @@ INSERT INTO `option_value` (`option_value_id`, `option_id`, `image`, `sort_order
 
 
 -- Dumping structure for table zara.option_value_description
-DROP TABLE IF EXISTS `option_value_description`;
 CREATE TABLE IF NOT EXISTS `option_value_description` (
   `option_value_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1874,7 +1731,6 @@ CREATE TABLE IF NOT EXISTS `option_value_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.option_value_description: 96 rows
-DELETE FROM `option_value_description`;
 /*!40000 ALTER TABLE `option_value_description` DISABLE KEYS */;
 INSERT INTO `option_value_description` (`option_value_id`, `language_id`, `option_id`, `name`) VALUES
 	(54, 2, 13, 'Xanh lá cây'),
@@ -1977,7 +1833,6 @@ INSERT INTO `option_value_description` (`option_value_id`, `language_id`, `optio
 
 
 -- Dumping structure for table zara.order
-DROP TABLE IF EXISTS `order`;
 CREATE TABLE IF NOT EXISTS `order` (
   `order_id` int(11) NOT NULL AUTO_INCREMENT,
   `invoice_no` int(11) NOT NULL DEFAULT '0',
@@ -2041,7 +1896,6 @@ CREATE TABLE IF NOT EXISTS `order` (
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.order: 9 rows
-DELETE FROM `order`;
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
 INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_company_id`, `payment_tax_id`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `date_added`, `date_modified`) VALUES
 	(1, 0, 'INV-2013-00', 0, 'Thời Trang Phan Nguyễn', 'http://zara.lc/', 1, 1, 'Khiem', 'Pham', 'rongandat@gmail.com', '01694042658', '', 'Khiem', 'Pham', 'fsdf', '', '', '423423', '', '4234242', '', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Thu tiền khi giao hàng', 'cod', 'Khiem', 'Pham', 'fsdf', '423423', '', '4234242', '', 'Viet Nam', 230, 'Ha Noi', 3776, '', 'Miễn phí vận chuyển', 'free.free', '', 1100.0000, 0, 0, 0.0000, 2, 2, 'USD', 1.00000000, '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; rv:21.0) Gecko/20100101 Firefox/21.0 FirePHP/0.7.2', 'en-US,en;q=0.5', '2013-06-26 10:37:43', '2013-06-26 10:37:43'),
@@ -2057,7 +1911,6 @@ INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `st
 
 
 -- Dumping structure for table zara.order_download
-DROP TABLE IF EXISTS `order_download`;
 CREATE TABLE IF NOT EXISTS `order_download` (
   `order_download_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2070,13 +1923,11 @@ CREATE TABLE IF NOT EXISTS `order_download` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.order_download: 0 rows
-DELETE FROM `order_download`;
 /*!40000 ALTER TABLE `order_download` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_download` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.order_field
-DROP TABLE IF EXISTS `order_field`;
 CREATE TABLE IF NOT EXISTS `order_field` (
   `order_id` int(11) NOT NULL,
   `custom_field_id` int(11) NOT NULL,
@@ -2088,13 +1939,11 @@ CREATE TABLE IF NOT EXISTS `order_field` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.order_field: 0 rows
-DELETE FROM `order_field`;
 /*!40000 ALTER TABLE `order_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_field` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.order_fraud
-DROP TABLE IF EXISTS `order_fraud`;
 CREATE TABLE IF NOT EXISTS `order_fraud` (
   `order_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -2153,13 +2002,11 @@ CREATE TABLE IF NOT EXISTS `order_fraud` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.order_fraud: 0 rows
-DELETE FROM `order_fraud`;
 /*!40000 ALTER TABLE `order_fraud` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_fraud` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.order_history
-DROP TABLE IF EXISTS `order_history`;
 CREATE TABLE IF NOT EXISTS `order_history` (
   `order_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2171,7 +2018,6 @@ CREATE TABLE IF NOT EXISTS `order_history` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.order_history: 1 rows
-DELETE FROM `order_history`;
 /*!40000 ALTER TABLE `order_history` DISABLE KEYS */;
 INSERT INTO `order_history` (`order_history_id`, `order_id`, `order_status_id`, `notify`, `comment`, `date_added`) VALUES
 	(1, 8, 1, 1, '', '2013-06-26 10:52:35');
@@ -2179,7 +2025,6 @@ INSERT INTO `order_history` (`order_history_id`, `order_id`, `order_status_id`, 
 
 
 -- Dumping structure for table zara.order_option
-DROP TABLE IF EXISTS `order_option`;
 CREATE TABLE IF NOT EXISTS `order_option` (
   `order_option_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2193,7 +2038,6 @@ CREATE TABLE IF NOT EXISTS `order_option` (
 ) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.order_option: 25 rows
-DELETE FROM `order_option`;
 /*!40000 ALTER TABLE `order_option` DISABLE KEYS */;
 INSERT INTO `order_option` (`order_option_id`, `order_id`, `order_product_id`, `product_option_id`, `product_option_value_id`, `name`, `value`, `type`) VALUES
 	(1, 1, 1, 231, 37, 'Kích cỡ theo chữ', 'XS', 'radio'),
@@ -2225,7 +2069,6 @@ INSERT INTO `order_option` (`order_option_id`, `order_id`, `order_product_id`, `
 
 
 -- Dumping structure for table zara.order_product
-DROP TABLE IF EXISTS `order_product`;
 CREATE TABLE IF NOT EXISTS `order_product` (
   `order_product_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2241,7 +2084,6 @@ CREATE TABLE IF NOT EXISTS `order_product` (
 ) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.order_product: 33 rows
-DELETE FROM `order_product`;
 /*!40000 ALTER TABLE `order_product` DISABLE KEYS */;
 INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name`, `model`, `quantity`, `price`, `total`, `tax`, `reward`) VALUES
 	(1, 1, 30, 'Ao Sơ Mi 01', 'asm1', 2, 80.0000, 160.0000, 0.0000, 400),
@@ -2281,7 +2123,6 @@ INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name
 
 
 -- Dumping structure for table zara.order_status
-DROP TABLE IF EXISTS `order_status`;
 CREATE TABLE IF NOT EXISTS `order_status` (
   `order_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -2290,7 +2131,6 @@ CREATE TABLE IF NOT EXISTS `order_status` (
 ) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.order_status: 28 rows
-DELETE FROM `order_status`;
 /*!40000 ALTER TABLE `order_status` DISABLE KEYS */;
 INSERT INTO `order_status` (`order_status_id`, `language_id`, `name`) VALUES
 	(2, 2, 'Processing'),
@@ -2325,7 +2165,6 @@ INSERT INTO `order_status` (`order_status_id`, `language_id`, `name`) VALUES
 
 
 -- Dumping structure for table zara.order_total
-DROP TABLE IF EXISTS `order_total`;
 CREATE TABLE IF NOT EXISTS `order_total` (
   `order_total_id` int(10) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2339,7 +2178,6 @@ CREATE TABLE IF NOT EXISTS `order_total` (
 ) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.order_total: 27 rows
-DELETE FROM `order_total`;
 /*!40000 ALTER TABLE `order_total` DISABLE KEYS */;
 INSERT INTO `order_total` (`order_total_id`, `order_id`, `code`, `title`, `text`, `value`, `sort_order`) VALUES
 	(1, 1, 'sub_total', 'Thành tiền:', '$1,100.00', 1100.0000, 1),
@@ -2373,7 +2211,6 @@ INSERT INTO `order_total` (`order_total_id`, `order_id`, `code`, `title`, `text`
 
 
 -- Dumping structure for table zara.order_voucher
-DROP TABLE IF EXISTS `order_voucher`;
 CREATE TABLE IF NOT EXISTS `order_voucher` (
   `order_voucher_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2391,13 +2228,11 @@ CREATE TABLE IF NOT EXISTS `order_voucher` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.order_voucher: 0 rows
-DELETE FROM `order_voucher`;
 /*!40000 ALTER TABLE `order_voucher` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_voucher` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.product
-DROP TABLE IF EXISTS `product`;
 CREATE TABLE IF NOT EXISTS `product` (
   `product_id` int(11) NOT NULL AUTO_INCREMENT,
   `model` varchar(64) NOT NULL,
@@ -2434,7 +2269,6 @@ CREATE TABLE IF NOT EXISTS `product` (
 ) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.product: 8 rows
-DELETE FROM `product`;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
 	(28, 'ap1', '', '', '', '', '', '', '', 932, 5, 'data/IMG_3920.JPG', 5, 1, 100.0000, 200, 9, '2009-02-03', 0.00000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:06:50', '2013-06-16 17:18:42', 119),
@@ -2443,13 +2277,12 @@ INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`
 	(55, 'asm5', '', '', '', '', '', '', '', 100, 5, 'data/IMG_4125.JPG', 9, 1, 400.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2013-06-16 17:45:52', '2013-06-16 17:47:53', 2),
 	(50, 'asm2', '', '', '', '', '', '', '', 100, 5, 'data/IMG_3909.JPG', 9, 1, 400.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2013-06-16 16:54:51', '2013-06-16 17:19:24', 18),
 	(51, 'ap2', '', '', '', '', '', '', '', 98, 5, 'data/IMG_3963.JPG', 9, 1, 400.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2013-06-16 17:19:33', '2013-06-16 17:24:16', 41),
-	(52, 'ap3', '', '', '', '', '', '', '', 100, 5, 'data/IMG_3969.JPG', 9, 1, 400.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2013-06-16 17:24:24', '2013-06-16 17:29:36', 7),
+	(52, 'ap3', '', '', '', '', '', '', '', 100, 5, 'data/IMG_4126.JPG', 9, 1, 400.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2013-06-16 17:24:24', '2013-07-03 22:10:02', 7),
 	(53, 'asm3', '', '', '', '', '', '', '', 100, 5, 'data/IMG_4105.JPG', 9, 1, 400.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2013-06-16 17:29:49', '2013-06-20 17:28:06', 57);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.product_attribute
-DROP TABLE IF EXISTS `product_attribute`;
 CREATE TABLE IF NOT EXISTS `product_attribute` (
   `product_id` int(11) NOT NULL,
   `attribute_id` int(11) NOT NULL,
@@ -2459,13 +2292,11 @@ CREATE TABLE IF NOT EXISTS `product_attribute` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.product_attribute: 0 rows
-DELETE FROM `product_attribute`;
 /*!40000 ALTER TABLE `product_attribute` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_attribute` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.product_description
-DROP TABLE IF EXISTS `product_description`;
 CREATE TABLE IF NOT EXISTS `product_description` (
   `product_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -2480,7 +2311,6 @@ CREATE TABLE IF NOT EXISTS `product_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.product_description: 16 rows
-DELETE FROM `product_description`;
 /*!40000 ALTER TABLE `product_description` DISABLE KEYS */;
 INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `description`, `sort_description`, `meta_description`, `meta_keyword`, `tag`) VALUES
 	(28, 2, 'Ao Phông 01', '&lt;p&gt;Sản phẩm cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Sản phẩm cực đẹp&lt;/p&gt;\r\n', 'Ao Phông 01', 'Ao Phông 01', ''),
@@ -2489,8 +2319,8 @@ INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `descrip
 	(50, 3, 'Ao-So-MI-2', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', 'Ao-So-MI-2', 'Ao-So-MI-2', ''),
 	(51, 2, 'Ao Phông 02', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', 'Ao Phông 02', 'Ao Phông 02', 'Ao Sơ Mi'),
 	(51, 3, 'Ao Phông 02', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', 'Ao Phông 02', 'Ao Phông 02', ''),
-	(52, 2, 'Ao Phông 03', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', 'Ao Phông 03', 'Ao Phông 03', 'Ao Sơ Mi'),
 	(52, 3, 'Ao Phông 03', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', 'Ao Phông 03', 'Ao Phông 03', ''),
+	(52, 2, 'Ao Phông 03', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', 'Ao Phông 03', 'Ao Phông 03', 'Ao Sơ Mi'),
 	(53, 3, 'Ao-So-MI-3', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', 'Ao-So-MI-3', 'Ao-So-MI-3', ''),
 	(53, 2, 'Ao Sơ Mi 03', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', 'Ao Sơ Mi 03', 'Ao Sơ Mi 03', 'Ao Sơ Mi'),
 	(54, 2, 'Ao Sơ Mi 04', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', 'Ao Sơ Mi 04', 'Ao Sơ Mi 04', 'Ao Sơ Mi'),
@@ -2503,7 +2333,6 @@ INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `descrip
 
 
 -- Dumping structure for table zara.product_discount
-DROP TABLE IF EXISTS `product_discount`;
 CREATE TABLE IF NOT EXISTS `product_discount` (
   `product_discount_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2518,13 +2347,11 @@ CREATE TABLE IF NOT EXISTS `product_discount` (
 ) ENGINE=MyISAM AUTO_INCREMENT=456 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.product_discount: 0 rows
-DELETE FROM `product_discount`;
 /*!40000 ALTER TABLE `product_discount` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_discount` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.product_filter
-DROP TABLE IF EXISTS `product_filter`;
 CREATE TABLE IF NOT EXISTS `product_filter` (
   `product_id` int(11) NOT NULL,
   `filter_id` int(11) NOT NULL,
@@ -2532,23 +2359,20 @@ CREATE TABLE IF NOT EXISTS `product_filter` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.product_filter: 0 rows
-DELETE FROM `product_filter`;
 /*!40000 ALTER TABLE `product_filter` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_filter` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.product_image
-DROP TABLE IF EXISTS `product_image`;
 CREATE TABLE IF NOT EXISTS `product_image` (
   `product_image_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_image_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2493 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2497 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.product_image: 30 rows
-DELETE FROM `product_image`;
 /*!40000 ALTER TABLE `product_image` DISABLE KEYS */;
 INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
 	(2483, 55, 'data/IMG_4126.JPG', 1),
@@ -2560,10 +2384,10 @@ INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_or
 	(2430, 28, 'data/IMG_3922.JPG', 0),
 	(2482, 55, 'data/IMG_4125.JPG', 0),
 	(2478, 54, 'data/IMG_4134.JPG', 0),
-	(2453, 52, 'data/IMG_3969.JPG', 0),
-	(2454, 52, 'data/IMG_3970.JPG', 2),
-	(2455, 52, 'data/IMG_3971.JPG', 1),
-	(2456, 52, 'data/IMG_3972.JPG', 0),
+	(2496, 52, 'no_image.jpg', 0),
+	(2495, 52, 'no_image.jpg', 1),
+	(2494, 52, 'no_image.jpg', 2),
+	(2493, 52, 'no_image.jpg', 0),
 	(2477, 54, 'data/IMG_4132.JPG', 0),
 	(2476, 54, 'data/IMG_4131.JPG', 1),
 	(2489, 53, 'no_image.jpg', 1),
@@ -2585,7 +2409,6 @@ INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_or
 
 
 -- Dumping structure for table zara.product_option
-DROP TABLE IF EXISTS `product_option`;
 CREATE TABLE IF NOT EXISTS `product_option` (
   `product_option_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2596,7 +2419,6 @@ CREATE TABLE IF NOT EXISTS `product_option` (
 ) ENGINE=MyISAM AUTO_INCREMENT=241 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.product_option: 8 rows
-DELETE FROM `product_option`;
 /*!40000 ALTER TABLE `product_option` DISABLE KEYS */;
 INSERT INTO `product_option` (`product_option_id`, `product_id`, `option_id`, `option_value`, `required`) VALUES
 	(237, 53, 14, '', 1),
@@ -2611,7 +2433,6 @@ INSERT INTO `product_option` (`product_option_id`, `product_id`, `option_id`, `o
 
 
 -- Dumping structure for table zara.product_option_value
-DROP TABLE IF EXISTS `product_option_value`;
 CREATE TABLE IF NOT EXISTS `product_option_value` (
   `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_option_id` int(11) NOT NULL,
@@ -2630,7 +2451,6 @@ CREATE TABLE IF NOT EXISTS `product_option_value` (
 ) ENGINE=MyISAM AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.product_option_value: 24 rows
-DELETE FROM `product_option_value`;
 /*!40000 ALTER TABLE `product_option_value` DISABLE KEYS */;
 INSERT INTO `product_option_value` (`product_option_value_id`, `product_option_id`, `product_id`, `option_id`, `option_value_id`, `quantity`, `subtract`, `price`, `price_prefix`, `points`, `points_prefix`, `weight`, `weight_prefix`) VALUES
 	(51, 238, 54, 14, 60, 80, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
@@ -2641,12 +2461,12 @@ INSERT INTO `product_option_value` (`product_option_value_id`, `product_option_i
 	(42, 235, 51, 14, 60, 78, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(43, 235, 51, 14, 63, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(41, 235, 51, 14, 62, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(46, 236, 52, 14, 62, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(44, 236, 52, 14, 60, 80, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(45, 236, 52, 14, 63, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(40, 234, 50, 14, 62, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(38, 234, 50, 14, 60, 80, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(39, 234, 50, 14, 63, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(44, 236, 52, 14, 60, 80, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(46, 236, 52, 14, 62, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(29, 231, 30, 14, 63, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(37, 231, 30, 14, 60, 78, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(30, 231, 30, 14, 62, 9, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
@@ -2661,7 +2481,6 @@ INSERT INTO `product_option_value` (`product_option_value_id`, `product_option_i
 
 
 -- Dumping structure for table zara.product_related
-DROP TABLE IF EXISTS `product_related`;
 CREATE TABLE IF NOT EXISTS `product_related` (
   `product_id` int(11) NOT NULL,
   `related_id` int(11) NOT NULL,
@@ -2669,7 +2488,6 @@ CREATE TABLE IF NOT EXISTS `product_related` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.product_related: 18 rows
-DELETE FROM `product_related`;
 /*!40000 ALTER TABLE `product_related` DISABLE KEYS */;
 INSERT INTO `product_related` (`product_id`, `related_id`) VALUES
 	(28, 30),
@@ -2694,17 +2512,15 @@ INSERT INTO `product_related` (`product_id`, `related_id`) VALUES
 
 
 -- Dumping structure for table zara.product_reward
-DROP TABLE IF EXISTS `product_reward`;
 CREATE TABLE IF NOT EXISTS `product_reward` (
   `product_reward_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL DEFAULT '0',
   `customer_group_id` int(11) NOT NULL DEFAULT '0',
   `points` int(8) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_reward_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=589 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=590 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.product_reward: 8 rows
-DELETE FROM `product_reward`;
 /*!40000 ALTER TABLE `product_reward` DISABLE KEYS */;
 INSERT INTO `product_reward` (`product_reward_id`, `product_id`, `customer_group_id`, `points`) VALUES
 	(572, 28, 1, 400),
@@ -2714,12 +2530,11 @@ INSERT INTO `product_reward` (`product_reward_id`, `product_id`, `customer_group
 	(587, 53, 1, 200),
 	(577, 51, 1, 200),
 	(575, 50, 1, 200),
-	(579, 52, 1, 200);
+	(589, 52, 1, 200);
 /*!40000 ALTER TABLE `product_reward` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.product_special
-DROP TABLE IF EXISTS `product_special`;
 CREATE TABLE IF NOT EXISTS `product_special` (
   `product_special_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2730,10 +2545,9 @@ CREATE TABLE IF NOT EXISTS `product_special` (
   `date_end` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`product_special_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=495 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=497 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.product_special: 8 rows
-DELETE FROM `product_special`;
 /*!40000 ALTER TABLE `product_special` DISABLE KEYS */;
 INSERT INTO `product_special` (`product_special_id`, `product_id`, `customer_group_id`, `priority`, `price`, `date_start`, `date_end`) VALUES
 	(482, 50, 1, 2, 90.0000, '0000-00-00', '0000-00-00'),
@@ -2742,13 +2556,12 @@ INSERT INTO `product_special` (`product_special_id`, `product_id`, `customer_gro
 	(481, 50, 1, 1, 80.0000, '0000-00-00', '0000-00-00'),
 	(486, 51, 1, 2, 90.0000, '0000-00-00', '0000-00-00'),
 	(485, 51, 1, 1, 80.0000, '0000-00-00', '0000-00-00'),
-	(490, 52, 1, 2, 90.0000, '0000-00-00', '0000-00-00'),
-	(489, 52, 1, 1, 80.0000, '0000-00-00', '0000-00-00');
+	(496, 52, 1, 2, 90.0000, '0000-00-00', '0000-00-00'),
+	(495, 52, 1, 1, 80.0000, '0000-00-00', '0000-00-00');
 /*!40000 ALTER TABLE `product_special` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.product_to_category
-DROP TABLE IF EXISTS `product_to_category`;
 CREATE TABLE IF NOT EXISTS `product_to_category` (
   `product_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
@@ -2756,7 +2569,6 @@ CREATE TABLE IF NOT EXISTS `product_to_category` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.product_to_category: 16 rows
-DELETE FROM `product_to_category`;
 /*!40000 ALTER TABLE `product_to_category` DISABLE KEYS */;
 INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 	(28, 33),
@@ -2779,7 +2591,6 @@ INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 
 
 -- Dumping structure for table zara.product_to_download
-DROP TABLE IF EXISTS `product_to_download`;
 CREATE TABLE IF NOT EXISTS `product_to_download` (
   `product_id` int(11) NOT NULL,
   `download_id` int(11) NOT NULL,
@@ -2787,13 +2598,11 @@ CREATE TABLE IF NOT EXISTS `product_to_download` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.product_to_download: 0 rows
-DELETE FROM `product_to_download`;
 /*!40000 ALTER TABLE `product_to_download` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_to_download` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.product_to_layout
-DROP TABLE IF EXISTS `product_to_layout`;
 CREATE TABLE IF NOT EXISTS `product_to_layout` (
   `product_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -2802,13 +2611,11 @@ CREATE TABLE IF NOT EXISTS `product_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.product_to_layout: 0 rows
-DELETE FROM `product_to_layout`;
 /*!40000 ALTER TABLE `product_to_layout` DISABLE KEYS */;
 /*!40000 ALTER TABLE `product_to_layout` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.product_to_store
-DROP TABLE IF EXISTS `product_to_store`;
 CREATE TABLE IF NOT EXISTS `product_to_store` (
   `product_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -2816,7 +2623,6 @@ CREATE TABLE IF NOT EXISTS `product_to_store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.product_to_store: 8 rows
-DELETE FROM `product_to_store`;
 /*!40000 ALTER TABLE `product_to_store` DISABLE KEYS */;
 INSERT INTO `product_to_store` (`product_id`, `store_id`) VALUES
 	(28, 0),
@@ -2831,7 +2637,6 @@ INSERT INTO `product_to_store` (`product_id`, `store_id`) VALUES
 
 
 -- Dumping structure for table zara.return
-DROP TABLE IF EXISTS `return`;
 CREATE TABLE IF NOT EXISTS `return` (
   `return_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2856,13 +2661,11 @@ CREATE TABLE IF NOT EXISTS `return` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.return: 0 rows
-DELETE FROM `return`;
 /*!40000 ALTER TABLE `return` DISABLE KEYS */;
 /*!40000 ALTER TABLE `return` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.return_action
-DROP TABLE IF EXISTS `return_action`;
 CREATE TABLE IF NOT EXISTS `return_action` (
   `return_action_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -2871,7 +2674,6 @@ CREATE TABLE IF NOT EXISTS `return_action` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.return_action: 6 rows
-DELETE FROM `return_action`;
 /*!40000 ALTER TABLE `return_action` DISABLE KEYS */;
 INSERT INTO `return_action` (`return_action_id`, `language_id`, `name`) VALUES
 	(1, 2, 'Refunded'),
@@ -2884,7 +2686,6 @@ INSERT INTO `return_action` (`return_action_id`, `language_id`, `name`) VALUES
 
 
 -- Dumping structure for table zara.return_history
-DROP TABLE IF EXISTS `return_history`;
 CREATE TABLE IF NOT EXISTS `return_history` (
   `return_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `return_id` int(11) NOT NULL,
@@ -2896,13 +2697,11 @@ CREATE TABLE IF NOT EXISTS `return_history` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.return_history: 0 rows
-DELETE FROM `return_history`;
 /*!40000 ALTER TABLE `return_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `return_history` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.return_reason
-DROP TABLE IF EXISTS `return_reason`;
 CREATE TABLE IF NOT EXISTS `return_reason` (
   `return_reason_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -2911,7 +2710,6 @@ CREATE TABLE IF NOT EXISTS `return_reason` (
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.return_reason: 10 rows
-DELETE FROM `return_reason`;
 /*!40000 ALTER TABLE `return_reason` DISABLE KEYS */;
 INSERT INTO `return_reason` (`return_reason_id`, `language_id`, `name`) VALUES
 	(1, 2, 'Dead On Arrival'),
@@ -2928,7 +2726,6 @@ INSERT INTO `return_reason` (`return_reason_id`, `language_id`, `name`) VALUES
 
 
 -- Dumping structure for table zara.return_status
-DROP TABLE IF EXISTS `return_status`;
 CREATE TABLE IF NOT EXISTS `return_status` (
   `return_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -2937,7 +2734,6 @@ CREATE TABLE IF NOT EXISTS `return_status` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.return_status: 6 rows
-DELETE FROM `return_status`;
 /*!40000 ALTER TABLE `return_status` DISABLE KEYS */;
 INSERT INTO `return_status` (`return_status_id`, `language_id`, `name`) VALUES
 	(1, 2, 'Pending'),
@@ -2950,7 +2746,6 @@ INSERT INTO `return_status` (`return_status_id`, `language_id`, `name`) VALUES
 
 
 -- Dumping structure for table zara.review
-DROP TABLE IF EXISTS `review`;
 CREATE TABLE IF NOT EXISTS `review` (
   `review_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2966,7 +2761,6 @@ CREATE TABLE IF NOT EXISTS `review` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.review: 1 rows
-DELETE FROM `review`;
 /*!40000 ALTER TABLE `review` DISABLE KEYS */;
 INSERT INTO `review` (`review_id`, `product_id`, `customer_id`, `author`, `text`, `rating`, `status`, `date_added`, `date_modified`) VALUES
 	(1, 30, 0, 'fsd', 'fsdfsdfsdfsfsfsdfsf sdf sf sf sdf sdfsdf sd', 13, 0, '2013-06-04 14:52:37', '0000-00-00 00:00:00');
@@ -2974,7 +2768,6 @@ INSERT INTO `review` (`review_id`, `product_id`, `customer_id`, `author`, `text`
 
 
 -- Dumping structure for table zara.setting
-DROP TABLE IF EXISTS `setting`;
 CREATE TABLE IF NOT EXISTS `setting` (
   `setting_id` int(11) NOT NULL AUTO_INCREMENT,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -2983,10 +2776,9 @@ CREATE TABLE IF NOT EXISTS `setting` (
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4756 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5074 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zara.setting: 139 rows
-DELETE FROM `setting`;
+-- Dumping data for table zara.setting: 140 rows
 /*!40000 ALTER TABLE `setting` DISABLE KEYS */;
 INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `serialized`) VALUES
 	(1, 0, 'shipping', 'shipping_sort_order', '3', 0),
@@ -3133,7 +2925,6 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 
 
 -- Dumping structure for table zara.stock_status
-DROP TABLE IF EXISTS `stock_status`;
 CREATE TABLE IF NOT EXISTS `stock_status` (
   `stock_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -3142,7 +2933,6 @@ CREATE TABLE IF NOT EXISTS `stock_status` (
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.stock_status: 8 rows
-DELETE FROM `stock_status`;
 /*!40000 ALTER TABLE `stock_status` DISABLE KEYS */;
 INSERT INTO `stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 	(7, 2, 'In Stock'),
@@ -3157,7 +2947,6 @@ INSERT INTO `stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 
 
 -- Dumping structure for table zara.store
-DROP TABLE IF EXISTS `store`;
 CREATE TABLE IF NOT EXISTS `store` (
   `store_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -3167,13 +2956,11 @@ CREATE TABLE IF NOT EXISTS `store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.store: 0 rows
-DELETE FROM `store`;
 /*!40000 ALTER TABLE `store` DISABLE KEYS */;
 /*!40000 ALTER TABLE `store` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.tax_class
-DROP TABLE IF EXISTS `tax_class`;
 CREATE TABLE IF NOT EXISTS `tax_class` (
   `tax_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(32) NOT NULL,
@@ -3184,7 +2971,6 @@ CREATE TABLE IF NOT EXISTS `tax_class` (
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.tax_class: 2 rows
-DELETE FROM `tax_class`;
 /*!40000 ALTER TABLE `tax_class` DISABLE KEYS */;
 INSERT INTO `tax_class` (`tax_class_id`, `title`, `description`, `date_added`, `date_modified`) VALUES
 	(9, 'Taxable Goods', 'Taxed Stuff', '2009-01-06 23:21:53', '2011-09-23 14:07:50'),
@@ -3193,7 +2979,6 @@ INSERT INTO `tax_class` (`tax_class_id`, `title`, `description`, `date_added`, `
 
 
 -- Dumping structure for table zara.tax_rate
-DROP TABLE IF EXISTS `tax_rate`;
 CREATE TABLE IF NOT EXISTS `tax_rate` (
   `tax_rate_id` int(11) NOT NULL AUTO_INCREMENT,
   `geo_zone_id` int(11) NOT NULL DEFAULT '0',
@@ -3206,7 +2991,6 @@ CREATE TABLE IF NOT EXISTS `tax_rate` (
 ) ENGINE=MyISAM AUTO_INCREMENT=88 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.tax_rate: 2 rows
-DELETE FROM `tax_rate`;
 /*!40000 ALTER TABLE `tax_rate` DISABLE KEYS */;
 INSERT INTO `tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `date_added`, `date_modified`) VALUES
 	(86, 3, 'VAT (17.5%)', 17.5000, 'P', '2011-03-09 21:17:10', '2011-09-22 22:24:29'),
@@ -3215,7 +2999,6 @@ INSERT INTO `tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `d
 
 
 -- Dumping structure for table zara.tax_rate_to_customer_group
-DROP TABLE IF EXISTS `tax_rate_to_customer_group`;
 CREATE TABLE IF NOT EXISTS `tax_rate_to_customer_group` (
   `tax_rate_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
@@ -3223,7 +3006,6 @@ CREATE TABLE IF NOT EXISTS `tax_rate_to_customer_group` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.tax_rate_to_customer_group: 2 rows
-DELETE FROM `tax_rate_to_customer_group`;
 /*!40000 ALTER TABLE `tax_rate_to_customer_group` DISABLE KEYS */;
 INSERT INTO `tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`) VALUES
 	(86, 1),
@@ -3232,7 +3014,6 @@ INSERT INTO `tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`) VA
 
 
 -- Dumping structure for table zara.tax_rule
-DROP TABLE IF EXISTS `tax_rule`;
 CREATE TABLE IF NOT EXISTS `tax_rule` (
   `tax_rule_id` int(11) NOT NULL AUTO_INCREMENT,
   `tax_class_id` int(11) NOT NULL,
@@ -3243,7 +3024,6 @@ CREATE TABLE IF NOT EXISTS `tax_rule` (
 ) ENGINE=MyISAM AUTO_INCREMENT=129 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.tax_rule: 4 rows
-DELETE FROM `tax_rule`;
 /*!40000 ALTER TABLE `tax_rule` DISABLE KEYS */;
 INSERT INTO `tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`, `priority`) VALUES
 	(121, 10, 86, 'payment', 1),
@@ -3254,16 +3034,14 @@ INSERT INTO `tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`, `
 
 
 -- Dumping structure for table zara.url_alias
-DROP TABLE IF EXISTS `url_alias`;
 CREATE TABLE IF NOT EXISTS `url_alias` (
   `url_alias_id` int(11) NOT NULL AUTO_INCREMENT,
   `query` varchar(255) NOT NULL,
   `keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`url_alias_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=874 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=875 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.url_alias: 33 rows
-DELETE FROM `url_alias`;
 /*!40000 ALTER TABLE `url_alias` DISABLE KEYS */;
 INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 	(873, 'product_id=30', 'ao-so-mi-nam-01'),
@@ -3295,7 +3073,7 @@ INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 	(862, 'product_id=28', 'ao-phong-phan-nguyen-01'),
 	(865, 'product_id=50', 'ao-so-mi-nam-02'),
 	(866, 'product_id=51', 'ao-phong-phan-nguyen-02'),
-	(867, 'product_id=52', 'ao-phong-phan-nguyen-03'),
+	(874, 'product_id=52', 'ao-phong-phan-nguyen-03'),
 	(872, 'product_id=53', 'ao-so-mi-nam04'),
 	(870, 'product_id=54', 'ao-so-mi-nam4'),
 	(871, 'product_id=55', 'ao-so-mi-nu-05');
@@ -3303,7 +3081,6 @@ INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 
 
 -- Dumping structure for table zara.user
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_group_id` int(11) NOT NULL,
@@ -3321,15 +3098,13 @@ CREATE TABLE IF NOT EXISTS `user` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.user: 1 rows
-DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `code`, `ip`, `status`, `date_added`) VALUES
-	(1, 1, 'admin', 'eb3b619f4e511cdecae9a01f958f9322a445eeb6', '16c32b3ef', '', '', 'admin@admin.com', '', '127.0.0.1', 1, '2013-05-16 23:52:20');
+	(1, 1, 'admin', 'eb3b619f4e511cdecae9a01f958f9322a445eeb6', '16c32b3ef', '', '', 'admin@admin.com', '', '::1', 1, '2013-05-16 23:52:20');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.user_group
-DROP TABLE IF EXISTS `user_group`;
 CREATE TABLE IF NOT EXISTS `user_group` (
   `user_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -3338,7 +3113,6 @@ CREATE TABLE IF NOT EXISTS `user_group` (
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.user_group: 2 rows
-DELETE FROM `user_group`;
 /*!40000 ALTER TABLE `user_group` DISABLE KEYS */;
 INSERT INTO `user_group` (`user_group_id`, `name`, `permission`) VALUES
 	(1, 'Top Administrator', 'a:2:{s:6:"access";a:138:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";i:133;s:18:"module/tnt_newscat";i:134;s:13:"module/filter";i:135;s:28:"module/manufacturersdropdown";i:136;s:19:"module/filteroption";i:137;s:13:"shipping/free";}s:6:"modify";a:138:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:12:"catalog/news";i:8;s:21:"catalog/news_category";i:9;s:20:"catalog/news_comment";i:10;s:14:"catalog/option";i:11;s:15:"catalog/product";i:12;s:14:"catalog/review";i:13;s:18:"common/filemanager";i:14;s:13:"design/banner";i:15;s:19:"design/custom_field";i:16;s:13:"design/layout";i:17;s:14:"extension/feed";i:18;s:17:"extension/manager";i:19;s:16:"extension/module";i:20;s:17:"extension/payment";i:21;s:18:"extension/shipping";i:22;s:15:"extension/total";i:23;s:16:"feed/google_base";i:24;s:19:"feed/google_sitemap";i:25;s:20:"localisation/country";i:26;s:21:"localisation/currency";i:27;s:21:"localisation/geo_zone";i:28;s:21:"localisation/language";i:29;s:25:"localisation/length_class";i:30;s:25:"localisation/order_status";i:31;s:26:"localisation/return_action";i:32;s:26:"localisation/return_reason";i:33;s:26:"localisation/return_status";i:34;s:25:"localisation/stock_status";i:35;s:22:"localisation/tax_class";i:36;s:21:"localisation/tax_rate";i:37;s:25:"localisation/weight_class";i:38;s:17:"localisation/zone";i:39;s:14:"module/account";i:40;s:16:"module/affiliate";i:41;s:13:"module/banner";i:42;s:17:"module/bestseller";i:43;s:15:"module/carousel";i:44;s:15:"module/category";i:45;s:15:"module/featured";i:46;s:13:"module/filter";i:47;s:18:"module/google_talk";i:48;s:18:"module/information";i:49;s:13:"module/latest";i:50;s:20:"module/news_category";i:51;s:19:"module/newsfeatured";i:52;s:17:"module/newslatest";i:53;s:16:"module/slideshow";i:54;s:14:"module/special";i:55;s:12:"module/store";i:56;s:18:"module/tnt_newscat";i:57;s:20:"module/vqmod_manager";i:58;s:14:"module/welcome";i:59;s:24:"payment/authorizenet_aim";i:60;s:21:"payment/bank_transfer";i:61;s:14:"payment/cheque";i:62;s:11:"payment/cod";i:63;s:21:"payment/free_checkout";i:64;s:22:"payment/klarna_account";i:65;s:22:"payment/klarna_invoice";i:66;s:14:"payment/liqpay";i:67;s:20:"payment/moneybookers";i:68;s:14:"payment/nochex";i:69;s:15:"payment/paymate";i:70;s:16:"payment/paypoint";i:71;s:13:"payment/payza";i:72;s:26:"payment/perpetual_payments";i:73;s:14:"payment/pp_pro";i:74;s:17:"payment/pp_pro_uk";i:75;s:19:"payment/pp_standard";i:76;s:15:"payment/sagepay";i:77;s:22:"payment/sagepay_direct";i:78;s:18:"payment/sagepay_us";i:79;s:19:"payment/twocheckout";i:80;s:28:"payment/web_payment_software";i:81;s:16:"payment/worldpay";i:82;s:27:"report/affiliate_commission";i:83;s:22:"report/customer_credit";i:84;s:22:"report/customer_online";i:85;s:21:"report/customer_order";i:86;s:22:"report/customer_reward";i:87;s:24:"report/product_purchased";i:88;s:21:"report/product_viewed";i:89;s:18:"report/sale_coupon";i:90;s:17:"report/sale_order";i:91;s:18:"report/sale_return";i:92;s:20:"report/sale_shipping";i:93;s:15:"report/sale_tax";i:94;s:14:"sale/affiliate";i:95;s:12:"sale/contact";i:96;s:11:"sale/coupon";i:97;s:13:"sale/customer";i:98;s:20:"sale/customer_ban_ip";i:99;s:19:"sale/customer_group";i:100;s:10:"sale/order";i:101;s:11:"sale/return";i:102;s:12:"sale/voucher";i:103;s:18:"sale/voucher_theme";i:104;s:15:"setting/setting";i:105;s:13:"setting/store";i:106;s:16:"shipping/auspost";i:107;s:17:"shipping/citylink";i:108;s:14:"shipping/fedex";i:109;s:13:"shipping/flat";i:110;s:13:"shipping/free";i:111;s:13:"shipping/item";i:112;s:23:"shipping/parcelforce_48";i:113;s:15:"shipping/pickup";i:114;s:19:"shipping/royal_mail";i:115;s:12:"shipping/ups";i:116;s:13:"shipping/usps";i:117;s:15:"shipping/weight";i:118;s:11:"tool/backup";i:119;s:14:"tool/error_log";i:120;s:12:"total/coupon";i:121;s:12:"total/credit";i:122;s:14:"total/handling";i:123;s:16:"total/klarna_fee";i:124;s:19:"total/low_order_fee";i:125;s:12:"total/reward";i:126;s:14:"total/shipping";i:127;s:15:"total/sub_total";i:128;s:9:"total/tax";i:129;s:11:"total/total";i:130;s:13:"total/voucher";i:131;s:9:"user/user";i:132;s:20:"user/user_permission";i:133;s:18:"module/tnt_newscat";i:134;s:13:"module/filter";i:135;s:28:"module/manufacturersdropdown";i:136;s:19:"module/filteroption";i:137;s:13:"shipping/free";}}'),
@@ -3347,7 +3121,6 @@ INSERT INTO `user_group` (`user_group_id`, `name`, `permission`) VALUES
 
 
 -- Dumping structure for table zara.voucher
-DROP TABLE IF EXISTS `voucher`;
 CREATE TABLE IF NOT EXISTS `voucher` (
   `voucher_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -3365,13 +3138,11 @@ CREATE TABLE IF NOT EXISTS `voucher` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.voucher: 0 rows
-DELETE FROM `voucher`;
 /*!40000 ALTER TABLE `voucher` DISABLE KEYS */;
 /*!40000 ALTER TABLE `voucher` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.voucher_history
-DROP TABLE IF EXISTS `voucher_history`;
 CREATE TABLE IF NOT EXISTS `voucher_history` (
   `voucher_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `voucher_id` int(11) NOT NULL,
@@ -3382,13 +3153,11 @@ CREATE TABLE IF NOT EXISTS `voucher_history` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.voucher_history: 0 rows
-DELETE FROM `voucher_history`;
 /*!40000 ALTER TABLE `voucher_history` DISABLE KEYS */;
 /*!40000 ALTER TABLE `voucher_history` ENABLE KEYS */;
 
 
 -- Dumping structure for table zara.voucher_theme
-DROP TABLE IF EXISTS `voucher_theme`;
 CREATE TABLE IF NOT EXISTS `voucher_theme` (
   `voucher_theme_id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) NOT NULL,
@@ -3396,7 +3165,6 @@ CREATE TABLE IF NOT EXISTS `voucher_theme` (
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.voucher_theme: 3 rows
-DELETE FROM `voucher_theme`;
 /*!40000 ALTER TABLE `voucher_theme` DISABLE KEYS */;
 INSERT INTO `voucher_theme` (`voucher_theme_id`, `image`) VALUES
 	(8, 'data/demo/canon_eos_5d_2.jpg'),
@@ -3406,7 +3174,6 @@ INSERT INTO `voucher_theme` (`voucher_theme_id`, `image`) VALUES
 
 
 -- Dumping structure for table zara.voucher_theme_description
-DROP TABLE IF EXISTS `voucher_theme_description`;
 CREATE TABLE IF NOT EXISTS `voucher_theme_description` (
   `voucher_theme_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -3415,7 +3182,6 @@ CREATE TABLE IF NOT EXISTS `voucher_theme_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.voucher_theme_description: 6 rows
-DELETE FROM `voucher_theme_description`;
 /*!40000 ALTER TABLE `voucher_theme_description` DISABLE KEYS */;
 INSERT INTO `voucher_theme_description` (`voucher_theme_id`, `language_id`, `name`) VALUES
 	(6, 2, 'Christmas'),
@@ -3428,7 +3194,6 @@ INSERT INTO `voucher_theme_description` (`voucher_theme_id`, `language_id`, `nam
 
 
 -- Dumping structure for table zara.weight_class
-DROP TABLE IF EXISTS `weight_class`;
 CREATE TABLE IF NOT EXISTS `weight_class` (
   `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `value` decimal(15,8) NOT NULL DEFAULT '0.00000000',
@@ -3436,7 +3201,6 @@ CREATE TABLE IF NOT EXISTS `weight_class` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.weight_class: 4 rows
-DELETE FROM `weight_class`;
 /*!40000 ALTER TABLE `weight_class` DISABLE KEYS */;
 INSERT INTO `weight_class` (`weight_class_id`, `value`) VALUES
 	(1, 1.00000000),
@@ -3447,7 +3211,6 @@ INSERT INTO `weight_class` (`weight_class_id`, `value`) VALUES
 
 
 -- Dumping structure for table zara.weight_class_description
-DROP TABLE IF EXISTS `weight_class_description`;
 CREATE TABLE IF NOT EXISTS `weight_class_description` (
   `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -3457,7 +3220,6 @@ CREATE TABLE IF NOT EXISTS `weight_class_description` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.weight_class_description: 8 rows
-DELETE FROM `weight_class_description`;
 /*!40000 ALTER TABLE `weight_class_description` DISABLE KEYS */;
 INSERT INTO `weight_class_description` (`weight_class_id`, `language_id`, `title`, `unit`) VALUES
 	(1, 2, 'Kilogram', 'kg'),
@@ -3472,7 +3234,6 @@ INSERT INTO `weight_class_description` (`weight_class_id`, `language_id`, `title
 
 
 -- Dumping structure for table zara.zone
-DROP TABLE IF EXISTS `zone`;
 CREATE TABLE IF NOT EXISTS `zone` (
   `zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `country_id` int(11) NOT NULL,
@@ -3483,7 +3244,6 @@ CREATE TABLE IF NOT EXISTS `zone` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4033 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.zone: 3,985 rows
-DELETE FROM `zone`;
 /*!40000 ALTER TABLE `zone` DISABLE KEYS */;
 INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 	(1, 1, 'Badakhshan', 'BDS', 1),
@@ -7475,7 +7235,6 @@ INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 
 
 -- Dumping structure for table zara.zone_to_geo_zone
-DROP TABLE IF EXISTS `zone_to_geo_zone`;
 CREATE TABLE IF NOT EXISTS `zone_to_geo_zone` (
   `zone_to_geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `country_id` int(11) NOT NULL,
@@ -7487,7 +7246,6 @@ CREATE TABLE IF NOT EXISTS `zone_to_geo_zone` (
 ) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.zone_to_geo_zone: 2 rows
-DELETE FROM `zone_to_geo_zone`;
 /*!40000 ALTER TABLE `zone_to_geo_zone` DISABLE KEYS */;
 INSERT INTO `zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id`, `geo_zone_id`, `date_added`, `date_modified`) VALUES
 	(57, 222, 0, 3, '2010-02-26 22:33:24', '0000-00-00 00:00:00'),
