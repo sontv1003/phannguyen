@@ -5,6 +5,9 @@ class ModelCatalogProduct extends Model {
 		
 		$product_id = $this->db->getLastId();
 		
+		if (isset($data['image_representative'])) {
+			$this->db->query("UPDATE " . DB_PREFIX . "product SET image_representative = '" . $this->db->escape(html_entity_decode($data['image_representative'], ENT_QUOTES, 'UTF-8')) . "' WHERE product_id = '" . (int)$product_id . "'");
+		}
 		if (isset($data['image'])) {
 			$this->db->query("UPDATE " . DB_PREFIX . "product SET image = '" . $this->db->escape(html_entity_decode($data['image'], ENT_QUOTES, 'UTF-8')) . "' WHERE product_id = '" . (int)$product_id . "'");
 		}
@@ -123,7 +126,9 @@ class ModelCatalogProduct extends Model {
 		if (isset($data['image'])) {
 			$this->db->query("UPDATE " . DB_PREFIX . "product SET image = '" . $this->db->escape(html_entity_decode($data['image'], ENT_QUOTES, 'UTF-8')) . "' WHERE product_id = '" . (int)$product_id . "'");
 		}
-		
+		if (isset($data['image_representative'])) {
+			$this->db->query("UPDATE " . DB_PREFIX . "product SET image_representative = '" . $this->db->escape(html_entity_decode($data['image_representative'], ENT_QUOTES, 'UTF-8')) . "' WHERE product_id = '" . (int)$product_id . "'");
+		}
 		$this->db->query("DELETE FROM " . DB_PREFIX . "product_description WHERE product_id = '" . (int)$product_id . "'");
 		
 		foreach ($data['product_description'] as $language_id => $value) {

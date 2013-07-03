@@ -161,6 +161,12 @@
                             <td><input type="text" name="keyword" value="<?php echo $keyword; ?>" /></td>
                         </tr>
                         <tr>
+                            <td><?php echo $entry_image_representative; ?></td>
+                            <td><div class="image"><img src="<?php echo $thumb_representative; ?>" alt="" id="thumb_representative" /><br />
+                                    <input type="hidden" name="image_representative" value="<?php echo $image_representative; ?>" id="image_representative" />
+                                    <a onclick="image_upload('image_representative', 'thumb_representative');"><?php echo $text_browse; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onclick="$('#thumb_representative').attr('src', '<?php echo $no_image; ?>'); $('#image_representative').attr('value', '');"><?php echo $text_clear; ?></a></div></td>
+                        </tr>
+                        <tr>
                             <td><?php echo $entry_image; ?></td>
                             <td><div class="image"><img src="<?php echo $thumb; ?>" alt="" id="thumb" /><br />
                                     <input type="hidden" name="image" value="<?php echo $image; ?>" id="image" />
