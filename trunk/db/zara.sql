@@ -3,7 +3,7 @@
 -- Server version:               5.5.24-log - MySQL Community Server (GPL)
 -- Server OS:                    Win64
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2013-07-03 22:14:16
+-- Date/time:                    2013-07-03 22:19:36
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -2277,7 +2277,7 @@ INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`
 	(55, 'asm5', '', '', '', '', '', '', '', 100, 5, 'data/IMG_4125.JPG', 9, 1, 400.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2013-06-16 17:45:52', '2013-06-16 17:47:53', 2),
 	(50, 'asm2', '', '', '', '', '', '', '', 100, 5, 'data/IMG_3909.JPG', 9, 1, 400.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2013-06-16 16:54:51', '2013-06-16 17:19:24', 18),
 	(51, 'ap2', '', '', '', '', '', '', '', 98, 5, 'data/IMG_3963.JPG', 9, 1, 400.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2013-06-16 17:19:33', '2013-06-16 17:24:16', 41),
-	(52, 'ap3', '', '', '', '', '', '', '', 100, 5, 'data/IMG_4126.JPG', 9, 1, 400.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2013-06-16 17:24:24', '2013-07-03 22:10:02', 7),
+	(52, 'ap3', '', '', '', '', '', '', '', 100, 5, 'data/IMG_4126.JPG', 9, 1, 400.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2013-06-16 17:24:24', '2013-07-03 22:18:14', 7),
 	(53, 'asm3', '', '', '', '', '', '', '', 100, 5, 'data/IMG_4105.JPG', 9, 1, 400.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2013-06-16 17:29:49', '2013-06-20 17:28:06', 57);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
@@ -2320,7 +2320,6 @@ INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `descrip
 	(51, 2, 'Ao Phông 02', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', 'Ao Phông 02', 'Ao Phông 02', 'Ao Sơ Mi'),
 	(51, 3, 'Ao Phông 02', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', 'Ao Phông 02', 'Ao Phông 02', ''),
 	(52, 3, 'Ao Phông 03', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', 'Ao Phông 03', 'Ao Phông 03', ''),
-	(52, 2, 'Ao Phông 03', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', 'Ao Phông 03', 'Ao Phông 03', 'Ao Sơ Mi'),
 	(53, 3, 'Ao-So-MI-3', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', 'Ao-So-MI-3', 'Ao-So-MI-3', ''),
 	(53, 2, 'Ao Sơ Mi 03', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', 'Ao Sơ Mi 03', 'Ao Sơ Mi 03', 'Ao Sơ Mi'),
 	(54, 2, 'Ao Sơ Mi 04', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', 'Ao Sơ Mi 04', 'Ao Sơ Mi 04', 'Ao Sơ Mi'),
@@ -2328,7 +2327,8 @@ INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `descrip
 	(55, 2, 'Ao Sơ Mi 05', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', 'Ao Sơ Mi 05', 'Ao Sơ Mi 05', 'Ao Sơ Mi'),
 	(55, 3, 'Ao Sơ Mi 05', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', 'Ao Sơ Mi 05', 'Ao Sơ Mi 05', ''),
 	(30, 3, 'Ao-So-MI', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', 'Ao-So-MI', 'Ao-So-MI', ''),
-	(30, 2, 'Ao Sơ Mi 01', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', 'Ao Sơ Mi 01', 'Ao Sơ Mi 01', 'Ao Sơ Mi');
+	(30, 2, 'Ao Sơ Mi 01', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', 'Ao Sơ Mi 01', 'Ao Sơ Mi 01', 'Ao Sơ Mi'),
+	(52, 2, 'Ao Phông 03', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', '&lt;p&gt;Áo Sơ Mi Cực đẹp&lt;/p&gt;\r\n', 'Ao Phông 03', 'Ao Phông 03', 'Ao Sơ Mi');
 /*!40000 ALTER TABLE `product_description` ENABLE KEYS */;
 
 
@@ -2370,9 +2370,9 @@ CREATE TABLE IF NOT EXISTS `product_image` (
   `image` varchar(255) DEFAULT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_image_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2497 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2499 DEFAULT CHARSET=utf8;
 
--- Dumping data for table zara.product_image: 30 rows
+-- Dumping data for table zara.product_image: 28 rows
 /*!40000 ALTER TABLE `product_image` DISABLE KEYS */;
 INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
 	(2483, 55, 'data/IMG_4126.JPG', 1),
@@ -2384,10 +2384,8 @@ INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_or
 	(2430, 28, 'data/IMG_3922.JPG', 0),
 	(2482, 55, 'data/IMG_4125.JPG', 0),
 	(2478, 54, 'data/IMG_4134.JPG', 0),
-	(2496, 52, 'no_image.jpg', 0),
-	(2495, 52, 'no_image.jpg', 1),
-	(2494, 52, 'no_image.jpg', 2),
-	(2493, 52, 'no_image.jpg', 0),
+	(2498, 52, 'data/IMG_4126.JPG', 2),
+	(2497, 52, 'data/IMG_4124.JPG', 1),
 	(2477, 54, 'data/IMG_4132.JPG', 0),
 	(2476, 54, 'data/IMG_4131.JPG', 1),
 	(2489, 53, 'no_image.jpg', 1),
@@ -2461,12 +2459,12 @@ INSERT INTO `product_option_value` (`product_option_value_id`, `product_option_i
 	(42, 235, 51, 14, 60, 78, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(43, 235, 51, 14, 63, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(41, 235, 51, 14, 62, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(44, 236, 52, 14, 60, 80, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(46, 236, 52, 14, 62, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(45, 236, 52, 14, 63, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(40, 234, 50, 14, 62, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(38, 234, 50, 14, 60, 80, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(39, 234, 50, 14, 63, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-	(46, 236, 52, 14, 62, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
+	(44, 236, 52, 14, 60, 80, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(29, 231, 30, 14, 63, 10, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(37, 231, 30, 14, 60, 78, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 	(30, 231, 30, 14, 62, 9, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
@@ -2518,7 +2516,7 @@ CREATE TABLE IF NOT EXISTS `product_reward` (
   `customer_group_id` int(11) NOT NULL DEFAULT '0',
   `points` int(8) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_reward_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=590 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=591 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.product_reward: 8 rows
 /*!40000 ALTER TABLE `product_reward` DISABLE KEYS */;
@@ -2530,7 +2528,7 @@ INSERT INTO `product_reward` (`product_reward_id`, `product_id`, `customer_group
 	(587, 53, 1, 200),
 	(577, 51, 1, 200),
 	(575, 50, 1, 200),
-	(589, 52, 1, 200);
+	(590, 52, 1, 200);
 /*!40000 ALTER TABLE `product_reward` ENABLE KEYS */;
 
 
@@ -2545,7 +2543,7 @@ CREATE TABLE IF NOT EXISTS `product_special` (
   `date_end` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`product_special_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=497 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=499 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.product_special: 8 rows
 /*!40000 ALTER TABLE `product_special` DISABLE KEYS */;
@@ -2556,8 +2554,8 @@ INSERT INTO `product_special` (`product_special_id`, `product_id`, `customer_gro
 	(481, 50, 1, 1, 80.0000, '0000-00-00', '0000-00-00'),
 	(486, 51, 1, 2, 90.0000, '0000-00-00', '0000-00-00'),
 	(485, 51, 1, 1, 80.0000, '0000-00-00', '0000-00-00'),
-	(496, 52, 1, 2, 90.0000, '0000-00-00', '0000-00-00'),
-	(495, 52, 1, 1, 80.0000, '0000-00-00', '0000-00-00');
+	(498, 52, 1, 2, 90.0000, '0000-00-00', '0000-00-00'),
+	(497, 52, 1, 1, 80.0000, '0000-00-00', '0000-00-00');
 /*!40000 ALTER TABLE `product_special` ENABLE KEYS */;
 
 
@@ -3039,7 +3037,7 @@ CREATE TABLE IF NOT EXISTS `url_alias` (
   `query` varchar(255) NOT NULL,
   `keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`url_alias_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=875 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=876 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table zara.url_alias: 33 rows
 /*!40000 ALTER TABLE `url_alias` DISABLE KEYS */;
@@ -3073,7 +3071,7 @@ INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 	(862, 'product_id=28', 'ao-phong-phan-nguyen-01'),
 	(865, 'product_id=50', 'ao-so-mi-nam-02'),
 	(866, 'product_id=51', 'ao-phong-phan-nguyen-02'),
-	(874, 'product_id=52', 'ao-phong-phan-nguyen-03'),
+	(875, 'product_id=52', 'ao-phong-phan-nguyen-03'),
 	(872, 'product_id=53', 'ao-so-mi-nam04'),
 	(870, 'product_id=54', 'ao-so-mi-nam4'),
 	(871, 'product_id=55', 'ao-so-mi-nu-05');
