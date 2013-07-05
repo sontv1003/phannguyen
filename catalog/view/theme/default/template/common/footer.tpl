@@ -999,6 +999,7 @@ OpenCart is open source software and you are free to remove the powered by OpenC
 Please donate via PayPal to donate@opencart.com
 //-->
 </div>
+</div>
 
 </body>
 </html>

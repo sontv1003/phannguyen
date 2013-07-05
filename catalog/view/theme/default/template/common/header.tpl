@@ -155,6 +155,7 @@
         <?php echo $google_analytics; ?>
     </head>
     <body class="designPage homePage staticMenu">
+        <div id="wrapper">
         <div id="modal-ajax" class="modal hide fade">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
 
