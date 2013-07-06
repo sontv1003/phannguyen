@@ -34,7 +34,8 @@ class ControllerCommonHeader extends Controller {
         } else {
             $this->data['logo'] = '';
         }
-
+        $this->data['text_special'] = $this->language->get('text_special');
+        $this->data['special'] = $this->url->link('product/special');
         $this->language->load('common/header');
 
         $this->data['text_home'] = $this->language->get('text_home');
