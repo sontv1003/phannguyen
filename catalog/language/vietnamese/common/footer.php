@@ -14,5 +14,5 @@ $_['text_account']      = 'Tài khoản của tôi';
 $_['text_order']        = 'Lịch sử đơn hàng';
 $_['text_wishlist']     = 'Danh sách yêu thích';
 $_['text_newsletter']   = 'Thư thông báo';
-$_['text_powered']      = '';
+$_['text_powered']      = '© 2013 PHAN NGUYEN, all rights reserved. Thiết kế bởi  <a href="http://www.geckomedia.vn" target="_blank">GECKO MEDIA</a>';
 ?>

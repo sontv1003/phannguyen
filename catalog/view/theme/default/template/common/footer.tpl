@@ -47,19 +47,15 @@
 
 
     <div class="line-up">
-        <nav id="countries">
-
+        <nav id="countries" style="float: right;">
             <ul>
                 <li>
 
-                    <span>
+                    <span style="display: block; text-align: right;">
                         <?php echo $powered; ?>
                     </span>	
 
                 </li>
-
-
-
             </ul>
         </nav>
 
@@ -993,7 +989,6 @@
 OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
 Please donate via PayPal to donate@opencart.com
 //-->
-<div id="powered"><?php echo $powered; ?></div>
 <!--
 OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
 Please donate via PayPal to donate@opencart.com
