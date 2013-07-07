@@ -145,112 +145,111 @@
     <?php foreach ($stores as $store) { ?>
                 $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></iframe>');
     <?php } ?>
-                                                                                                
-                                                                                                
+                                                                                                        
+                                                                                                        
         });
-                                                                                                
-                                                                                             
+                                                                                                        
+                                                                                                     
         //--></script>
         <?php } ?>
         <?php echo $google_analytics; ?>
     </head>
     <body class="designPage homePage staticMenu">
         <div id="wrapper">
-        <div id="modal-ajax" class="modal hide fade">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            <div id="modal-ajax" class="modal hide fade">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
 
 
-            <div class="modal-body">
+                <div class="modal-body">
 
+                </div>
+                <div id="itxLoading" ></div>
             </div>
-            <div id="itxLoading" ></div>
-        </div>
-        <?php if ($logo) { ?>
-            <h1> 		 
-                <a href="<?php echo $home; ?>" class="fixed" id="logo" style="left: 55px;">
-                    <img  class="gaTrack gaViewEvent" alt="<?php echo $name; ?>" src="<?php echo $logo; ?>">
-                </a>
-            </h1>
-        <?php } ?>
+            <?php if ($logo) { ?>
+                <h1> 		 
+                    <a href="<?php echo $home; ?>" class="fixed" id="logo" style="left: 55px;">
+                        <img  class="gaTrack gaViewEvent" alt="<?php echo $name; ?>" src="<?php echo $logo; ?>">
+                    </a>
+                </h1>
+            <?php } ?>
 
-        <div id="container-nav">
-            <nav id="menu">
-                <ul id="mainNavigationMenu">
-                    <li id="menuItemData_363021">
-                        <a href="<?php echo $special; ?>"><?php echo $text_special; ?></a>
-                    </li>
-                    <li><i class="icon icon-line-menu-divider"></i> </li>
-                    <?php if ($categories) { ?>
-                        <?php foreach ($categories as $category) { ?>
-                            <li class="<?php echo ($category['category_id'] == $category_id) ? 'current' : '' ?>">
-                                <a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
-                                <?php if ($category['children']) { ?>
-                                    <?php for ($i = 0; $i < count($category['children']);) { ?>
-                                        <ul>
-                                            <?php $j = $i + ceil(count($category['children']) / $category['column']); ?>
-                                            <?php for (; $i < $j; $i++) { ?>
-                                                <?php if (isset($category['children'][$i])) { ?>
-                                                    <li><a href="<?php echo $category['children'][$i]['href']; ?>"><?php echo $category['children'][$i]['name']; ?></a></li>
-                                                <?php } ?>
-                                            <?php } ?>
-                                        </ul>
-                                    <?php } ?>
-                                <?php } ?>
-                            </li>
-                        <?php } ?>
-                    <?php } ?>
-<!--                    <li class="">
-                        <a href="<?php echo $news_brand_href ?>">Bộ sưu tập</a> 
-                        <ul>
-                            <?php foreach ($categoriesnews as $category) { ?>
-                                <li>
+            <div id="container-nav">
+                <nav id="menu">
+                    <ul id="mainNavigationMenu">
+                        <li id="menuItemData_363021">
+                            <a href="<?php echo $special; ?>"><?php echo $text_special; ?></a>
+                        </li>
+                        <li><i class="icon icon-line-menu-divider"></i> </li>
+                        <?php if ($categories) { ?>
+                            <?php foreach ($categories as $category) { ?>
+                                <li class="<?php echo ($category['category_id'] == $category_id) ? 'current' : '' ?>">
                                     <a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
+                                    <?php if ($category['children']) { ?>
+                                        <?php for ($i = 0; $i < count($category['children']);) { ?>
+                                            <ul>
+                                                <?php $j = $i + ceil(count($category['children']) / $category['column']); ?>
+                                                <?php for (; $i < $j; $i++) { ?>
+                                                    <?php if (isset($category['children'][$i])) { ?>
+                                                        <li><a href="<?php echo $category['children'][$i]['href']; ?>"><?php echo $category['children'][$i]['name']; ?></a></li>
+                                                    <?php } ?>
+                                                <?php } ?>
+                                            </ul>
+                                        <?php } ?>
+                                    <?php } ?>
                                 </li>
                             <?php } ?>
-                        </ul>
-
-                    </li>-->
-                    <?php echo $information ?>        
-
-                </ul>
-
-                <div id="search" class="search">
-                    <input type="text" class="textField searchTextField placeholder" size="18" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />
-                    <div class="button searchButton button-search"></div>
-                </div>
-
-        </div>
-
-
-
-        <div id="page-container">
-
-            <header class="content-main fixed" id="header" style="left: 0px;">
-                <!-- User menu section -->
-                <nav class="_menuUser">
-                    <ul id="header-actions">
-                        <?php if (!$logged) { ?>
-                            <li class="login-page"> 
-
-                                <?php echo $text_welcome; ?>
-
-                            </li>
-                        <?php } else { ?>
-                            <li class="member-page"> 
-                                <?php echo $text_logged; ?>
-                            </li>
                         <?php } ?>
-                        <?php echo $language; ?>
-                        <li class="miniShopCart" id="miniShopCart">
-                            <?php echo $cart; ?>
+                        <li>
+                            <a href="<?php echo $lookbook_href ?>">Bộ Sưu tập</a>
+                            <ul id="news_category" style="<?php echo(!empty($is_new)?'display: block':'') ?>" >
+                                <?php foreach ($categoriesnews as $category) { ?>
+                                    <li>
+                                        <a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
+                                    </li>
+                                <?php } ?>
+                            </ul>
                         </li>
-
-                        <li class="_userHelp">
-                            <a href="<?php echo $contact ?>"><?php echo $text_contact ?></a>
-                        </li>
+                        <?php echo $information ?>        
 
                     </ul>
-                </nav>
 
-            </header>
-            <div id="notification"></div>
+                    <div id="search" class="search">
+                        <input type="text" class="textField searchTextField placeholder" size="18" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />
+                        <div class="button searchButton button-search"></div>
+                    </div>
+
+            </div>
+
+
+
+            <div id="page-container">
+
+                <header class="content-main fixed" id="header" style="left: 0px;">
+                    <!-- User menu section -->
+                    <nav class="_menuUser">
+                        <ul id="header-actions">
+                            <?php if (!$logged) { ?>
+                                <li class="login-page"> 
+
+                                    <?php echo $text_welcome; ?>
+
+                                </li>
+                            <?php } else { ?>
+                                <li class="member-page"> 
+                                    <?php echo $text_logged; ?>
+                                </li>
+                            <?php } ?>
+                            <?php echo $language; ?>
+                            <li class="miniShopCart" id="miniShopCart">
+                                <?php echo $cart; ?>
+                            </li>
+
+                            <li class="_userHelp">
+                                <a href="<?php echo $contact ?>"><?php echo $text_contact ?></a>
+                            </li>
+
+                        </ul>
+                    </nav>
+
+                </header>
+                <div id="notification"></div>

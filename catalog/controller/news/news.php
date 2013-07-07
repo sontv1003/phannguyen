@@ -30,6 +30,7 @@ class ControllerNewsNews extends Controller {
 		);	
 		
 		$this->load->model('catalog/news_category');	
+                $this->data['is_new'] = true;
 		
 		if (isset($this->request->get['cat_id'])) {
 			$cat_id = '';
