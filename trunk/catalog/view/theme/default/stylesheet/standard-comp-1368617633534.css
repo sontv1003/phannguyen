@@ -1679,3 +1679,58 @@ h2.h2 {
 table.form tr td{
     padding: 5px 0;
 }
+
+
+.designPage #page-container #main {
+    display: block;
+    margin: 30px 0 0;
+    width: 100%
+}
+.page {
+    padding-left: 0;
+}
+#page-container {
+    margin-left: 230px;
+}
+.staticMenu .main section .head {
+    height: 80px;
+    width: 100%;
+}
+.body {
+    padding-top: 0;
+}
+.debug #main, .debug .look, .debug .details, .debug .detail {
+    border: 1px solid red;
+}
+.look {
+    margin: 0 auto;
+    overflow: hidden;
+}
+.look img.image {
+    background: url("images/loader.gif") no-repeat scroll 50% 50% transparent;
+    width: 100%;
+}
+.look .details {
+    font-size: 9px;
+    line-height: 14px;
+    margin: 10px 0 30px;
+    min-height: 80px;
+    padding: 0 15px;
+    text-align: center;
+}
+.look .details .detail {
+    display: inline-block;
+    margin-right: 5px;
+    white-space: nowrap;
+}
+.look .details span {
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 5px;
+}
+.look .share-container {
+    margin-top: 5px;
+}
+.look .share-container .icon-mail, .look .share-container .icon-print {
+    display: none;
+}

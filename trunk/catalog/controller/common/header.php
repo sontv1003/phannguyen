@@ -54,6 +54,7 @@ class ControllerCommonHeader extends Controller {
         $this->data['shopping_cart'] = $this->url->link('checkout/cart');
         $this->data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
         $this->data['news_brand_href'] = $this->url->link('news/news_category', 'cat_id=2', 'SSL');
+        $this->data['lookbook_href'] = $this->url->link('news/all');
         // Daniel's robot detector
         $status = true;
 
@@ -120,7 +121,6 @@ class ControllerCommonHeader extends Controller {
                         'href' => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id'])
                     );
                 }
-                $this->data['lookbook_href'] = $this->url->link('product/lookbook');
                 // Level 1
                 $this->data['categories'][] = array(
                     'name' => $category['name'],
@@ -130,6 +130,11 @@ class ControllerCommonHeader extends Controller {
                     'href' => $this->url->link('product/category', 'path=' . $category['category_id'])
                 );
             }
+        }
+        
+        $route = $this->request->get['route'];
+        if(current(explode('/', $route)) == 'news'){
+            $this->data['is_new'] = true;
         }
 
         $categoriesTop2 = $this->model_catalog_category->getCategoriesTop2();
