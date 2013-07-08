@@ -70,22 +70,24 @@
             var wwindow = $(window).width();
 
             var p_window = wwindow / hwindow;
-
+            var left = 0;
             if (p_window > p_image) {
                 c_width = wwindow / p_image * p_window;
                 c_height = c_width / p_image;
             } else if(hwindow >= actualHeight){
                 c_height = actualHeight;
                 c_width = actualWidth;
+                left = '-900';
             }else {
                 c_height = hwindow *  p_window /p_image;
                 c_width = c_height * p_image;
+                
             }
             console.debug(c_height);
             console.debug(p_window);
             console.debug(p_image);
 
-            var left = 0;
+            
             $('.fullImage').css('left', left + 'px');
 
             $('.fullImage').css('height', c_height);

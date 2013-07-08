@@ -27,6 +27,7 @@ $_['text_wait']         = 'Vui lòng đợi!';
 $_['text_tags']         = 'Tags:';
 $_['text_error']        = 'Không có sản phẩm!';
 
+
 // Entry
 $_['entry_name']        = 'Tên bạn:';
 $_['entry_review']      = 'Đánh giá của bạn:';
