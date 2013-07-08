@@ -177,7 +177,7 @@
                 <nav id="menu">
                     <ul id="mainNavigationMenu">
                         <li id="menuItemData_363021">
-                            <a href="<?php echo $special; ?>"><?php echo $text_special; ?></a>
+                            <a href="<?php echo $new_products; ?>"><?php echo $text_new_products; ?></a>
                         </li>
                         <li><i class="icon icon-line-menu-divider"></i> </li>
                         <?php if ($categories) { ?>
