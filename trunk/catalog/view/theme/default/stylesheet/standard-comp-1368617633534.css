@@ -1698,6 +1698,8 @@ table.form tr td{
 }
 .body {
     padding-top: 0;
+	 width: 80%;
+	 margin:0px auto;
 }
 .debug #main, .debug .look, .debug .details, .debug .detail {
     border: 1px solid red;
