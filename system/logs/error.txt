@@ -1521,3 +1521,6 @@
 2013-06-06 5:42:43 - PHP Warning:  Invalid argument supplied for foreach() in F:\zara\catalog\view\theme\default\template\common\footer.tpl on line 71
 2013-06-06 5:42:43 - PHP Notice:  Undefined variable: redirect in F:\zara\catalog\view\theme\default\template\common\footer.tpl on line 89
 2013-06-06 5:43:14 - PHP Notice:  Undefined variable: language in F:\zara\catalog\view\theme\default\template\common\footer.tpl on line 67
+2013-07-09 16:19:40 - PHP Warning:  file_put_contents(E:\Sources\phannguyen\vqmod/logs/Tue.log) [<a href='function.file-put-contents'>function.file-put-contents</a>]: failed to open stream: No such file or directory in C:\wamp\www\phannguyen\vqmod\vqmod.php on line 415
+2013-07-09 16:19:51 - PHP Warning:  file_put_contents(E:\Sources\phannguyen\vqmod/logs/Tue.log) [<a href='function.file-put-contents'>function.file-put-contents</a>]: failed to open stream: No such file or directory in C:\wamp\www\phannguyen\vqmod\vqmod.php on line 415
+2013-07-09 16:20:06 - PHP Warning:  file_put_contents(E:\Sources\phannguyen\vqmod/logs/Tue.log) [<a href='function.file-put-contents'>function.file-put-contents</a>]: failed to open stream: No such file or directory in C:\wamp\www\phannguyen\vqmod\vqmod.php on line 415
