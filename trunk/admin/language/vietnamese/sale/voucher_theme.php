@@ -5,8 +5,8 @@ $_['heading_title']      = 'Chủ đề chứng từ';
 // Text
 $_['text_success']       = 'Thành công: Bạn đã sửa đổi các chủ đề chứng từ!';
 $_['text_image_manager'] = 'Quản lý hình ảnh';
-$_['text_browse']        = 'Browse Files';
-$_['text_clear']         = 'Clear Image';
+$_['text_browse']        = 'Tìm ảnh';
+$_['text_clear']         = 'Xóa ảnh';
 
 // Column
 $_['column_name']        = 'Tên chứng từ';

@@ -145,15 +145,48 @@
     <?php foreach ($stores as $store) { ?>
                 $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></iframe>');
     <?php } ?>
-                                                                                                        
-                                                                                                        
+                                                                                                                                
+                                                                                                                                
         });
-                                                                                                        
-                                                                                                     
+                                                                                                                                
+                                                                                                                             
         //--></script>
         <?php } ?>
         <?php echo $google_analytics; ?>
     </head>
+
+    <style type="text/css">
+        .staticMenu #logo {
+            position: absolute;
+        }
+
+
+        .staticMenu #container-nav {
+            height: 330px;
+            overflow: hidden;
+            position: absolute;
+        }
+
+        .staticMenu #header {
+            position: absolute;
+        }
+
+
+        #sidebar {
+            position: absolute;
+        }
+        .no-touch .product-card .right {
+            margin-left: 45%;
+            position: absolute;
+        }
+
+        .product-card #products-nav {
+            left: 0;
+            padding-top: 0;
+            position: absolute;
+            z-index: 1;
+        }
+    </style>
     <body class="designPage homePage staticMenu">
         <div id="wrapper">
             <div id="modal-ajax" class="modal hide fade">
@@ -201,7 +234,7 @@
                         <?php } ?>
                         <li>
                             <a href="<?php echo $lookbook_href ?>">Bộ Sưu tập</a>
-                            <ul id="news_category" style="<?php echo(!empty($is_new)?'display: block':'') ?>" >
+                            <ul id="news_category" style="<?php echo(!empty($is_new) ? 'display: block' : '') ?>" >
                                 <?php foreach ($categoriesnews as $category) { ?>
                                     <li>
                                         <a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>

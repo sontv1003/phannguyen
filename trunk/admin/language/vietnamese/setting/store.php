@@ -10,8 +10,8 @@ $_['text_account']                 = 'Account';
 $_['text_checkout']                = 'Checkout';
 $_['text_stock']                   = 'Stock';
 $_['text_image_manager']      = 'Quản lý hình ảnh';
-$_['text_browse']              = 'Browse Files';
-$_['text_clear']               = 'Clear Image';
+$_['text_browse']              = 'Tìm ảnh';
+$_['text_clear']               = 'Xóa ảnh';
 $_['text_shipping']            = 'Shipping Address';
 $_['text_payment']             = 'Payment Address';
 

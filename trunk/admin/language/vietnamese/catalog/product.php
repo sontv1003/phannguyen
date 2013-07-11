@@ -8,8 +8,8 @@ $_['text_plus']              = '+';
 $_['text_minus']             = '-';
 $_['text_default']           = 'Mặc định';
 $_['text_image_manager']     = 'Quản lý ảnh';
-$_['text_browse']            = 'Browse Files';
-$_['text_clear']             = 'Clear Image';
+$_['text_browse']            = 'Tìm ảnh';
+$_['text_clear']             = 'Xóa ảnh';
 $_['text_option']            = 'Tùy chọn';
 $_['text_option_value']      = 'Giá trị tùy chọn';
 $_['text_percent']           = 'Tỷ lệ phần trăm';
@@ -17,7 +17,7 @@ $_['text_amount']            = 'Số lượng Cố định';
 
 // Column
 $_['column_name']            = 'Tên sản phẩm';
-$_['column_model']           = 'Model';
+$_['column_model']           = 'Mã sản phẩm';
 $_['column_image']           = 'Hình ảnh';
 $_['column_price']           = 'Giá';
 $_['column_quantity']        = 'Số lượng';
@@ -31,7 +31,7 @@ $_['entry_meta_description'] = 'Mô tả từ khóa:';
 $_['entry_description']      = 'Mô tả sản phẩm:';
 $_['entry_store']            = 'Cửa hàng:';
 $_['entry_keyword']          = 'Từ khóa SEO:';
-$_['entry_model']            = 'Model:';
+$_['entry_model']            = 'Mã sản phẩm:';
 $_['entry_sku']              = 'SKU:<br/><span class="help">Stock Keeping Unit</span>';
 $_['entry_upc']              = 'UPC:<br/><span class="help">Universal Product Code</span>';
 $_['entry_ean']              = 'EAN:<br/><span class="help">European Article Number</span>';

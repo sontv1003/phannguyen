@@ -3350,10 +3350,9 @@ CREATE TABLE IF NOT EXISTS `stock_status` (
 --
 
 INSERT INTO `stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
-(7, 2, 'In Stock'),
-(8, 2, 'Pre-Order'),
-(5, 2, 'Out Of Stock'),
-(6, 2, '2 - 3 Days');
+(7, 2, 'Còn hàng'),
+(5, 2, 'Hết hàng'),
+(6, 2, '2 - 3 ngày');
 
 -- --------------------------------------------------------
 

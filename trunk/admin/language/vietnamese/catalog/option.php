@@ -16,9 +16,9 @@ $_['text_file']           = 'Tập tin';
 $_['text_date']           = 'Ngày';
 $_['text_datetime']       = 'Ngày &amp; Thời gian';
 $_['text_time']           = 'Thời gian';
-$_['text_image_manager']  = 'Image Manager';
-$_['text_browse']         = 'Browse Files';
-$_['text_clear']          = 'Clear Image';
+$_['text_image_manager']  = 'Quản lý ảnh';
+$_['text_browse']         = 'Tìm ảnh';
+$_['text_clear']          = 'Xóa ảnh';
 
 // Column
 $_['column_name']         = 'Tên tùy chọn';

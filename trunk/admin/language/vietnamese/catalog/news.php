@@ -6,8 +6,8 @@ $_['heading_title']          = 'Tin tức';
 $_['text_success']           = 'Thành công: Thông tin tin tức đã được cập nhật!';
 $_['text_default']           = 'Mặc định';
 $_['text_image_manager']     = 'Quản lý hình';
-$_['text_browse']            = 'Browse Files';
-$_['text_clear']             = 'Clear Image';
+$_['text_browse']            = 'Tìm ảnh';
+$_['text_clear']             = 'Xóa ảnh';
 
 // Column
 $_['column_name']            = 'Tiêu đề';
