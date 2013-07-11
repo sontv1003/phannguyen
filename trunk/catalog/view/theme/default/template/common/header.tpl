@@ -154,7 +154,7 @@
         <?php } ?>
         <?php echo $google_analytics; ?>
     </head>
-
+    <?php if(!empty($is_mobile)){ ?>
     <style type="text/css">
         .staticMenu #logo {
             position: absolute;
@@ -187,6 +187,7 @@
             z-index: 1;
         }
     </style>
+    <?php } ?>
     <body class="designPage homePage staticMenu">
         <div id="wrapper">
             <div id="modal-ajax" class="modal hide fade">
