@@ -14,7 +14,8 @@ a:focus{color:black}
 a:hover{color:black}
 a:active{color:black}
 a:hover{text-decoration:underline}
-body{min-width:990px}
+body{min-width:990px;position: absolute;
+    top: 0;}
 #logo{top:30px;left:55px;z-index:3}
 .touch #logo{position:absolute}
 #container-nav{top:200px;left:55px;width:175px;z-index:3;position:relative;visibility:visible}

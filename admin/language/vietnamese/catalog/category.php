@@ -7,8 +7,8 @@ $_['heading_title'] = 'Danh mục';
 $_['text_success'] = 'Thành công: Danh mục đã được thay đổi!';
 $_['text_default'] = 'Mặc định';
 $_['text_image_manager'] = 'Quán lý hình ảnh';
-$_['text_browse'] = 'Browse Files';
-$_['text_clear'] = 'Clear Image';
+$_['text_browse'] = 'Tìm ảnh';
+$_['text_clear'] = 'Xóa ảnh';
 
 // Column
 $_['column_name'] = 'Tên Danh mục';

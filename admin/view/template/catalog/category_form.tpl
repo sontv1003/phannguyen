@@ -55,11 +55,11 @@
               <td><input type="text" name="path" value="<?php echo $path; ?>" size="100" />
                 <input type="hidden" name="parent_id" value="<?php echo $parent_id; ?>" /></td>
             </tr>
-            <tr>
+            <tr style="display: none;">
               <td><?php echo $entry_filter; ?></td>
               <td><input type="text" name="filter" value="" /></td>
             </tr>
-            <tr>
+            <tr style="display: none;">
               <td>&nbsp;</td>
               <td><div id="category-filter" class="scrollbox">
                   <?php $class = 'odd'; ?>

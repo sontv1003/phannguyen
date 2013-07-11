@@ -8,7 +8,7 @@
                 <div class="left">
 
 
-                    <nav class="fixed" id="products-nav" style="left: 300px;">
+                    <nav class="fixed" id="products-nav" style="">
 
                         <a data-ga-props="{action:'Navegacion', opt_label:'Volver'}" class="back gaTrack gaViewEvent" href="#">
                             BACK
