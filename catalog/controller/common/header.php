@@ -34,6 +34,8 @@ class ControllerCommonHeader extends Controller {
         } else {
             $this->data['logo'] = '';
         }
+        
+        $this->data['is_mobile'] = $this->mobiledetect->isMobile();
         $this->data['text_special'] = $this->language->get('text_special');
         $this->data['special'] = $this->url->link('product/special');
         $this->data['new_products'] = $this->url->link('product/feature');

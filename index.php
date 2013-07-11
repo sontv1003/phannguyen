@@ -22,6 +22,7 @@ require_once($vqmod->modCheck(DIR_SYSTEM . 'startup.php'));
 
 // Application Classes
 require_once($vqmod->modCheck(DIR_SYSTEM . 'library/customer.php'));
+require_once($vqmod->modCheck(DIR_SYSTEM . 'library/mobiledetect.php'));
 require_once($vqmod->modCheck(DIR_SYSTEM . 'library/affiliate.php'));
 require_once($vqmod->modCheck(DIR_SYSTEM . 'library/currency.php'));
 require_once($vqmod->modCheck(DIR_SYSTEM . 'library/tax.php'));
@@ -190,6 +191,8 @@ $registry->set('language', $language);
 
 // Document
 $registry->set('document', new Document()); 		
+
+$registry->set('mobiledetect', new Mobiledetect()); 		
 
 // Customer
 $registry->set('customer', new Customer($registry));
