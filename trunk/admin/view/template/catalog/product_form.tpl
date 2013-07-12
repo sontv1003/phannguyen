@@ -230,10 +230,10 @@
                 </div>
                 <div id="tab-links">
                     <table class="form">
-                        <tr>
+<!--                        <tr>
                             <td><?php echo $entry_manufacturer; ?></td>
                             <td><input type="text" name="manufacturer" value="<?php echo $manufacturer ?>" /><input type="hidden" name="manufacturer_id" value="<?php echo $manufacturer_id; ?>" /></td>
-                        </tr>
+                        </tr>-->
                         <tr>
                             <td><?php echo $entry_category; ?></td>
                             <td><input type="text" name="category" value="" /></td>
