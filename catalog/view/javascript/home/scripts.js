@@ -528,35 +528,35 @@ var bnrs={
         var $this=this;
         var $container=$('#container_dgbnr');
 
-        $('#filters a').click(function(e){
-          e.preventDefault();
-
-          //nel caso dati banner non siano disponibili
-          if(!$this.data_loaded){
-              return;
-          }
-          if($(this).hasClass("selected")) return;
-          $('#filters a').removeClass("selected");
-          $(this).addClass("selected");
-
-          bnrs.currFilter = $(this).attr('data-filter');
-          var show_selector = $(this).attr('data-show');
-
-          if($('#selectedBox').length) $('#selectedBox').remove();
-          bnrs.abis=0;
-          if(show_selector=='*'){
-              $this.is_filter_on=0;
-              $container.isotope({ filter:bnrs.currFilter}).isotope('reLayout');
-              $container.find('.dgbnr').removeClass('filtered-faded');
-          }else{
-              $this.filter_els(show_selector,bnrs.currFilter);
-              $this.is_filter_on=1;
-              /*$container.isotope({ filter:filter_selector},function($items){
-                            $items.css({opacity:0.3})
-                            }).isotope('reLayout');*/
-                }
-          return false;
-        });
+//        $('#filters a').click(function(e){
+//          e.preventDefault();
+//
+//          //nel caso dati banner non siano disponibili
+//          if(!$this.data_loaded){
+//              return;
+//          }
+//          if($(this).hasClass("selected")) return;
+//          $('#filters a').removeClass("selected");
+//          $(this).addClass("selected");
+//
+//          bnrs.currFilter = $(this).attr('data-filter');
+//          var show_selector = $(this).attr('data-show');
+//
+//          if($('#selectedBox').length) $('#selectedBox').remove();
+//          bnrs.abis=0;
+//          if(show_selector=='*'){
+//              $this.is_filter_on=0;
+//              $container.isotope({ filter:bnrs.currFilter}).isotope('reLayout');
+//              $container.find('.dgbnr').removeClass('filtered-faded');
+//          }else{
+//              $this.filter_els(show_selector,bnrs.currFilter);
+//              $this.is_filter_on=1;
+//              /*$container.isotope({ filter:filter_selector},function($items){
+//                            $items.css({opacity:0.3})
+//                            }).isotope('reLayout');*/
+//                }
+//          return false;
+//        });
 
         $container.isotope({
          resizable: true,
