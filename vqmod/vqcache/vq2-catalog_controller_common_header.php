@@ -9,8 +9,8 @@ class ControllerCommonHeader extends Controller {
         } else {
             $server = $this->config->get('config_url');
         }
-        
-        
+
+
 
         $this->data['base'] = $server;
         $this->data['description'] = $this->document->getDescription();
@@ -34,7 +34,11 @@ class ControllerCommonHeader extends Controller {
         } else {
             $this->data['logo'] = '';
         }
-
+        
+        $this->data['is_mobile'] = $this->mobiledetect->isMobile();
+        $this->data['text_special'] = $this->language->get('text_special');
+        $this->data['special'] = $this->url->link('product/special');
+        $this->data['new_products'] = $this->url->link('product/feature');
         $this->language->load('common/header');
 
         $this->data['text_home'] = $this->language->get('text_home');
@@ -45,6 +49,7 @@ class ControllerCommonHeader extends Controller {
         $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
         $this->data['text_account'] = $this->language->get('text_account');
         $this->data['text_checkout'] = $this->language->get('text_checkout');
+        $this->data['text_new_products'] = $this->language->get('text_new_products');
 
         $this->data['home'] = $this->url->link('common/home');
         $this->data['wishlist'] = $this->url->link('account/wishlist', '', 'SSL');
@@ -53,6 +58,7 @@ class ControllerCommonHeader extends Controller {
         $this->data['shopping_cart'] = $this->url->link('checkout/cart');
         $this->data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
         $this->data['news_brand_href'] = $this->url->link('news/news_category', 'cat_id=2', 'SSL');
+        $this->data['lookbook_href'] = $this->url->link('news/all');
         // Daniel's robot detector
         $status = true;
 
@@ -119,7 +125,6 @@ class ControllerCommonHeader extends Controller {
                         'href' => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id'])
                     );
                 }
-                $this->data['lookbook_href'] = $this->url->link('product/lookbook');
                 // Level 1
                 $this->data['categories'][] = array(
                     'name' => $category['name'],
@@ -130,6 +135,13 @@ class ControllerCommonHeader extends Controller {
                 );
             }
         }
+        if (isset($this->request->get['route'])) {
+            $route = $this->request->get['route'];
+            if (current(explode('/', $route)) == 'news') {
+                $this->data['is_new'] = true;
+            }
+        }
+
 
         $categoriesTop2 = $this->model_catalog_category->getCategoriesTop2();
         $this->data['categoriesTop2'] = array();
