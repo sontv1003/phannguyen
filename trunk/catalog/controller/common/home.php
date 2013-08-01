@@ -12,7 +12,11 @@ class ControllerCommonHome extends Controller {
         }
 
 
-
+        $this->language->load('common/header');
+        $this->data['home'] = $this->url->link('common/home');
+        $this->data['logged'] = $this->customer->isLogged();
+        $this->data['text_welcome'] = sprintf($this->language->get('text_welcome'), $this->url->link('account/login', '', 'SSL'), $this->url->link('account/register', '', 'SSL'));
+        $this->data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
         $this->data['base'] = $server;
         $this->data['description'] = $this->document->getDescription();
         $this->data['keywords'] = $this->document->getKeywords();
@@ -44,10 +48,11 @@ class ControllerCommonHome extends Controller {
         $this->data['heading_title'] = $this->config->get('config_title');
         $this->load->model('tool/image');
         $this->data['image_home'] = $this->model_tool_image->resize($this->config->get('config_home_image'), 2880, 1440);
-        
+
         $this->load->model('catalog/category');
         $this->load->model('catalog/product');
-        
+        $this->load->model('tool/image');
+
         $this->data['categories'] = array();
         $categories = $this->model_catalog_category->getCategories(0);
 
@@ -56,6 +61,7 @@ class ControllerCommonHome extends Controller {
                 // Level 1
                 $this->data['categories'][] = array(
                     'name' => $category['name'],
+                    'image' => $this->model_tool_image->resize($category['image'], 560, 374),
                     'column' => $category['column'] ? $category['column'] : 1,
                     'href' => $this->url->link('product/category', 'path=' . $category['category_id'])
                 );

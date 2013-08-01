@@ -244,7 +244,6 @@
                             </ul>
                         </li>
                         <?php echo $information ?>        
-
                     </ul>
 
                     <div id="search" class="search">
