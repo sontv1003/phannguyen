@@ -5,25 +5,19 @@
     <form id="main-product">
         <section id="main" class="content-main">
             <section id="product" class="product-card psection_1 ptype_0 pcatentry_1344505 pversion_v1">
-                <div class="left">
-
-
-                    <nav class="fixed" id="products-nav" style="">
-
-                        <a data-ga-props="{action:'Navegacion', opt_label:'Volver'}" class="back gaTrack gaViewEvent" href="#">
+               <div class="fixed" id="products-nav">
+<!--                        <a data-ga-props="{action:'Navegacion', opt_label:'Volver'}" class="back gaTrack gaViewEvent" href="#">
                             BACK
                         </a>
-
-
                         <input type="hidden" value="#" name="patternProductUrl" id="patternProductUrl">
                         <a href="javascript:void(0)" data-ga-props="{action:'Navegacion', opt_label:'Anterior'}" class="prev gaTrack gaViewEvent">
                             <i class="icon icon-arrow-left-disabled"></i>
                         </a>
                         <a href="#" data-ga-props="{action:'Navegacion', opt_label:'Siguiente'}" class="next gaTrack gaViewEvent">
                             <i class="icon icon-arrow-right"></i>
-                        </a>
+                        </a>-->
 
-                        <div id="associatedLnks" >
+                        <div id="associatedLnks">
                             <div class="clear"></div>
                             <div class="associatedTitle">LOOK+</div>
                             <?php if ($products) { ?>
@@ -37,33 +31,26 @@
                                     <?php } ?>
                                 </ul>
                             <?php } ?>
-
                         </div>
-
-
-                    </nav>	
-
-                    <div class="bigImageContainer">
-
-                        <?php if ($thumb || $images) { ?>
+                    </div>	
+                <div class="left">                   
+                    <div class="bigImageContainer" style="width: 525px;">
+                        <?php if ($popup || $images) { ?>
                             <div class="image-wrap mainImage imageZoom">
-                                <?php if ($thumb) { ?>
-                                    <img src="<?php echo $popup; ?>" data-name="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" >
+                                <?php if ($popup) { ?>
+                                            <a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="MagicZoomPlus"><img src="<?php echo $thumb; ?>"/></a>
                                 <?php } ?>
 
                                 <?php if ($images) { ?>
                                     <div class="image-additional">
                                         <?php foreach ($images as $image) { ?>
-                                            <img src="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>"/>
+                                            <a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" class="MagicZoomPlus"><img src="<?php echo $image['thumb']; ?>"/></a>
                                         <?php } ?>
                                     </div>
                                 <?php } ?>
                             </div>
                         <?php } ?>
-
-
                     </div>
-
                 </div>
 
 
@@ -87,8 +74,16 @@
                     <p class="reference">
                         <span><?php echo $text_stock; ?></span> <?php echo $stock; ?>
                     </p>	
-
-                    <br/>
+                   <p class="share"> AddThis Button BEGIN 
+                        <div class="addthis_default_style">
+                            <a class="addthis_button_compact"><?php echo $text_share; ?></a>
+                            <a class="addthis_button_email"></a><a class="addthis_button_print"></a>
+                            <a class="addthis_button_facebook"></a> <a class="addthis_button_twitter"></a>
+                        </div>
+                        <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script> 
+                    </p>
+                    <br />
+                    <br />
                     <div class="description"><?php echo $description; ?></div>
 
 
@@ -500,7 +495,10 @@
         if ($.browser.msie && $.browser.version == 6) {
             $('.date, .datetime, .time').bgIframe();
         }
-
+        if($.browser.chrome = (typeof window.chrome === "object")) {
+            $('.product-card .left').css('margin-left', '0px');
+        }
+        
         $('.date').datepicker({dateFormat: 'yy-mm-dd'});
         $('.datetime').datetimepicker({
             dateFormat: 'yy-mm-dd',
@@ -508,5 +506,9 @@
         });
         $('.time').timepicker({timeFormat: 'h:m'});
     });
+    
     //--></script> 
 <?php echo $footer; ?>
+<style>
+    #page-container{ width: 100%; }
+</style>
