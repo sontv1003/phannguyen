@@ -23,7 +23,8 @@ class ControllerModuleBanner extends Controller {
 		}
 		
 		$this->data['module'] = $module++;
-				
+		$this->data['layout_id'] = $setting['layout_id'];
+                
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/banner.tpl')) {
 			$this->template = $this->config->get('config_template') . '/template/module/banner.tpl';
 		} else {

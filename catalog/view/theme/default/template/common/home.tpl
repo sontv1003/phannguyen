@@ -33,9 +33,9 @@
             <header id="header">
                 <div id="followus"> <span>Follow us:</span>
                     <ul>
-                        <li id="int_fb"><a name="&amp;lid=http://www.facebook.com/phannguyen" href="http://www.facebook.com/phannguyen" target="_blank">&nbsp;</a></li>
-                        <li id="int_tw"><a name="&amp;lid=http://twitter.com/phannguyen" href="http://twitter.com/phannguyen" target="_blank">&nbsp;</a></li>
-                        <li id="int_yt"><a name="&amp;lid=http://www.youtube.com/phannguyen" href="http://www.youtube.com/phannguyen" target="_blank">&nbsp;</a></li>
+                        <li id="int_fb"><a name="&amp;lid=http://www.facebook.com/#" href="http://www.facebook.com/#" target="_blank">&nbsp;</a></li>
+                        <li id="int_tw"><a name="&amp;lid=http://twitter.com/#" href="http://twitter.com/#" target="_blank">&nbsp;</a></li>
+                        <li id="int_yt"><a name="&amp;lid=http://www.youtube.com/#" href="http://www.youtube.com/#" target="_blank">&nbsp;</a></li>
                     </ul>
                 </div>
                 <div id="sn">
@@ -62,21 +62,8 @@
                 <div class="row-fluid" id="topbanner">
                     <div class="col4">
                         <div class="figure">
-                            <img id="logo_c4" style="position:absolute;top:125px;left:50px;z-index:100;" src="<?php echo HTTP_SERVER ?>image/home/logo_small.png" > 
+                            <!--<img id="logo_c4" style="position:absolute;top:125px;left:50px;z-index:100;" src="<?php echo HTTP_SERVER ?>image/home/logo_small.png" >--> 
                             <?php echo $content_top; ?>
-                            <!--                            <div style="height: 339.72px;" id="slide_top"> 
-                                                            <img style="display: block;" src="<?php echo HTTP_SERVER ?>image/home/dolce-and-gabbana-fw-2014-men-adv-campaign-.jpg" alt="phan nguyễn 1">
-                                                            <img style="display: block;" src="<?php echo HTTP_SERVER ?>image/home/dolce-and-gabbana-fw-2014-child-adv-campaign-04.jpg" alt="">
-                                                            <img style="display: inline;" src="<?php echo HTTP_SERVER ?>image/home/dolce-and-gabbana-fw-2014-women-adv-campaign-02.jpg" alt="#">
-                                                        </div>
-                                                        <div style="opacity: 0.7; display: none; height: 339.72px;" class="fdr"></div>
-                                                        <div class="caption">
-                                                            <img id="logo_c4" src="<?php echo HTTP_SERVER ?>image/home/logo_small.png" > 
-                                                            <ul class="en" style="display: none;" id="dglinks">
-                                                                <li id="dg_wmn">
-                                                                    <a href="http://www.thoitrangphannguyen.com/ao-phong-nam" target="_blank">Hàng hiệu của người Việt</a><span></span></li>
-                                                            </ul>
-                                                        </div>-->
                         </div>
                     </div>
                 </div>
@@ -100,33 +87,11 @@
 
                 <!--container_dgbnr-->
                 <div class="isotope"  id="container_dgbnr">
-
-                    <?php foreach ($categories as $category): ?>
-                        <div style="position: absolute; left: 0px; top: 0px; opacity: 1; display: block;" class="dgbnr col2 collection htxtleft vtxtmiddle isotope-item" data-category="collection" data-social="none"> 
-                            <a href="<?php echo $category['href'] ?>">
-                                <div class="figure"> 
-                                    <img src="<?php echo $category['image'] ?>" class="bdg" alt="#" height="374" width="560">
-                                    <div style="opacity: 0.5285; display: block;" class="fdr"></div>
-                                    <div class="caption">
-                                        <div class="cpos_h3">
-                                            <h3><?php echo $category['name'] ?></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a> 
-                        </div>
-                    <?php endforeach; ?>
-
+                    <?php echo $content_bottom; ?>
                 </div>
                 <!--/container_dgbnr--> 
             </section>
-            <!--/body--> 
-            <!--load_more-->
-            <!--            <div  id="load_more">
-                            <div style="display: none;" id="txt_loading_more">Loading more content...</div>
-                            <div style="display: none;" id="btn_load_more"><a href="#"><span>Load more content</span></a></div>
-                        </div>-->
-            <!--/load_more--> 
+            <!--/body-->
         </div>
         <!--/layout--> 
     </div>
