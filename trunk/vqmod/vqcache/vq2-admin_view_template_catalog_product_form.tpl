@@ -65,27 +65,27 @@
                                     <span class="error"><?php echo $error_model; ?></span>
                                 <?php } ?></td>
                         </tr>
-                        <tr>
+                        <tr style="display: none;">
                             <td><?php echo $entry_sku; ?></td>
                             <td><input type="text" name="sku" value="<?php echo $sku; ?>" /></td>
                         </tr>
-                        <tr>
+                        <tr style="display: none;">
                             <td><?php echo $entry_upc; ?></td>
                             <td><input type="text" name="upc" value="<?php echo $upc; ?>" /></td>
                         </tr>
-                        <tr>
+                        <tr style="display: none;"  >
                             <td><?php echo $entry_ean; ?></td>
                             <td><input type="text" name="ean" value="<?php echo $ean; ?>" /></td>
                         </tr>
-                        <tr>
+                        <tr style="display: none;">
                             <td><?php echo $entry_jan; ?></td>
                             <td><input type="text" name="jan" value="<?php echo $jan; ?>" /></td>
                         </tr>
-                        <tr>
+                        <tr style="display: none;">
                             <td><?php echo $entry_isbn; ?></td>
                             <td><input type="text" name="isbn" value="<?php echo $isbn; ?>" /></td>
                         </tr>
-                        <tr>
+                        <tr style="display: none;">
                             <td><?php echo $entry_mpn; ?></td>
                             <td><input type="text" name="mpn" value="<?php echo $mpn; ?>" /></td>
                         </tr>
@@ -159,6 +159,12 @@
                         <tr>
                             <td><?php echo $entry_keyword; ?></td>
                             <td><input type="text" name="keyword" value="<?php echo $keyword; ?>" /></td>
+                        </tr>
+                        <tr>
+                            <td><?php echo $entry_image_representative; ?></td>
+                            <td><div class="image"><img src="<?php echo $thumb_representative; ?>" alt="" id="thumb_representative" /><br />
+                                    <input type="hidden" name="image_representative" value="<?php echo $image_representative; ?>" id="image_representative" />
+                                    <a onclick="image_upload('image_representative', 'thumb_representative');"><?php echo $text_browse; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onclick="$('#thumb_representative').attr('src', '<?php echo $no_image; ?>'); $('#image_representative').attr('value', '');"><?php echo $text_clear; ?></a></div></td>
                         </tr>
                         <tr>
                             <td><?php echo $entry_image; ?></td>

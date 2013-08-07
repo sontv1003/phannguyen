@@ -378,7 +378,9 @@ $(document).ready(function() {
 	
 	
    $('#delete').bind('click', function() {
-
+            if(confirm('Bạn chắc chắn muốn xóa?') == false) {
+                return false;
+            }
                                  
             if ($('#column-right a.selected').length > 0) {
 
@@ -438,83 +440,7 @@ $(document).ready(function() {
                 }           
             }
     });               
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-	
+    
     $('#move').bind('click', function() {
         $('#dialog').remove();
         
