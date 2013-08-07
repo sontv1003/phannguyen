@@ -44,7 +44,9 @@
                                 <?php if ($images) { ?>
                                     <div class="image-additional">
                                         <?php foreach ($images as $image) { ?>
-                                            <a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" class="MagicZoomPlus"><img src="<?php echo $image['thumb']; ?>"/></a>
+                                            <a id="Zoomer" href="<?php echo $image['popup']; ?>" class="MagicZoomPlus" rel="background-color: #FFFFFF; background-opacity: 100; hint: false; font:0px;" title="<?php echo $heading_title; ?>">
+                                                <img src="<?php echo $image['thumb']; ?>"/>
+                                            </a>
                                         <?php } ?>
                                     </div>
                                 <?php } ?>
@@ -505,9 +507,15 @@
             timeFormat: 'h:m'
         });
         $('.time').timepicker({timeFormat: 'h:m'});
+    
+    $('.MagicZoomPlus').live('click', function() {        
+        $('.MagicThumb-buttons').next().remove();
+        alert('ok');
     });
     
-    //--></script> 
+    });
+    
+//--></script> 
 <?php echo $footer; ?>
 <style>
     #page-container{ width: 100%; }

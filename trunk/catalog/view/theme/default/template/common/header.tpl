@@ -24,6 +24,7 @@
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/perfect-scrollbar.min.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/category-comp-1370537430555.css" />
         <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/magiczoomplus.css" />
         <?php foreach ($styles as $style) { ?>
             <link rel="<?php echo $style['rel']; ?>" type="text/css" href="<?php echo $style['href']; ?>" media="<?php echo $style['media']; ?>" />
         <?php } ?>
@@ -35,6 +36,7 @@
         <script type="text/javascript" src="catalog/view/javascript/perfect-scrollbar.min.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/perfect-scrollbar.with-mousewheel.min.js"></script>
         <script type="text/javascript" src="catalog/view/javascript/jquery/bootstrap.min.js"></script>
+        <script type="text/javascript" src="catalog/view/javascript/magiczoomplus.js"></script>
 
         <script>
             $(document).ready(function ($) {
@@ -244,6 +246,7 @@
                             </ul>
                         </li>
                         <?php echo $information ?>        
+
                     </ul>
 
                     <div id="search" class="search">
