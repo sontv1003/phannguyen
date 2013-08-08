@@ -38,7 +38,7 @@
                         <?php if ($popup || $images) { ?>
                             <div class="image-wrap mainImage imageZoom">
                                 <?php if ($popup) { ?>
-                                            <a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="MagicZoomPlus"><img src="<?php echo $thumb; ?>"/></a>
+                                            <a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="MagicZoomPlus" rel="background-color: #FFFFFF; background-opacity: 100; hint: false; font:0px;"><img src="<?php echo $thumb; ?>"/></a>
                                 <?php } ?>
 
                                 <?php if ($images) { ?>
