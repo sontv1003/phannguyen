@@ -183,7 +183,7 @@
             }
         });
     });
-
+    
     // Login
     $('#checkout #button-login').live('click', function() {
         $.ajax({

@@ -45,9 +45,17 @@
             <p>
                 <?php echo $text_register; ?>
             </p>
+            <label for="register">
+                <input type="radio" id="register" value="register" name="account" checked="checked">
+                <b>Khách hang moi</b>
+            </label>  
+            <br/>
+            <label for="guest">
+                <input type="radio" id="guest" value="guest" name="account">
+                <b>Khách Vang Lai</b>
+            </label>
 
             <div class="actions">
-                <input type="radio" name="account" value="register" id="register" checked="checked" style="display: none"/>
                 <button class="button butBlack actionButton" type="button" value="<?php echo $button_continue; ?>" id="button-account">
                     <span><?php echo $button_continue; ?></span>
                 </button>
