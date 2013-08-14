@@ -345,6 +345,7 @@ var bnrs={
         $this.set_social_onload();
         $this.ic=$this.count_bnr_in_dom();
 
+        $('.fdr').hide();
 
         $('#btn_close_qn').click(function(e){
             e.preventDefault();
@@ -352,6 +353,7 @@ var bnrs={
             $('#qn').removeClass('on');
             $qn_win.fadeOut('fast').data('open',0);
         });
+        
         if(device!='tablet'){
 
             $('#qn').bind('mouseenter',function(){
