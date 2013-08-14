@@ -134,7 +134,7 @@
                                                     <?php } ?>
                                                 </tbody>
                                             </table>
-                                        </div>
+                                        </div>     
                                     </div>
                                     <br />
                                 <?php } ?>
@@ -158,6 +158,8 @@
                                                         <?php } ?>
                                                     </tbody>
                                                 </table>
+                                                <div style="text-align: right;"><a href="javascript:void(0)" onclick="show_sizeguide()" style="text-decoration: underline;">Bảng size</a></div>
+                                                <div class="clear"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -514,6 +516,19 @@
     });
     
     });
+    
+    
+    /**
+     * show_sizeguide
+     */
+    function show_sizeguide() {
+        var x = screen.width / 2 - 850 / 2;
+        var y = screen.height / 2 - 600 / 2;
+        var url = '<?php echo $sizeguide_href; ?>'
+        window.open(url, 'Bảng hướng dẫn chi tiết kích thước', 'toolbar=0,status=1,scrollbars=1,width=850,height=550,left=' + x + ',top=' + y);
+        
+        return false;       
+    }
     
 //--></script> 
 <?php echo $footer; ?>
