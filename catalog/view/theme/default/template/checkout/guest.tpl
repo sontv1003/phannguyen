@@ -3,7 +3,9 @@
 </div>
 <br/>
 <div class="infoLogin logonPanel gaTrack gaPanel" id="logonPanel" style="height: 262px;">
+    <form id="frmGuest" onsubmit="return false;">
     <div id="payment-address">
+        <div id="loading"></div>
         <div class="left">
             <span class="required">*</span> Họ:<br />
             <input type="text" name="lastname" value="<?php echo $lastname; ?>" class="large-field inputText" />
@@ -95,6 +97,7 @@
             </button>
         </div>
     </div>
+    </form>
 </div>
 <script type="text/javascript"><!--
 $('#payment-address input[name=\'customer_group_id\']:checked').live('change', function() {
