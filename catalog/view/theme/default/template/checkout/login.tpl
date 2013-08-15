@@ -47,12 +47,12 @@
             </p>
             <label for="register">
                 <input type="radio" id="register" value="register" name="account" checked="checked">
-                <b>Khách hang moi</b>
+                <b>Khách hàng đăng ký mới</b>
             </label>  
             <br/>
             <label for="guest">
                 <input type="radio" id="guest" value="guest" name="account">
-                <b>Khách Vang Lai</b>
+                <b>Khách tự do</b>
             </label>
 
             <div class="actions">
