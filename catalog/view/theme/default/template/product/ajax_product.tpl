@@ -23,7 +23,7 @@
 
                     <header>
                         <h1>
-                            <?php echo $heading_title; ?>	
+                            <a href="<?php echo $product_href; ?>"><?php echo $heading_title; ?></a>
                         </h1>
                     </header>						
 
