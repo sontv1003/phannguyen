@@ -16,7 +16,8 @@ class ControllerProductAjaxProduct extends Controller {
         );
 
         $this->load->model('catalog/category');
-
+        $this->data['product_href'] = $this->url->link('product/product', 'product_id=' . $this->request->get['product_id']);
+        
         if (isset($this->request->get['path'])) {
             $path = '';
 
@@ -550,7 +551,7 @@ class ControllerProductAjaxProduct extends Controller {
 
             $this->data['button_continue'] = $this->language->get('button_continue');
 
-            $this->data['continue'] = $this->url->link('common/home');
+            $this->data['continue'] = $this->url->link('common/home');            
 
             if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/error/not_found.tpl')) {
                 $this->template = $this->config->get('config_template') . '/template/error/not_found.tpl';
