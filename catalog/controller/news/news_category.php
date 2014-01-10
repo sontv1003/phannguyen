@@ -141,7 +141,14 @@ class ControllerNewsNewsCategory extends Controller {
                 $height = '';
 
                 if ($result['image']) {
-                    $image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_news_width'), $this->config->get('config_image_news_width'));
+                    if (empty($news_category_info['theme_id'])) {
+                        $thumb_width = $this->config->get('config_image_news_width');
+                        $thumb_height = $this->config->get('config_image_news_height');
+                    } else {
+                        $thumb_width = 220;
+                        $thumb_height = 153;
+                    }
+                    $image = $this->model_tool_image->resize($result['image'], $thumb_width, $thumb_height);
                 } else {
                     $firstImgNews = $this->catchFirstImage(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8'));
                     if ($firstImgNews == 'no_image.jpg') {
@@ -165,6 +172,7 @@ class ControllerNewsNewsCategory extends Controller {
                     'thumb' => $image,
                     'name' => $result['name'],
                     'short_description' => $short_description,
+                    'date_available' => $result['date_available'],
                     'date_added' => date('H:i:s - ' . $this->language->get('date_format_short'), strtotime($result['date_added'])),
                     'width' => $width,
                     'height' => $height,
@@ -232,10 +240,18 @@ class ControllerNewsNewsCategory extends Controller {
 
             $this->data['continue'] = $this->url->link('news/all');
 
-            if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/news/news_category.tpl')) {
-                $this->template = $this->config->get('config_template') . '/template/news/news_category.tpl';
+            if (empty($news_category_info['theme_id'])) { //               
+                if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/news/news_lookbook.tpl')) {
+                    $this->template = $this->config->get('config_template') . '/template/news/news_lookbook.tpl';
+                } else {
+                    $this->template = 'default/template/news/news_lookbook.tpl';
+                }
             } else {
-                $this->template = 'default/template/news/news_category.tpl';
+                if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/news/news_category.tpl')) {
+                    $this->template = $this->config->get('config_template') . '/template/news/news_category.tpl';
+                } else {
+                    $this->template = 'default/template/news/news_category.tpl';
+                }
             }
 
             $this->children = array(
