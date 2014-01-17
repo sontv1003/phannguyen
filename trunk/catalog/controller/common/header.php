@@ -59,6 +59,7 @@ class ControllerCommonHeader extends Controller {
         $this->data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
         $this->data['news_brand_href'] = $this->url->link('news/news_category', 'cat_id=2', 'SSL');
         $this->data['lookbook_href'] = $this->url->link('news/news_category', 'cat_id=3', 'SSL');
+        $this->data['news_href'] = $this->url->link('news/news_category', 'cat_id=4', 'SSL');
         // Daniel's robot detector
         $status = true;
 
