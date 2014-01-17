@@ -236,8 +236,9 @@
                                 </li>
                             <?php } ?>
                         <?php } ?>
+                        <li><a href="<?php echo $lookbook_href ?>">Bộ Sưu Tập</a></li>
+                        <li><a href="<?php echo $news_href ?>">Tin Tức</a></li>
                         <li>
-                            <a href="<?php echo $lookbook_href ?>">Bộ Sưu tập</a>
                             <ul id="news_category" style="<?php echo(!empty($is_new) ? 'display: block' : '') ?>" >
                                 <?php foreach ($categoriesnews as $category) { ?>
                                     <li>
