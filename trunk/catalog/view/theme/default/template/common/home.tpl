@@ -100,7 +100,8 @@
     <footer style="display: block;" id="footer">
         <div id="footer_container">
             <p> <br>
-                Copyright © Gia Phan - ĐT: 0936.474.346 - Giấy Phép số. 763 - All rights reserved. Thiết kế bởi: <a href="http://geckomedia.vn"> Gecko Media</a> </p>
+                Copyright © Gia Phan - ĐT: 0936.474.346 - All rights reserved. Thiết kế bởi: <a href="http://geckomedia.vn"> Gecko Media</a>. Website đang trong quá trình hoàn thiện các thủ tục đăng kí quyền thương mại điện tử với bộ Công thương.
+            </p>
         </div>
     </footer>
     <!--chiude footer--> 
