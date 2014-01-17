@@ -38,9 +38,7 @@
             var lh_page = $("#lh_page").val();
             if(lh_page >= 2){
                 ajaxHomepageGetMore();					
-            }	
-            var html = $('#product-info').html();
-            
+            }
         }
     });	
     

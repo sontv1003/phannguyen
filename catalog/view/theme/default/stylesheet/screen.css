@@ -311,8 +311,8 @@ a:link,a:visited{color:#fff;text-decoration:none;outline:none !important}
 #slide_top img:first-child{display:block}
 #filterby{position:relative;display:block;font-family:FuturaBT-Book;text-transform:uppercase;font-size:12px;height:25px;padding:0 0 10px 70px;margin:20px 0 10px 0;z-index:4;*zoom:1}
 #filterby.loaded{background:url("http://cdn.dolcegabbana.com/img/shared/bg_row_filter.png") repeat-x left bottom}
-#filterby h3{position:absolute;left:70px;top:0;display:block;margin:0;padding:0;font-size:12px;color:#d9c7b5;font-weight:normal}
-#filterby ul{display:block;margin:0 auto;width:730px;padding:0 0 0 65px;list-style:none}
+#filterby h3{position:absolute;left:20px;top:0;display:block;margin:0;padding:0;font-size:12px;color:#d9c7b5;font-weight:normal}
+#filterby ul{display:block;margin:0 auto;width:1000px;padding:0 0 0 65px;list-style:none}
 #filterby ul li{display:inline-block;*float:left;font-size:12px;margin:0;padding:0 0 0 7px;list-style:none;background:url("http://cdn.dolcegabbana.com/img/shared/brd_filter_off.png") no-repeat 0 3px}
 #filterby ul li:first-child{background:none}
 #filterby ul li a:link,#filterby ul li a:visited{display:block;font-size:12px;padding:0 7px 0 7px}
@@ -324,7 +324,7 @@ a:link,a:visited{color:#fff;text-decoration:none;outline:none !important}
 #load_more a:link,#load_more a:visited{display:block;width:64px;height:37px;margin:0 auto}
 #loading_bar{position:absolute;left:0;bottom:0;height:3px;width:0%;margin-top:8px;background:#C8C6C2}
 #footer{display:block;position:fixed;left:0;bottom:-10px;height:45px;width:100%;background-color:#5a5a57;z-index:200;line-height:2em;clear:both}
-#footer p{font-family:Arial;font-size:9px;color:#b8b8b5;text-transform:uppercase;text-align:center;line-height:1.4em;width:570px;margin:0 auto;padding-top:4px}
+#footer p{font-family:Arial;font-size:9px;color:#b8b8b5;text-transform:uppercase;text-align:center;line-height:1.4em;width:100%;margin:0 auto;padding-top:4px}
 #footer p a:link,#footer p a:visited{font-family:Arial;font-size:9px;color:#b8b8b5;text-transform:uppercase}
 #footer p a:hover{color:#dadada}
 #footer #ftr_langs{display:none;position:absolute;height:auto;bottom:45px;left:0px;width:100px;background:black;margin:0px;padding:0;background-color:#5a5a57}

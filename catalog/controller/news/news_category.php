@@ -120,7 +120,7 @@ class ControllerNewsNewsCategory extends Controller {
                 );
             }
 
-            $this->data['ajax_href'] = $this->url->link('news/news_category/ajax_load_news', 'cat_id=' . $this->request->get['cat_id']);
+            $this->data['ajax_href'] = $this->url->link('news/news_category/ajax_load_news', 'news_cat_id=' . $this->request->get['cat_id']);
 
             $this->data['news'] = array();
 
@@ -329,6 +329,7 @@ class ControllerNewsNewsCategory extends Controller {
 //end function
 
     public function ajax_load_news() {
+        
         $this->language->load('news/news_category');
 
         $this->load->model('catalog/news_category');
@@ -363,10 +364,10 @@ class ControllerNewsNewsCategory extends Controller {
             'separator' => $this->language->get('text_separator')
         );
 
-        if (isset($this->request->get['cat_id'])) {
+        if (isset($this->request->get['news_cat_id'])) {
             $cat_id = '';
 
-            $parts = explode('_', (string) $this->request->get['cat_id']);
+            $parts = explode('_', (string) $this->request->get['news_cat_id']);
 
             foreach ($parts as $cat_id_item) {
                 if (!$cat_id) {
@@ -500,31 +501,31 @@ class ControllerNewsNewsCategory extends Controller {
             $this->data['limits'][] = array(
                 'text' => $this->config->get('config_catalog_limit'),
                 'value' => $this->config->get('config_catalog_limit'),
-                'href' => $this->url->link('news/news_category', 'cat_id=' . $this->request->get['cat_id'] . $url . '&limit=' . $this->config->get('config_catalog_limit'))
+                'href' => $this->url->link('news/news_category', 'cat_id=' . $this->request->get['news_cat_id'] . $url . '&limit=' . $this->config->get('config_catalog_limit'))
             );
 
             $this->data['limits'][] = array(
                 'text' => 25,
                 'value' => 25,
-                'href' => $this->url->link('news/news_category', 'cat_id=' . $this->request->get['cat_id'] . $url . '&limit=25')
+                'href' => $this->url->link('news/news_category', 'cat_id=' . $this->request->get['news_cat_id'] . $url . '&limit=25')
             );
 
             $this->data['limits'][] = array(
                 'text' => 50,
                 'value' => 50,
-                'href' => $this->url->link('news/news_category', 'cat_id=' . $this->request->get['cat_id'] . $url . '&limit=50')
+                'href' => $this->url->link('news/news_category', 'cat_id=' . $this->request->get['news_cat_id'] . $url . '&limit=50')
             );
 
             $this->data['limits'][] = array(
                 'text' => 75,
                 'value' => 75,
-                'href' => $this->url->link('news/news_category', 'cat_id=' . $this->request->get['cat_id'] . $url . '&limit=75')
+                'href' => $this->url->link('news/news_category', 'cat_id=' . $this->request->get['news_cat_id'] . $url . '&limit=75')
             );
 
             $this->data['limits'][] = array(
                 'text' => 100,
                 'value' => 100,
-                'href' => $this->url->link('news/news_category', 'cat_id=' . $this->request->get['cat_id'] . $url . '&limit=100')
+                'href' => $this->url->link('news/news_category', 'cat_id=' . $this->request->get['news_cat_id'] . $url . '&limit=100')
             );
 
             $url = '';
@@ -538,7 +539,7 @@ class ControllerNewsNewsCategory extends Controller {
             $pagination->page = $page;
             $pagination->limit = $limit;
             $pagination->text = $this->language->get('text_pagination');
-            $pagination->url = $this->url->link('news/news_category', 'cat_id=' . $this->request->get['cat_id'] . $url . '&page={page}');
+            $pagination->url = $this->url->link('news/news_category', 'cat_id=' . $this->request->get['news_cat_id'] . $url . '&page={page}');
 
             $this->data['pagination'] = $pagination->render();
 
@@ -546,10 +547,19 @@ class ControllerNewsNewsCategory extends Controller {
 
             $this->data['continue'] = $this->url->link('news/all');
 
-            if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/news/news_category_ajax.tpl')) {
-                $this->template = $this->config->get('config_template') . '/template/news/news_category_ajax.tpl';
+            
+            if (empty($news_category_info['theme_id'])) { //               
+                if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/news/news_lookbook_ajax.tpl')) {
+                    $this->template = $this->config->get('config_template') . '/template/news/news_lookbook_ajax.tpl';
+                } else {
+                    $this->template = 'default/template/news/news_lookbook_ajax.tpl';
+                }
             } else {
-                $this->template = 'default/template/news/news_category_ajax.tpl';
+                if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/news/news_category.tpl')) {
+                    $this->template = $this->config->get('config_template') . '/template/news/news_category_ajax.tpl';
+                } else {
+                    $this->template = 'default/template/news/news_category_ajax.tpl';
+                }
             }
 
             $this->children = array(
@@ -592,7 +602,7 @@ class ControllerNewsNewsCategory extends Controller {
             $this->data['button_continue'] = $this->language->get('button_continue');
 
             $this->data['continue'] = $this->url->link('common/home');
-
+  
             if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/error/not_found.tpl')) {
                 $this->template = $this->config->get('config_template') . '/template/error/not_found.tpl';
             } else {
