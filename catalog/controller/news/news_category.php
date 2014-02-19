@@ -479,12 +479,13 @@ class ControllerNewsNewsCategory extends Controller {
                     'news_id' => $result['news_id'],
                     'thumb' => $image,
                     'name' => $result['name'],
+                    'date_available' => $result['date_available'],
                     'short_description' => $short_description,
                     'date_added' => date('H:i:s - ' . $this->language->get('date_format_short'), strtotime($result['date_added'])),
                     'width' => $width,
                     'height' => $height,
                     'viewed' => $result['viewed'],
-                    'href' => $this->url->link('news/news', 'cat_id=' . $this->request->get['cat_id'] . '&news_id=' . $result['news_id'])
+                    'href' => $this->url->link('news/news', 'cat_id=' . $this->request->get['news_cat_id'] . '&news_id=' . $result['news_id'])
                 );
             }
 
